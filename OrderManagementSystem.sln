@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.24720.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrderManagementSystem", "OrderManagementSystem\OrderManagementSystem.csproj", "{390A5B33-1089-4895-ADC1-51EF6309338A}"
+EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "OrderManagementSystem.Database", "OrderManagementSystem.Database\OrderManagementSystem.Database.sqlproj", "{8F9EC182-E07D-402D-8377-4E869352B874}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{390A5B33-1089-4895-ADC1-51EF6309338A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{390A5B33-1089-4895-ADC1-51EF6309338A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{390A5B33-1089-4895-ADC1-51EF6309338A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{390A5B33-1089-4895-ADC1-51EF6309338A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8F9EC182-E07D-402D-8377-4E869352B874}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8F9EC182-E07D-402D-8377-4E869352B874}.Release|Any CPU.ActiveCfg = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
