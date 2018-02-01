@@ -1,0 +1,53 @@
+﻿@model OrderManagementSystem.Models.Customer.CustomerForm
+
+@{
+    ViewBag.Title = "Zarejestruj się jako klient";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2 class="margin-form">Rejestracja klienta</h2>
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.CustomerId, htmlAttributes: new { @class = "control-label col-md-2" })
+
+        <div class="row">
+            <div class="form-group col-md-6">
+                @Html.LabelFor(model => model.Login, htmlAttributes: new {@class = "control-label col-md-2"})
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Login, new {htmlAttributes = new {@class = "form-control"}})
+                    @Html.ValidationMessageFor(model => model.Login, "", new {@class = "text-danger"})
+                </div>
+            </div>
+
+            <div class="form-group col-md-6">
+                @Html.LabelFor(model => model.Password, htmlAttributes: new {@class = "control-label col-md-2"})
+                <div class="col-md-10">
+                    @Html.PasswordFor(model => model.Password, new {@class = "form-control"})
+                    @Html.ValidationMessageFor(model => model.Password, "", new {@class = "text-danger"})
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="form-group col-md-6">
+                @Html.LabelFor(model => model.Firstname, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Firstname, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Firstname, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-5 col-md-10">
+                <input type="submit" value="Utwórz konto" class="btn btn-success" />
+            </div>
+        </div>
+    </div>
+}

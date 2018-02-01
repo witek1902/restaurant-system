@@ -1,0 +1,153 @@
+﻿@model OrderManagementSystem.Models.Restaurant.RestaurantForm
+
+@{
+    ViewBag.Title = "Zarejestruj się jako restauracja";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2 class="margin-form">Zarejestruj się jako restauracja</h2>
+<h4>Manager restauracji</h4>
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <hr/>
+        @Html.ValidationSummary(true, "", new {@class = "text-danger"})
+
+        <div class="form-group">
+            @Html.HiddenFor(model => model.RestaurantId, htmlAttributes: new {@class = "control-label col-md-2"})
+        </div>
+
+        <div class="row">
+            <div class="form-group">
+                @Html.HiddenFor(model => model.ManagerId, htmlAttributes: new {@class = "control-label col-md-2"})
+            </div>
+
+            <div class="form-group col-md-6">
+                @Html.LabelFor(model => model.ManagerFirstname, htmlAttributes: new {@class = "control-label col-md-2"})
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.ManagerFirstname, new {htmlAttributes = new {@class = "form-control"}})
+                    @Html.ValidationMessageFor(model => model.ManagerFirstname, "", new {@class = "text-danger"})
+                </div>
+            </div>
+
+            <div class="form-group col-md-6">
+                @Html.LabelFor(model => model.ManagerLastname, htmlAttributes: new {@class = "control-label col-md-2"})
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.ManagerLastname, new {htmlAttributes = new {@class = "form-control"}})
+                    @Html.ValidationMessageFor(model => model.ManagerLastname, "", new {@class = "text-danger"})
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="form-group col-md-6">
+                @Html.LabelFor(model => model.ManagerLogin, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.ManagerLogin, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.ManagerLogin, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group col-md-6">
+                @Html.LabelFor(model => model.ManagerPassword, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.PasswordFor(model => model.ManagerPassword, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.ManagerPassword, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="form-group col-md-6">
+                @Html.LabelFor(model => model.ManagerNick, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.ManagerNick, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.ManagerNick, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        </div>
+
+        <h4>Informacje ogólne dotyczące restauracji</h4>
+        <hr/>
+        <div class="row">
+            <div class="form-group col-md-6">
+                @Html.LabelFor(model => model.RestaurantName, htmlAttributes: new {@class = "control-label col-md-2"})
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.RestaurantName, new {htmlAttributes = new {@class = "form-control"}})
+                    @Html.ValidationMessageFor(model => model.RestaurantName, "", new {@class = "text-danger"})
+                </div>
+            </div>
+
+            <div class="form-group col-md-6">
+                @Html.LabelFor(model => model.RestaurantCode, htmlAttributes: new {@class = "control-label col-md-5"})
+                <div class="col-md-7">
+                    @Html.EditorFor(model => model.RestaurantCode, new {htmlAttributes = new {@class = "form-control"}})
+                    @Html.ValidationMessageFor(model => model.RestaurantCode, "", new {@class = "text-danger"})
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="form-group col-md-6">
+                @Html.LabelFor(model => model.RestaurantCity, htmlAttributes: new {@class = "control-label col-md-2"})
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.RestaurantCity, new {htmlAttributes = new {@class = "form-control"}})
+                    @Html.ValidationMessageFor(model => model.RestaurantCity, "", new {@class = "text-danger"})
+                </div>
+            </div>
+
+            <div class="form-group col-md-6">
+                @Html.LabelFor(model => model.RestaurantPostalCode, htmlAttributes: new {@class = "control-label col-md-5"})
+                <div class="col-md-7">
+                    @Html.EditorFor(model => model.RestaurantPostalCode, new {htmlAttributes = new {@class = "form-control"}})
+                    @Html.ValidationMessageFor(model => model.RestaurantPostalCode, "", new {@class = "text-danger"})
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="form-group col-md-6">
+                @Html.LabelFor(model => model.RestaurantStreet, htmlAttributes: new {@class = "control-label col-md-2"})
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.RestaurantStreet, new {htmlAttributes = new {@class = "form-control"}})
+                    @Html.ValidationMessageFor(model => model.RestaurantStreet, "", new {@class = "text-danger"})
+                </div>
+            </div>
+
+            <div class="form-group col-md-6">
+                @Html.LabelFor(model => model.RestaurantStreetNumber, htmlAttributes: new { @class = "control-label col-md-5" })
+                <div class="col-md-7">
+                    @Html.EditorFor(model => model.RestaurantStreetNumber, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.RestaurantStreetNumber, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="form-group col-md-6">
+                @Html.LabelFor(model => model.RestaurantFlatNumber, htmlAttributes: new {@class = "control-label col-md-2"})
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.RestaurantFlatNumber, new {htmlAttributes = new {@class = "form-control"}})
+                    @Html.ValidationMessageFor(model => model.RestaurantFlatNumber, "", new {@class = "text-danger"})
+                </div>
+            </div>
+
+            <div class="form-group col-md-6">
+                @Html.LabelFor(model => model.RestaurantPhotoUrl, htmlAttributes: new { @class = "control-label col-md-5" })
+                <div class="col-md-7">
+                    @Html.EditorFor(model => model.RestaurantPhotoUrl, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.RestaurantPhotoUrl, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-5">
+                <input type="submit" value="Zarejestruj restaurację" class="btn btn-success"/>
+            </div>
+        </div>
+    </div>
+}
