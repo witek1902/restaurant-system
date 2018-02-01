@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="OrderManagementSystem" namespace="OrderManagementSystem.Domain.Product">
+  <class name="Product" table="Product">
+    
+    <id name="Id" column="ProductId">
+      <generator class="guid.comb"/>
+    </id>
+
+    <many-to-one name="Menu" class="OrderManagementSystem.Domain.Restaurant.Menu" column="MenuId" />
+    <many-to-one name="ProductCategory" class="ProductCategory" column="ProductCategoryId" />
+    <many-to-one name="ProductDetails" class="ProductDetails" unique="true" column="ProductDetailsId" cascade="all"/>
+
+    <property name="Name" />
+    <property name="Price" type="decimal"/>
+    <property name="Description" />
+    <property name="PercentDiscount" />
+    <property name="PhotoUrl" />
+    <property name="Active" />
+    
+  </class>
+</hibernate-mapping>
