@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="OrderManagementSystem" namespace="OrderManagementSystem.Domain.User">
+  
+  <class name="Customer" table="Customer">
+    
+    <id name="Id" column="CustomerId">
+      <generator class="guid.comb"/>
+    </id>
+    
+    <property name="Firstname" />
+
+    <many-to-one name="AppUser" class="OrderManagementSystem.Infrastructure.Security.AppUser" column="UserId" />
+
+    <set name="Orders" table="Order" inverse="true" cascade="all-delete-orphan">
+      <key column="CustomerId" />
+      <one-to-many class="OrderManagementSystem.Domain.Order.Order"/>
+    </set>
+    
+  </class>
+</hibernate-mapping>
