@@ -1,0 +1,89 @@
+﻿body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 380px;
+}
+ 
+#searchRestaurant {
+    max-width: 100%;
+}
+
+.margin-form {
+    margin-top: 40px;
+    margin-bottom: 20px;
+}
+
+.registerCustomer {
+     background: url(../Content/icons/256-customer.png) no-repeat top left;
+     display: block;
+     width: 256px;
+     height: 256px;
+     text-indent: -9999px; /* hides the link text */
+}
+
+.registerRestaurant {
+     background: url(../Content/icons/256-restaurant.png) no-repeat top left;
+     display: block;
+     width: 256px;
+     height: 256px;
+     text-indent: -9999px; /* hides the link text */
+}
+
+.imageInTable {
+    max-width: 200px;
+}
+
+.restaurantRow {
+    font-size: 17px;
+}
+
+.registerText {
+    margin-top: 15px;
+    font-size: 20px;
+}
+
+.logoInJumbotron {
+    max-width: 550px;
+    max-height: 300px;
+}
+
+.restaurantPhoto {
+    max-width: 400px;
+    max-height: 200px;
+}
+
+.editManagerButton {
+    margin-right: 12px;
+}
+
+.help-img {
+    margin: 10px;
+}
+
+.help-text {
+    font-size: 17px;
+}
+
+#help-buttons {
+  display: flex;
+  justify-content: space-between;
+}
