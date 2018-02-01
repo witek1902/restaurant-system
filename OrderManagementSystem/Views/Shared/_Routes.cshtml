@@ -1,0 +1,12 @@
+﻿<script type="text/javascript">
+
+    $(function() {
+
+        Application.Routes = {
+            Customer: {
+                AddOrderItem:           "@Url.Action("AddOrderItem", "Customer")",
+                ChangeQuantityOrderItem:"@Url.Action("ChangeQuantity","Customer")"    
+            }
+        };
+    });
+</script>

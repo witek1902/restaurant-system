@@ -1,0 +1,20 @@
+﻿@using OrderManagementSystem.Infrastructure.Security
+
+@{
+    if (Security.IsUserInRole("managers"))
+    {
+        Layout = "~/Views/Shared/_RestaurantLayout.cshtml";
+    }
+    else if (Security.IsUserInRole("customers"))
+    {
+        Layout = "~/Views/Shared/_CustomerLayout.cshtml";
+    }
+    else if (Security.IsUserInRole("cooks") || Security.IsUserInRole("waiters"))
+    {
+        Layout = "~/Views/Shared/_RestaurantWorkerLayout.cshtml";
+    }
+    else
+    {
+        Layout = "~/Views/Shared/_Layout.cshtml";
+    }
+}
