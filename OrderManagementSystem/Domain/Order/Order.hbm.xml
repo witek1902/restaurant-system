@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="OrderManagementSystem" namespace="OrderManagementSystem.Domain.Order">
+
+    <class name="Order" table="`Order`">
+    
+      <id name="Id" column="OrderId">
+        <generator class="guid.comb"/>
+      </id>
+    
+      <property name="OrderStatus" column="OrderStatusId"/>
+      <property name="CreationDate" column="OrderCreationDate" />
+      <property name="FinishedDate" column="OrderFinishedDate" />
+      <property name="TableNumber" />
+      <property name="Rate" />
+      <property name="RateDetails" />
+      <property name="Comments" />
+
+      <many-to-one name="Waiter" class="OrderManagementSystem.Domain.User.RestaurantWorker" column="WaiterId" lazy="false" cascade="none" />
+      <many-to-one name="Cook" class="OrderManagementSystem.Domain.User.RestaurantWorker" column="CookId" lazy="false" cascade="none" />
+      <many-to-one name="Customer" class="OrderManagementSystem.Domain.User.Customer" column="CustomerId" lazy="false" cascade="none" />
+      
+      <set name="OrderItems" table="OrderItem" inverse="true" cascade="all-delete-orphan">
+        <key column="OrderId" />
+        <one-to-many class="OrderManagementSystem.Domain.Order.OrderItem.OrderItem"/>
+      </set>
+    
+  </class>
+</hibernate-mapping>

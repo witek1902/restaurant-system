@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="OrderManagementSystem" namespace="OrderManagementSystem.Domain.Order.OrderItem">
+
+  <class name="OrderItem" table="OrderItem">
+  
+    <id name="Id" column="OrderItemId">
+      <generator class="guid.comb"/>
+    </id>
+    
+    <property name="OrderItemStatus" column="OrderItemStatusId" />
+    <property name="Quantity" />
+
+    <many-to-one class="OrderManagementSystem.Domain.Order.Order" name="Order" column="OrderId" />
+    <many-to-one class="OrderManagementSystem.Domain.Product.Product" name="Product" column="ProductId" fetch="join"/>
+  
+  </class>
+</hibernate-mapping>
