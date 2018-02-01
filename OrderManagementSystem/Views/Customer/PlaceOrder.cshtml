@@ -1,0 +1,72 @@
+﻿@using OrderManagementSystem.Domain.Order.OrderItem
+@model OrderManagementSystem.Models.Order.OrderForm
+
+@{
+    ViewBag.Title = "Nowe zamówienie";
+    Layout = "~/Views/Shared/_CustomerLayout.cshtml";
+}
+
+@using (Html.BeginForm()) 
+{
+    @Html.HiddenFor(model => model.OrderId, new { @id = "OrderId", @value = @Model.OrderId })
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal col-md-12">
+        <h2 class="margin-form">
+            Twoje aktualne zamówienie
+            @if (@Model.OrderItems == null || (@Model.OrderItems.All(x => x.OrderItemStatus == OrderItemStatus.New)))
+            {
+                <input type="button" id="deleteOrder" class="btn btn-danger btn-xs pull-right" value="Rozmyśliłem się, rezygnuję z zamówienia." />
+            }
+        </h2>
+        <hr/>
+        @Html.ValidationSummary(true, "", new {@class = "text-danger"})
+        <div class="form-group">
+            @Html.LabelFor(model => model.ActualSelectedMenuId, htmlAttributes: new {@class = "control-label col-md-4"})
+            <div class="col-md-8">
+                @Html.DropDownListFor(model => model.ActualSelectedMenuId,
+                    Model.Menus.Select(x => new SelectListItem {Text = x.MenuName, Value = Convert.ToString(x.MenuId)}).ToList(), new {@class = "form-control", @id = "menuDropDown"})
+            </div>
+        </div>
+
+        <div id="productsInMenu">
+        </div>
+
+        <div id="myOrder">
+            <hr/>
+
+        </div>
+
+        <hr/>
+        <div class="row">
+            <div class="form-group col-md-6">
+                @Html.LabelFor(model => model.OrderComments, htmlAttributes: new {@class = "control-label col-md-4"})
+                <div class="col-md-8 orderComments">
+                    @Html.EditorFor(model => model.OrderComments, new {htmlAttributes = new {@class = "form-control"}})
+                    @Html.ValidationMessageFor(model => model.OrderComments, "", new {@class = "text-danger"})
+                </div>
+            </div>
+            <div class="form-group col-md-6">
+                @Html.LabelFor(model => model.TableNumber, htmlAttributes: new {@class = "control-label col-md-4"})
+                <div class="col-md-8">
+                    @Html.EditorFor(model => model.TableNumber, new {htmlAttributes = new {@class = "form-control"}})
+                    @Html.ValidationMessageFor(model => model.TableNumber, "", new {@class = "text-danger"})
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-4 col-md-10">
+                <input type="submit" value="To wszystko, dziękuję!" class="btn btn-success btn-lg"/>
+            </div>
+        </div>
+    </div>
+}
+
+<script src="~/Scripts/Application/OrderFormController.js"></script>
+<script type="text/javascript">
+    $(function () {
+        var ctrl = new OrderFormController();
+        ctrl.init();
+    });
+</script>

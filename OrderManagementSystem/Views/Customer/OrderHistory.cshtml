@@ -1,0 +1,92 @@
+﻿@model IEnumerable<OrderManagementSystem.Models.Order.OrderForm>
+
+@{
+    ViewBag.Title = "Historia zamówień";
+    Layout = "~/Views/Shared/_CustomerLayout.cshtml";
+}
+
+<h2 class="margin-form">Historia zamówień</h2>
+<hr/>
+<div class="col-md-12">
+    @if (Model.Any())
+    {
+        <table class="table table-responsive table-hover table-bordered">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.RestaurantName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.OrderCreationDate)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.OrderFinishedDate)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.OrderRate)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.OrderRateDetails)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.OrderComments)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.WaiterFirstName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.CookFirstName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.TableNumber)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.TotalPrice)
+                </th>
+                <th></th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        <b>@Html.DisplayFor(modelItem => item.RestaurantName)</b>
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.OrderCreationDate)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.OrderFinishedDate)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.OrderRate)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.OrderRateDetails)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.OrderComments)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.WaiterFirstName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CookFirstName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.TableNumber)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.TotalPrice) zł
+                    </td>
+                    <td>
+                        @Html.ActionLink("Szczegóły", "OrderDetails", new { orderId = item.OrderId })
+                    </td>
+                </tr>
+            }
+        </table>
+    }
+    else
+    {
+        <p class="alert alert-info">Nie złożyłeś jeszcze żadnego zamówienia :)</p>
+    }
+</div>

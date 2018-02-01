@@ -1,0 +1,49 @@
+﻿@model OrderManagementSystem.Models.Restaurant.MenuForm
+
+<div class="col-md-12">
+    <fieldset>
+        <legend>Produkty dostępne w Menu</legend>
+        <table id="productsInMenuTable" class="table table-hover">
+            <thead>
+            <tr>
+                <th></th>
+                <th>Kategoria</th>
+                <th>Nazwa produktu</th>
+                <th>Opis</th>
+                <th>Cena</th>
+                <th>Ilość</th>
+                <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            @foreach (var item in Model.Products)
+            {
+                <tr data-product-id="@item.ProductId">
+                    <td class="imageInTable"><a href="@item.ProductPhotoUrl" data-toggle="lightbox" data-title="@item.ProductName"
+                                                data-footer="@Html.Partial("_ProductDetails", item)">
+                        <img src="@item.ProductPhotoUrl" class="img-responsive img-thumbnail" alt="@item.ProductName"/>
+                    </a></td>
+                    <td>@item.ProductCategoryName</td>
+                    <td>@item.ProductName</td>
+                    <td>@item.ProductDescription</td>
+                    <td>@item.Price zł</td>
+                    <td>
+                        <input id="@item.ProductId-quantity" class="form-control quantity"/>
+                    </td>
+                    <td>
+                        <input type="button" id="@item.ProductId" class="btn btn-primary addProductToOrder" value="Dodaj"/>
+                    </td>
+                </tr>
+            }
+            </tbody>
+        </table>
+    </fieldset>
+</div>
+
+<script src="~/Scripts/Application/MenuFormController.js"></script>
+<script type="text/javascript">
+    $(function () {
+        var ctrl = new MenuFormController();
+        ctrl.init();
+    });
+</script>

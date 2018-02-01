@@ -1,0 +1,61 @@
+﻿@model OrderManagementSystem.Models.Order.OrderForm
+
+@{
+    ViewBag.Title = "Szczegóły zamówienia";
+    Layout = "~/Views/Shared/_CustomerLayout.cshtml";
+}
+
+<h2 class="margin-form">Szczegóły zamówienia</h2>
+
+<div class="col-md-12">
+    <hr/>
+    <dl class="dl-horizontal">
+        <dt>@Html.DisplayNameFor(model => model.OrderCreationDate) </dt>
+        <dd>@Html.DisplayFor(model => model.OrderCreationDate) </dd>
+        <dt>@Html.DisplayNameFor(model => model.OrderFinishedDate)</dt>
+        <dd>@Html.DisplayFor(model => model.OrderFinishedDate)</dd>
+        <dt>@Html.DisplayNameFor(model => model.OrderRate)</dt>
+        <dd>@Html.DisplayFor(model => model.OrderRate)</dd>
+        <dt>@Html.DisplayNameFor(model => model.OrderRateDetails)</dt>
+        <dd>@Html.DisplayFor(model => model.OrderRateDetails)</dd>
+        <dt>@Html.DisplayNameFor(model => model.OrderComments)</dt>
+        <dd>@Html.DisplayFor(model => model.OrderComments)</dd>
+        <dt>@Html.DisplayNameFor(model => model.CustomerFullName)</dt>
+        <dd>@Html.DisplayFor(model => model.CustomerFullName)</dd>
+        <dt>@Html.DisplayNameFor(model => model.WaiterFirstName)</dt>
+        <dd>@Html.DisplayFor(model => model.WaiterFirstName)</dd>
+        <dt>@Html.DisplayNameFor(model => model.CookFirstName)</dt>
+        <dd>@Html.DisplayFor(model => model.CookFirstName)</dd>
+        <dt>@Html.DisplayNameFor(model => model.TableNumber)</dt>
+        <dd>@Html.DisplayFor(model => model.TableNumber)</dd>
+        <dt>@Html.DisplayNameFor(model => model.TotalPrice)</dt>
+        <dd>@Html.DisplayFor(model => model.TotalPrice)</dd>
+    </dl>
+</div>
+<div class="col-md-12">
+    <fieldset>
+        <legend>Produkty na zamówieniu</legend>
+        <table id="orderItemsTable" class="table table-hover">
+            <thead>
+            <tr>
+                <th>Menu</th>
+                <th>Kategoria</th>
+                <th>Nazwa produktu</th>
+                <th>Opis</th>
+                <th>Cena</th>
+                <th>Ilość</th>
+                <th>Suma</th>
+            </tr>
+            </thead>
+            <tbody>
+            @foreach (var item in Model.OrderItems)
+            {
+                Html.RenderPartial("_OrderItem", item);
+            }
+            </tbody>
+        </table>
+    </fieldset>
+</div>
+<p>
+    @Html.ActionLink("Wróc do historii zamówień", "OrderHistory")
+</p>

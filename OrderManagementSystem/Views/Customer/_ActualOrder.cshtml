@@ -1,0 +1,58 @@
+﻿@using OrderManagementSystem.Domain.Order.OrderItem
+@using OrderManagementSystem.Infrastructure.ExtensionMethods
+@model OrderManagementSystem.Models.Order.OrderForm
+<input hidden="hidden" value="@Model.OrderId" id="actualOrderId"/>
+<div class="col-md-12">
+    <fieldset>
+        <legend>Produkty na zamówieniu</legend>
+        <table id="orderItemsTable" class="table table-hover">
+            <thead>
+            <tr>
+                <th>Status</th>
+                <th>Kategoria</th>
+                <th>Nazwa produktu</th>
+                <th>Opis</th>
+                <th>Cena</th>
+                <th>Ilość</th>
+                <th></th>
+            </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.OrderItems)
+                {
+                    <tr class="orderItemRow" data-order-item-id="@item.OrderItemId">
+                        <td>@item.OrderItemStatus.GetDisplayName()</td>
+                        <td>@item.ProductCategoryName</td>
+                        <td>@item.ProductName</td>
+                        <td>@item.ProductDescription</td>
+                        <td>@item.ProductPrice</td>
+                        <td>
+                            @if (@item.OrderItemStatus == OrderItemStatus.New)
+                            {
+                                <input id="@item.OrderItemId-quantity" class="form-control changeQuantityOrderItem" value="@item.Quantity" />
+                            }
+                            else
+                            {
+                                @item.Quantity
+                            }
+                        </td>
+                        <td>
+                            @if (@item.OrderItemStatus == OrderItemStatus.New)
+                            {
+                                <input type="button" id="@item.OrderItemId" class="btn btn-danger deleteOrderItem" value="Usuń"/>
+                            }
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </fieldset>
+</div>
+
+<script src="~/Scripts/Application/ActualOrderController.js"></script>
+<script type="text/javascript">
+    $(function () {
+        var ctrl = new ActualOrderController();
+        ctrl.init();
+    });
+</script>

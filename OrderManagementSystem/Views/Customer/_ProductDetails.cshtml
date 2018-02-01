@@ -1,0 +1,9 @@
+﻿@model OrderManagementSystem.Models.Product.ProductForm
+
+@if (Model.ProductDetailsId.HasValue)
+{
+    <strong>Ilość kalorii:</strong> @Model.ProductDetailsCalories @: kcal   
+    <strong>Białko:</strong> @Model.ProductDetailsProtein @: g      
+    <strong>Węglowodany:</strong> @Model.ProductDetailsCarbohydrates @: g     
+    <strong>Tłuszcz:</strong> @Model.ProductDetailsFat @: g    
+}

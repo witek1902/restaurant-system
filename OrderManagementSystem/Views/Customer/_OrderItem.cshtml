@@ -1,0 +1,11 @@
+﻿@model OrderManagementSystem.Models.Order.OrderItemForm
+
+<tr class="orderItemRow">
+    <td>@Model.MenuName</td>
+    <td>@Model.ProductCategoryName</td>
+    <td>@Model.ProductName</td>
+    <td>@Model.ProductDescription</td>
+    <td>@Model.ProductPrice</td>
+    <td>@Model.Quantity</td>
+    <td>@Convert.ToDecimal(Model.ProductPrice*Model.Quantity)</td>
+</tr>
