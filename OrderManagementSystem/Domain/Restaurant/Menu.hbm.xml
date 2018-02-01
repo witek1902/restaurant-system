@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="OrderManagementSystem">
+  
+  <class name="OrderManagementSystem.Domain.Restaurant.Menu" table="Menu">
+    
+    <id name="Id" column="MenuId">
+      <generator class="guid.comb"/>
+    </id>
+    
+    <property name="Code" />
+    <property name="Name" />
+    <property name="Active" />
+    
+    <many-to-one name="Restaurant" class="OrderManagementSystem.Domain.Restaurant.Restaurant" column="RestaurantId" cascade="none" fetch="join"/>
+
+    <set name="Products" table="Product" cascade="all-delete-orphan">
+      <key column="MenuId" />
+      <one-to-many class="OrderManagementSystem.Domain.Product.Product" />
+    </set>
+
+  </class>
+</hibernate-mapping>
