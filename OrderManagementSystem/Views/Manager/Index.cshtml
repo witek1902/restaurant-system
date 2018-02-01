@@ -1,0 +1,94 @@
+﻿@using OrderManagementSystem.Infrastructure.Security
+@model OrderManagementSystem.Models.Restaurant.RestaurantForm
+
+@{
+    ViewBag.Title = "Zarządzanie restauracją";
+    Layout = "~/Views/Shared/_RestaurantLayout.cshtml";
+}
+
+<div class="col-md-12">
+    <h2>Zarządzanie restauracją</h2>
+    <div class="col-md-12">
+        <h4>Podstawowe informacje o restauracji
+            @Html.ActionLink("Edytuj informacje o restauracji", "EditRestaurant", "Manager", new { @class= "btn btn-success btn-xs pull-right"})
+            @Html.ActionLink("Edytuj konto managera", "EditRestaurantWorker", "Manager", new { userId = @Security.CurrentUserId}, new {@class= "btn btn-success btn-xs pull-right editManagerButton" })
+        </h4>
+        <hr/>
+        <div class="col-md-6">
+            <dl class="dl-horizontal">
+                <dt> @Html.DisplayNameFor(model => model.RestaurantName) </dt>
+                <dd> @Html.DisplayFor(model => model.RestaurantName) </dd>
+                <dt> @Html.DisplayNameFor(model => model.RestaurantCode) </dt>
+                <dd> @Html.DisplayFor(model => model.RestaurantCode) </dd>
+                <dt> @Html.DisplayNameFor(model => model.RestaurantCity)</dt>
+                <dd> @Html.DisplayFor(model => model.RestaurantCity) </dd>
+                <dt> @Html.DisplayNameFor(model => model.RestaurantStreet) </dt>
+                <dd> @Html.DisplayFor(model => model.RestaurantStreet) </dd>
+                <dt> @Html.DisplayNameFor(model => model.RestaurantPostalCode) </dt>
+                <dd> @Html.DisplayFor(model => model.RestaurantPostalCode) </dd>
+                <dt> @Html.DisplayNameFor(model => model.RestaurantStreetNumber) </dt>
+                <dd> @Html.DisplayFor(model => model.RestaurantStreetNumber) </dd>
+                <dt> @Html.DisplayNameFor(model => model.RestaurantFlatNumber) </dt>
+                <dd> @Html.DisplayFor(model => model.RestaurantFlatNumber) </dd>
+                <dt> @Html.DisplayNameFor(model => model.ManagerFirstname) </dt>
+                <dd> @Html.DisplayFor(model => model.ManagerFirstname) </dd>
+                <dt> @Html.DisplayNameFor(model => model.ManagerLastname) </dt>
+                <dd> @Html.DisplayFor(model => model.ManagerLastname) </dd>
+            </dl>
+        </div>
+        <div class="col-md-6">
+            <img src="@Model.RestaurantPhotoUrl" alt="@Model.RestaurantName" class="img-rounded img-responsive restaurantPhoto"/>
+        </div>
+    </div>
+    <div class="col-md-12">
+        <h4>Zarządzanie kadrą i menu</h4>
+        <hr/>
+
+        <div class="row margin-form">
+            <div class="col-md-5">
+                <h4>
+                    Pracownicy
+                    @Html.ActionLink("Dodaj pracownika", "AddRestaurantWorker", "Manager", new { @class = "btn btn-success pull-right btn-xs" })
+                </h4>
+                <table id="restaurantWorkersTable" class="table table-hover table-striped">
+                    <thead>
+                        <tr>
+                            <th>Imię</th>
+                            <th>Nazwisko</th>
+                            <th>Stanowisko</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model.RestaurantWorkers)
+                        {
+                            @Html.Partial("_RestaurantWorkerTableItem", item)
+                        }
+                    </tbody>
+                </table>
+            </div>
+            <div class="col-md-offset-1 col-md-6">
+                <h4>
+                    Dostępne menu
+                    @Html.ActionLink("Dodaj menu", "AddMenu", "Manager", new { @class = "btn btn-success pull-right btn-xs" })
+                </h4>
+                <table id="menusTable" class="table table-hover table-striped">
+                    <thead>
+                        <tr>
+                            <th>Nazwa</th>
+                            <th>Kod</th>
+                            <th>Liczba produktów</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model.Menus)
+                        {
+                            @Html.Partial("_MenuTableItem", item)
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,11 @@
+﻿@using OrderManagementSystem.Infrastructure.ExtensionMethods
+@model OrderManagementSystem.Models.Restaurant.RestaurantWorkerForm
+
+<tr>
+    <td>@Model.Firstname</td>
+    <td>@Model.Lastname</td>
+    <td>@Model.Position.GetDisplayName()</td>
+    <td>
+        @Html.ActionLink("Edytuj", "EditRestaurantWorker", "Manager", new { userId = @Model.AppUserId }, new { @class = "btn btn-info btn-xs" })
+    </td>
+</tr>

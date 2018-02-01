@@ -1,0 +1,45 @@
+﻿@model OrderManagementSystem.Models.Product.ProductCategoryForm
+
+@{
+    ViewBag.Title = "Edytuj kategorię produktu";
+    Layout = "~/Views/Shared/_RestaurantLayout.cshtml";
+}
+
+<h2 class="margin-form">Edytuj kategorię produktu</h2>
+
+@using (Html.BeginForm("SaveProductCategory", "Manager"))
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.HiddenFor(model => model.ProductCategoryId, htmlAttributes: new { @class = "control-label col-md-2" })
+        </div>
+
+        <div class="row">
+            <div class="form-group col-md-6">
+                @Html.LabelFor(model => model.ProductCategoryName, htmlAttributes: new { @class = "control-label col-md-4" })
+                <div class="col-md-8">
+                    @Html.EditorFor(model => model.ProductCategoryName, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.ProductCategoryName, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group col-md-6">
+                @Html.LabelFor(model => model.ProductCategoryCode, htmlAttributes: new { @class = "control-label col-md-4" })
+                <div class="col-md-8">
+                    @Html.EditorFor(model => model.ProductCategoryCode, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.ProductCategoryCode, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-5 col-md-10">
+                <input type="submit" value="Zapisz zmiany" class="btn btn-success" />
+            </div>
+        </div>
+    </div>
+}

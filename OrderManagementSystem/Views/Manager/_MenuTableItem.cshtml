@@ -1,0 +1,10 @@
+﻿@model OrderManagementSystem.Models.Restaurant.MenuForm
+
+<tr>
+    <td>@Model.MenuName</td>
+    <td>@Model.MenuCode</td>
+    <td>@Model.Products.Count</td>
+    <td>
+        @Html.ActionLink("Edytuj menu", "EditMenu", new {menuId = @Model.MenuId}, new { @class="btn btn-info btn-xs"})
+    </td>
+</tr>

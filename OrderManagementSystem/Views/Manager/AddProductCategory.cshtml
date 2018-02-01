@@ -1,0 +1,72 @@
+﻿@model OrderManagementSystem.Models.Product.ProductCategoryForm
+
+@{
+    ViewBag.Title = "Dodaj kategorię produktu";
+    Layout = "~/Views/Shared/_RestaurantLayout.cshtml";
+}
+
+<h2 class="margin-form">Dodaj kategorię produktu</h2>
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.HiddenFor(model => model.ProductCategoryId, htmlAttributes: new { @class = "control-label col-md-2" })
+        </div>
+
+        <div class="row">
+            <div class="form-group col-md-6">
+                @Html.LabelFor(model => model.ProductCategoryName, htmlAttributes: new { @class = "control-label col-md-4" })
+                <div class="col-md-8">
+                    @Html.EditorFor(model => model.ProductCategoryName, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.ProductCategoryName, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group col-md-6">
+                @Html.LabelFor(model => model.ProductCategoryCode, htmlAttributes: new { @class = "control-label col-md-4" })
+                <div class="col-md-8">
+                    @Html.EditorFor(model => model.ProductCategoryCode, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.ProductCategoryCode, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-5 col-md-12">
+                <input type="submit" value="Dodaj kategorię" class="btn btn-success" />
+            </div>
+        </div>
+    </div>
+}
+
+@if (Model.ProductCategories != null && Model.ProductCategories.Any())
+{
+    <div class="col-md-12">
+        <table id="productsInMenuTable" class="table table-hover">
+            <thead>
+                <tr>
+                    <th>Nazwa kategorii</th>
+                    <th>Kod kategorii</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+            @foreach (var category in Model.ProductCategories)
+            {
+                <tr>
+                    <td>@category.ProductCategoryName</td>
+                    <td>@category.ProductCategoryCode</td>
+                    <td>
+                        @Html.ActionLink("Edytuj", "EditProductCategory", "Manager", new { productCategoryId = category.ProductCategoryId}, new {@class="btn btn-xs btn-info"})
+                    </td>
+                </tr>
+            }
+            </tbody>
+        </table>
+    </div>
+}
