@@ -1,0 +1,52 @@
+﻿@using OrderManagementSystem.Domain.Order
+@using OrderManagementSystem.Infrastructure.ExtensionMethods
+
+@model OrderManagementSystem.Models.Order.OrderForm
+
+<tr data-toggle="collapse" data-target="#@Model.OrderId" id="ajax-@Model.OrderId">
+    <td>@Model.OrderStatus.GetDisplayName()</td>
+    <td>@Model.CustomerFullName</td>
+    <td>@Model.TableNumber</td>
+    <td>@Model.OrderItems.Count</td>
+    <td>@Model.TotalPrice</td>
+    <td>@Model.OrderRate</td>
+    <td>
+        @if (@Model.OrderStatus == OrderStatus.Open)
+        {
+            @Html.ActionLink("Biorę", "AssignToWaiterOrder", "RestaurantWorker", new { orderId = @Model.OrderId },  new { @class = "btn btn-info btn-xs" })
+        }
+        else if (@Model.OrderStatus == OrderStatus.Closed)
+        {
+            @Html.ActionLink("Zapłacone", "MarkAsPaidOrder", "RestaurantWorker", new { orderId = @Model.OrderId }, new { @class = "btn btn-info btn-xs" })
+        }
+
+    </td>
+</tr>
+<tr id="@Model.OrderId" class="">
+    <td colspan="7">
+        <fieldset>
+            <legend>Elementy zamówienia</legend>
+            <table class="table table-condensed table-bordered">
+                <thead>
+                    <tr>
+                        <th>Status</th>
+                        <th>Menu</th>
+                        <th>Kategoria</th>
+                        <th>Nazwa</th>
+                        <th>Ilość</th>
+                        <th>Cena</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model.OrderItems)
+                    {
+                        <tr id="ajax-@item.OrderItemId" data-order-item-id="@item.OrderItemId">
+                            @Html.Partial("_OrderItemInTable", item)
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </fieldset>
+    </td>
+</tr>

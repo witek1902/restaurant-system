@@ -1,0 +1,78 @@
+﻿@model IEnumerable<OrderManagementSystem.Models.Order.OrderForm>
+
+@{
+    ViewBag.Title = "Historia obsłużonych zamówień";
+    Layout = "~/Views/Shared/_RestaurantWorkerLayout.cshtml";
+}
+
+<h2 class="margin-form">Historia obsłużonych zamówień</h2>
+<hr />
+<div class="col-md-12">
+    @if (Model.Any())
+    {
+        <table class="table">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.OrderCreationDate)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.OrderFinishedDate)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.OrderRate)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.OrderRateDetails)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.OrderComments)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.CustomerFullName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.WaiterFirstName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.CookFirstName)
+                </th>
+                <th></th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.OrderCreationDate)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.OrderFinishedDate)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.OrderRate)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.OrderRateDetails)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.OrderComments)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CustomerFullName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.WaiterFirstName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CookFirstName)
+                    </td>
+                </tr>
+            }
+        </table>
+    }
+    else
+    {
+        <p class="alert alert-info">Nie obsłużyłeś jeszcze żadnego zamówienia :)</p>
+    }
+</div>
+

@@ -1,0 +1,84 @@
+﻿@using OrderManagementSystem.Controllers
+@model Dictionary<OrderTypeEnum, List<OrderManagementSystem.Models.Order.OrderForm>>
+
+@{
+    ViewBag.Title = "Zamówienia";
+    Layout = "~/Views/Shared/_RestaurantWorkerLayout.cshtml";
+}
+
+<h2>Zamówienia</h2>
+
+<div id="actualOrders">
+    <fieldset>
+        <legend>Zamówienia, które obsługujesz</legend>
+    </fieldset>
+
+@if (!Model.Single(x => x.Key == OrderTypeEnum.InProgress).Value.Any())
+{
+    <div class="alert-info alert">Nie obsługujesz aktualnie żadnego zamówienia.</div>
+}
+else
+{
+    <table class="table table-bordered table-hover">
+        <thead>
+            <tr>
+                <th>Status zamówienia</th>
+                <th>Klient</th>
+                <th>Numer stolika</th>
+                <th>Ilość elementów</th>
+                <th>Cena</th>
+                <th>Ocena</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var order in Model.Where(x => x.Key == OrderTypeEnum.InProgress).Select(x => x.Value).Single())
+            {
+                Html.RenderPartial("_OrderListItem", order);
+            }
+        </tbody>
+    </table>
+}
+</div>
+
+<div id="newOrders">
+    <fieldset>
+        <legend>Nowe zamówienia</legend>
+    </fieldset>
+
+    @if (!Model.Single(x => x.Key == OrderTypeEnum.New).Value.Any())
+    {
+        <div class="alert-info alert">Brak nowych zamówień.</div>
+    }
+    else
+    {
+        <table class="table table-bordered table-hover">
+            <thead>
+                <tr>
+                    <th>Status zamówienia</th>
+                    <th>Klient</th>
+                    <th>Numer stolika</th>
+                    <th>Ilość elementów</th>
+                    <th>Suma</th>
+                    <th>Ocena</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var order in Model.Where(x => x.Key == OrderTypeEnum.New).Select(x => x.Value).Single())
+                {
+                    Html.RenderPartial("_OrderListItem", order);
+                }
+            </tbody>
+        </table>
+    }
+
+</div>
+
+<script type="text/javascript" src="~/Scripts/Application/RestaurantWorkerController.js"></script>
+<script type="text/javascript">
+    $(function () {
+        var ctrl = new RestaurantWorkerController();
+        ctrl.init();
+    });
+</script>
