@@ -2,6 +2,9 @@
 
 ![Food_Portal](https://witek1902.github.io/restaurant-system/img/food_portal_main.png)
 
+## Film obrazujący działanie aplikacje 
+https://vimeo.com/154968913
+
 ## Jak uruchomić lokalnie
 
 1. Stwórz bazę danych o nazwie **OMSDb**.
