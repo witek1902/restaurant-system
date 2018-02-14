@@ -5,6 +5,9 @@
 ## Film obrazujący działanie aplikacje 
 https://vimeo.com/154968913
 
+## Opis funkcjonalności
+https://witek1902.github.io/restaurant-system/
+
 ## Jak uruchomić lokalnie
 
 1. Stwórz bazę danych o nazwie **OMSDb**.
