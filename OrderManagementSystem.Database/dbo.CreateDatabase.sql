@@ -1,10 +1,26 @@
 ﻿use OMSDb
 
---CREATE TABLE dbo.AppUser
---(
---	UserId INT NOT NULL IDENTITY PRIMARY KEY,
---	[Login] varchar(255) NOT NULL
---)
+CREATE TABLE dbo.AppUser
+(
+	UserId INT NOT NULL IDENTITY PRIMARY KEY,
+	[Login] varchar(255) NOT NULL
+)
+
+INSERT INTO dbo.AppUser
+VALUES
+('rw-manager'),
+('rf-manager'),
+('rt-manager'),
+('rs-manager'),
+('rw-waiter'),
+('rf-waiter'),
+('rt-waiter'),
+('rs-waiter'),
+('rw-cook'),
+('rf-cook'),
+('rt-cook'),
+('rs-cook'),
+('customer')
 
 CREATE TABLE dbo.Restaurant
 (
