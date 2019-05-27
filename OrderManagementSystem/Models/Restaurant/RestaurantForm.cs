@@ -15,33 +15,33 @@
         public Guid? RestaurantId { get; set; }
 
         [Required]
-        [Display(Name="Nazwa")]
+        [Display(Name="Name")]
         public string RestaurantName { get; set; }
 
-        [Display(Name="Link do zdjęcia")]
+        [Display(Name="Link to the photo")]
         public string RestaurantPhotoUrl { get; set; }
 
         [Required]
-        [Display(Name="Unikalny kod restauracji")]
+        [Display(Name="A unique restaurant code")]
         public string RestaurantCode { get; set; }
 
         [Required]
-        [Display(Name ="Miasto")]
+        [Display(Name ="City")]
         public string RestaurantCity { get; set; }
 
         [Required]
-        [Display(Name="Ulica")]
+        [Display(Name="Street")]
         public string RestaurantStreet { get; set; }
 
         [Required]
-        [Display(Name="Kod pocztowy")]
+        [Display(Name="ZIP code")]
         public string RestaurantPostalCode { get; set; }
 
         [Required]
-        [Display(Name="Numer budynku")]
+        [Display(Name="Number of the building")]
         public int RestaurantStreetNumber { get; set; }
 
-        [Display(Name="Numer lokalu")]
+        [Display(Name="House number")]
         public int? RestaurantFlatNumber { get; set; }
 
         /// <summary>
@@ -54,16 +54,16 @@
         [Display(Name = "Login")]
         public string ManagerLogin { get; set; }
 
-        [Display(Name = "Hasło")]
+        [Display(Name = "Password ")]
         public string ManagerPassword { get; set; }
 
-        [Display(Name="Imię managera")]
+        [Display(Name="Manager's Name")]
         public string ManagerFirstname { get; set; }
 
-        [Display(Name="Pseudonim")]
+        [Display(Name="Pseudonym")]
         public string ManagerNick { get; set; }
 
-        [Display(Name="Nazwisko managera")]
+        [Display(Name="Manager's Name")]
         public string ManagerLastname { get; set; }
 
         /// <summary>

@@ -1,10 +1,10 @@
 ﻿@model OrderManagementSystem.Models.Restaurant.MenuForm
 
 @{
-    ViewBag.Title = "Edytuj menu";
+    ViewBag.Title = "Edit menu";
     Layout = "~/Views/Shared/_RestaurantLayout.cshtml";
 }
-<h2 class="margin-form">Edytuj menu</h2>
+<h2 class="margin-form">Edit menu</h2>
 
 @using (Html.BeginForm("SaveMenu", "Manager"))
 {
@@ -45,7 +45,7 @@
 
         <div class="form-group">
             <div class="col-md-offset-5 col-md-10">
-                <input type="submit" value="Zapisz zmiany" class="btn btn-success" />
+                <input type="submit" value="Save changes" class="btn btn-success" />
             </div>
         </div>
         @if (Model.Products.Any())
@@ -54,11 +54,11 @@
                 <table id="productsInMenuTable" class="table table-hover">
                     <thead>
                     <tr>
-                        <th>Zdjęcie</th>
-                        <th>Kategoria</th>
-                        <th>Nazwa produktu</th>
-                        <th>Opis</th>
-                        <th>Cena</th>
+                        <th>Picture</th>
+                        <th>Category</th>
+                        <th>Product name</th>
+                        <th>Description</th>
+                        <th>Price</th>
                         <th></th>
                         <th></th>
                     </tr>
@@ -74,16 +74,16 @@
                             <td>@item.ProductDescription</td>
                             <td>@item.Price zł</td>
                             <td>
-                                @Html.ActionLink("Edytuj", "EditProduct", "Manager", new {productId = @item.ProductId}, new {@class="btn btn-info btn-xs"})
+                                @Html.ActionLink("Edit", "EditProduct", "Manager", new {productId = @item.ProductId}, new {@class="btn btn-info btn-xs"})
                             </td>
                             <td>
                                 @if (@item.Active)
                                 {
-                                    @Html.ActionLink("Dezaktywuj", "DeactiveProduct", "Manager", new {productId = @item.ProductId}, new {@class = "btn btn-danger btn-xs" })
+                                    @Html.ActionLink("Deactivate", "DeactiveProduct", "Manager", new {productId = @item.ProductId}, new {@class = "btn btn-danger btn-xs" })
                                 }
                                 else
                                 {
-                                    @Html.ActionLink("Aktywuj", "ActiveProduct", "Manager", new { productId = @item.ProductId }, new { @class = "btn btn-success btn-xs" })
+                                    @Html.ActionLink("Activate", "ActiveProduct", "Manager", new { productId = @item.ProductId }, new { @class = "btn btn-success btn-xs" })
                                 }
                             </td>
                         </tr>
@@ -95,7 +95,7 @@
         else
         {
             <div class="col-md-offset-3 margin-form">
-                @Html.ActionLink("W tym menu nie ma jeszcze żadnych produktów. Kliknij, aby dodać pierwszy produkt", "AddProduct", "Manager", new { aria = "" }, new { @class = "btn btn-warning" })
+                @Html.ActionLink("There are no products in this menu yet. Click to add the first product", "AddProduct", "Manager", new { aria = "" }, new { @class = "btn btn-warning" })
             </div>
         }
     </div>

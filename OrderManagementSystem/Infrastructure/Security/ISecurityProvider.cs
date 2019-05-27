@@ -22,7 +22,7 @@
         int CurrentUserId { get; }
 
         /// <summary>
-        /// Nazwa
+        /// Name
         /// </summary>
         string CurrentUserName { get; }
 
@@ -38,10 +38,10 @@
         string[] GetRolesForUser();
 
         /// <summary>
-        /// Logowanie za pomocą nazwy użytkownika i hasła
+        /// Log in za pomocą nazwy użytkownika i hasła
         /// </summary>
         /// <param name="userName">Login</param>
-        /// <param name="password">Hasło</param>
+        /// <param name="password">Password </param>
         /// <param name="persistSecurityCookie">Czy przechowywać ciasteczka</param>
         /// <returns>Prawda, jeśli OK</returns>
         bool Login(string userName, string password, bool persistSecurityCookie = false);

@@ -19,17 +19,17 @@
         public virtual int? Calories { get; set; }
 
         /// <summary>
-        /// Ilość białka w gramach
+        /// Quantity of protein in grams
         /// </summary>
         public virtual int? Protein { get; set; }
 
         /// <summary>
-        /// Ilość węglowodanów w gramach
+        /// Quantity of carbohydrates in grams
         /// </summary>
         public virtual int? Carbohydrates { get; set; }
 
         /// <summary>
-        /// Ilość tłuszczu w gramach
+        /// Quantity of fat in grams
         /// </summary>
         public virtual int? Fat { get; set; }
     }

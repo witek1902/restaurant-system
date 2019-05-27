@@ -2,32 +2,32 @@
 @model Dictionary<OrderTypeEnum, List<OrderManagementSystem.Models.Order.OrderForm>>
 
 @{
-    ViewBag.Title = "Zamówienia";
+    ViewBag.Title = "Orders";
     Layout = "~/Views/Shared/_RestaurantWorkerLayout.cshtml";
 }
 
-<h2>Zamówienia</h2>
+<h2>Orders</h2>
 
 <div id="actualOrders">
     <fieldset>
-        <legend>Zamówienia, które obsługujesz</legend>
+        <legend>Orders that you support</legend>
     </fieldset>
 
 @if (!Model.Single(x => x.Key == OrderTypeEnum.InProgress).Value.Any())
 {
-    <div class="alert-info alert">Nie obsługujesz aktualnie żadnego zamówienia.</div>
+    <div class="alert-info alert">You do not currently have any orders.</div>
 }
 else
 {
     <table class="table table-bordered table-hover">
         <thead>
             <tr>
-                <th>Status zamówienia</th>
-                <th>Klient</th>
-                <th>Numer stolika</th>
-                <th>Ilość elementów</th>
-                <th>Cena</th>
-                <th>Ocena</th>
+                <th>Status of the order</th>
+                <th>Customer</th>
+                <th>Table number</th>
+                <th>Quantity of elements</th>
+                <th>Price</th>
+                <th>Rating</th>
                 <th></th>
             </tr>
         </thead>
@@ -43,24 +43,24 @@ else
 
 <div id="newOrders">
     <fieldset>
-        <legend>Nowe zamówienia</legend>
+        <legend>New orders</legend>
     </fieldset>
 
     @if (!Model.Single(x => x.Key == OrderTypeEnum.New).Value.Any())
     {
-        <div class="alert-info alert">Brak nowych zamówień.</div>
+        <div class="alert-info alert">No new orders.</div>
     }
     else
     {
         <table class="table table-bordered table-hover">
             <thead>
                 <tr>
-                    <th>Status zamówienia</th>
-                    <th>Klient</th>
-                    <th>Numer stolika</th>
-                    <th>Ilość elementów</th>
-                    <th>Suma</th>
-                    <th>Ocena</th>
+                    <th>Status of the order</th>
+                    <th>Customer</th>
+                    <th>Table number</th>
+                    <th>Quantity of elements</th>
+                    <th>Sum</th>
+                    <th>Rating</th>
                     <th></th>
                 </tr>
             </thead>

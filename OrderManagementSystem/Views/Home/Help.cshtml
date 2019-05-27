@@ -2,197 +2,197 @@
     <h2 class="margin-form" id="main">Basic information about the application</h2>
     <div class=" col-md-offset-3 col-md-6">
         <div id="help-buttons">
-            <a href="#klient"><input type="button" class="btn btn-success" value="Klient" /></a>
-            <a href="#pracownik"><input type="button" class="btn btn-success" value="Pracownik" /></a>
+            <a href="#Customer"><input type="button" class="btn btn-success" value="Customer" /></a>
+            <a href="#Employee"><input type="button" class="btn btn-success" value="Employee" /></a>
             <a href="#manager"><input type="button" class="btn btn-success" value="Manager" /></a>
-            <a href="#inne"><input type="button" class="btn btn-success" value="Inne" /></a>
+            <a href="#Other"><input type="button" class="btn btn-success" value="Other" /></a>
         </div>
     </div>
-    <div class="col-md-12" id="klient">
-        <h3>Klient</h3>
+    <div class="col-md-12" id="Customer">
+        <h3>Customer</h3>
         <hr/>
         <p class="help-text">
-            Jeśli klient chce złożyć zamówienie w restauracji powinien zalogować się do swojego konta poprzez naciśnięcie przycisku <strong>Zaloguj</strong>.
-            <img src="~/Content/screens/logowanie.png" alt="Logowanie" class="img-responsive help-img"/>
-            Jeśli klient nie posiada konta w portalu, musi się zarejestrować. W tym celu powinien kliknąć przycisk <strong>Zarejestruj</strong>. Po kliknięciu przycisku
-            zostaniemy przekierowani na główną stronę rejestracji. Na ekranie rejestracji wybieramy opcję <strong>Zarejestruj się jako klient</strong>.
-            <img src="~/Content/screens/rejestracja.png" alt="Rejestracja" class="img-responsive help-img"/>
-            Pojawia się ekran rejestracji dla klienta. Wpisujemy niezbędne do rejestracji dane i klikamy <strong>Utwórz konto</strong>.
-            <img src="~/Content/screens/rejestracja-klient.png" alt="Rejestracja klienta" class="img-responsive help-img"/>
-            Zostaniemy przekierowani do ekranu logowania. Wpisujemy dane i klikamy <strong>Zaloguj</strong>.
-            <img src="~/Content/screens/logowanie-po-rejestracji.png" alt="Ekran logowania po rejestracji" class="img-responsive help-img"/>
-            Po zalogowaniu się, widzimy ekran główny klienta.
-            W górnym menu mamy do wyboru kilka opcji. Jeśli aktualnie przebywamy w restauracji i chcemy złożyć zamówienie, wybieramy <strong>Wyszukiwanie restauracji</strong>.
-            <img src="~/Content/screens/klient-ekran-glowny.png" alt="Ekran główny klienta" class="img-responsive help-img"/>
-            Przechodzimy do ekranu wyszukiwania restuaracji.
-            <img src="~/Content/screens/klient-wyszukiwanie.png" alt="Wyszukiwanie restuaracji" class="img-responsive help-img"/>
-            W polu wyszukiwania wpisujemy albo kod restauracji albo jej nazwę (dopuszczalne jest wpisywanie tylko części kodu/nazwy).
-            Po kliknięciu przycisku lupki, pojawiają się rezultaty.
-            Rezultaty to lista restauracji, które pasują do wpisanego tekstu. Wybieramy restaurację klikając przycisk <strong>Wybierz</strong>.
-            <img src="~/Content/screens/klient-wyszukiwanie-rezultaty.png" alt="Wyszukiwanie restauracji rezultaty" class="img-responsive help-img"/>
-            Przechodzimy do okna składania zamówienia.
-            <img src="~/Content/screens/klient-skladanie-zamowienia-1.png" alt="Składanie zamówienia" class="img-responsive help-img"/>
-            Po wybraniu menu z listy dostępnych menu w restuaracji, na ekranie pojawią się produkty dostępne w obrębie danego menu.
-            <img src="~/Content/screens/klient-skladanie-zamowienia-2.png" alt="Składanie zamówienia" class="img-responsive help-img"/>
-            Po wybraniu produktu z menu, wpisujemy ilość i klikamy na przycisk <strong>Dodaj</strong>. Poniżej ukazuje się nowa sekcja <strong>Produkty na zamówieniu</strong>.
-            W tej sekcji widzimy produkty, które wstępnie dodaliśmy do zamówienia. Jeśli element zamówienia jest w statusie <strong>Nowa</strong>, możemy zmienić jego ilość lub usunąć go z zamówienia.
-            Dodatkowo, przed wciśnięciem przycisku <strong>To wszystko, dziękuję!</strong> powinniśmy wpisać <strong>numer stolika</strong> oraz <strong>uwagi</strong>.
-            W każdym momencie składania nowego zamówienia, możemy zrezygnować kompletnie z zamówienia i wyjść z restuaracji, klikając przycisk <strong>Rozmyśliłem się, rezygnuję z zamówienia</strong>.
-            Jeśli klient stwierdzi, że zamówienie jest już kompletne, klika przycisk <strong>To wszystko, dziękuję!</strong>.
-            <img src="~/Content/screens/klient-skladanie-zamowienia-3.png" alt="Składanie zamówienia" class="img-responsive help-img"/>
-            W tym momencie przechodzimy do okna szczegółów aktualnego zamówienia.
-            Na ekranie aktualnego zamówienia widzimy wszystkie niezbędne informacje, dotyczące naszego zamówienia. Po złożeniu zamówienia, nasze zamówienie ma status <strong>Otwarte</strong>.
-            Oznacza to, że czeka na kelnera, który je przypisze do siebie.
-            <img src="~/Content/screens/klient-aktualne-zamowienie-1.png" alt="Aktualne zamówienie" class="img-responsive help-img"/>
-            Po przypisaniu zamówienia przez kelnera, zamówienie zmienia status na <strong>Przypisane do kelnera</strong>.
-            <img src="~/Content/screens/klient-aktualne-zamowienie-2.png" alt="Aktualne zamówienie" class="img-responsive help-img"/>
-            Jeśli element zamówienia zostanie pobrany przez kucharza i oznaczony jako <strong>W trakcie przygotowywania</strong>, zmiany zobaczymy na naszym ekranie.
-            <img src="~/Content/screens/klient-aktualne-zamowienie-3.png" alt="Aktualne zamówienie" class="img-responsive help-img"/>
-            Jeśli element zamówienia zostanie przygotowany przez kucharza i oczekuje na kelnera, który dostarczy go do stolika, element zmieni status na <strong>Gotowy do podania</strong>.
-            <img src="~/Content/screens/klient-aktualne-zamowienie-4.png" alt="Aktualne zamówienie" class="img-responsive help-img"/>
-            Po dostarczeniu elementu zamówienia do stolika, status zostaje zmieniony na <strong>Dostarczona do stolika</strong>.
-            W tym momencie pojawia nam się również przycisk <strong>Chcę zapłacić</strong>.
-            W tej samej sekcji, cały czas widoczny był przycisk <strong>Mam ochotę na więcej...</strong>.
-            Jest on przydatny, gdy klient chcę domówić dodatkowe rzeczy do swojego zamówienia.
-            <img src="~/Content/screens/klient-aktualne-zamowienie-5.png" alt="Aktualne zamówienie" class="img-responsive help-img"/>
-            Po kliknięciu w <strong>Mam ochotę na więcej...</strong> zostaniemy przeniesieni do strony składania zamówienia.
-            <img src="~/Content/screens/klient-skladanie-zamowienia-ponowne-1.png" alt="Aktualne zamówienie" class="img-responsive help-img"/>
-            Na stronie widzimy nasze aktualne elementy zamówienia oraz mamy możliwość domówienia innych produktów.
-            <img src="~/Content/screens/klient-skladanie-zamowienia-ponowne-2.png" alt="Aktualne zamówienie" class="img-responsive help-img"/>
-            Jeśli klient chce zapłacić za zamówienie i zakończyć wizytę w restauracji, klika przycisk <strong>Chcę zapłacić.</strong> Zostaje przeniesiony do strony oceny zamówienia.
-            <img src="~/Content/screens/klient-ocena-zamowienia.png" alt="Ocena zamówienia" class="img-responsive help-img"/>
-            Po kliknięciu <strong>Wyślij ocenę</strong> wracamy do okna aktualnego statusu zamówienia.
-            Zamówienie zmienia status na <strong>Zamknięte</strong>. Zamiast przycisku, pojawia nam się informacja, aby oczekiwać na kelnera.
-            <img src="~/Content/screens/klient-aktualne-zamowienie-6.png" alt="Aktualne zamówienie" class="img-responsive help-img"/>
-            Po opłaceniu zamówienia u kelnera, zamówienie zmienia status na <strong>Opłacone</strong>. W tym momencie możemy się wylogować z aplikacji i opuścić restaurację.
-            <img src="~/Content/screens/klient-aktualne-zamowienie-7.png" alt="Aktualne zamówienie" class="img-responsive help-img"/>
-            Każdy klient ma możliwość przejrzenia historii swoich zamówień.
-            Po kliknięciu w <strong>Szczegóły</strong> możemy zobaczyć szczegóły danego zamówienia.
-            <img src="~/Content/screens/klient-historia.png" alt="Historia" class="img-responsive help-img"/>
-            <img src="~/Content/screens/klient-historia-detale.png" alt="Historia szczegóły" class="img-responsive help-img"/>
-            <a href="#main"><input type="button" class="btn btn-success pull-right" value="Wróć do początku"/></a>
+            If Customer wants to place an order at a restaurant, he should log in to his account by pressing the button<strong>Login</strong>.
+            <img src="~/Content/screens/logowanie.png" alt="Log in" class="img-responsive help-img" />
+            If Customer does not have an account in the portal, he must register. To do this, click the button<strong>Register</strong>. After clicking the button,
+            we will be redirected to the main registration page. On the registration screen, select the option<strong>Register as Customer</strong>.
+            <img src="~/Content/screens/rejestracja.png" alt="Registration" class="img-responsive help-img" />
+            The registration screen for the customer appears. We enter the necessary data for registration and click <strong>Create an account</strong>.
+            <img src="~/Content/screens/rejestracja-klient.png" alt="Customer registration" class="img-responsive help-img" />
+            We will be redirected to the login screen. Enter the data and click<strong>Login</strong>.
+            <img src="~/Content/screens/logowanie-po-rejestracji.png" alt="Login screen after registration" class="img-responsive help-img" />
+            After logging in, we can see the customer's main screen.
+            In the upper menu we have several options to choose from. If we are currently staying at a restaurant and want to place an order, we choose <strong>Search for restaurants</strong>.
+            <img src="~/Content/screens/klient-ekran-glowny.png" alt="Customer's main screen" class="img-responsive help-img" />
+            We go to the search screen of the restuaration.
+            <img src="~/Content/screens/klient-wyszukiwanie.png" alt="Search for restuarants" class="img-responsive help-img" />
+            In the search field,enter either the restaurant code or its name (it is permissible to enter only part of the code / name).
+            clicking the loupe button, the results appear. The results are a list of restaurants that match the entered text.
+            We choose the restaurant by clicking the button<strong>Select</strong>.
+            <img src="~/Content/screens/klient-wyszukiwanie-rezultaty.png" alt="Search for restaurants results" class="img-responsive help-img" />
+            We go to the ordering window.
+            <img src="~/Content/screens/klient-skladanie-zamowienia-1.png" alt="Order" class="img-responsive help-img" />
+            After selecting a menu from the list of available menus in the restuaration, the products available in the menu will appear on the screen.
+            <img src="~/Content/screens/klient-skladanie-zamowienia-2.png" alt="Order" class="img-responsive help-img" />
+            After selecting the product from the menu, enter Quantity and click on the button<strong></strong>. A new section appears below <strong>Products on order</strong>.
+            In this section, we see the products that we've pre-added to the order. If the line item is in status<strong>New</strong>, we can change its Quantity or remove it from the order.
+            Additionally, before pressing the button<strong>That is all, thank you!</strong> we should enter<strong>Table number</strong> and <strong>comments</strong>.
+            At any time when placing a new order, we can cancel the order completely and exit the restuaration by clicking the button<strong>I've changed my mind, giving up my order</strong>.
+            If Customer finds that the order is complete, he clicks the button<strong>That is all, thank you!</strong>.
+            <img src="~/Content/screens/klient-skladanie-zamowienia-3.png" alt="Order" class="img-responsive help-img" />
+            At this point, we go to the details window of the current order.
+            On the screen of the current order, we can see all the necessary information regarding our order. After placing the order, our order has the status<strong>Open</strong>.
+            This means that he waits for the waiter to assign them to himself.
+            <img src="~/Content/screens/klient-aktualne-zamowienie-1.png" alt="Current order" class="img-responsive help-img" />
+            After the order is assigned by the waiter, the order changes status to<strong>Assigned to the waiter</strong>.
+            <img src="~/Content/screens/klient-aktualne-zamowienie-2.png" alt="Current order" class="img-responsive help-img" />
+            If the line item is downloaded by the chef and marked as <strong>During preparation</strong>, we will see the changes on our screen.
+            <img src="~/Content/screens/klient-aktualne-zamowienie-3.png" alt="Current order" class="img-responsive help-img" />
+            If the line item is prepared by the cook and is waiting for the waiter, who will deliver it to the table, the item will change its status to<strong>Ready to serve</strong>.
+            <img src="~/Content/screens/klient-aktualne-zamowienie-4.png" alt="Current order" class="img-responsive help-img" />
+            When the line item is delivered to the table, the status is changed to <strong>Delivered to the table</strong>.
+            At this point, the button also appears to us<strong>I want to pay</strong>.
+            In the same section, the button was visible all the time <strong>I want more...</strong>.
+            It is useful when the Customer wants to order additional items to his order.
+            <img src="~/Content/screens/klient-aktualne-zamowienie-5.png" alt="Current order" class="img-responsive help-img" />
+            After clicking on<strong>I want more...</strong> we will be transferred to the ordering page.
+            <img src="~/Content/screens/klient-skladanie-zamowienia-ponowne-1.png" alt="Current order" class="img-responsive help-img" />
+            On the site we can see our current Line items and we have the option of ordering other products.
+            <img src="~/Content/screens/klient-skladanie-zamowienia-ponowne-2.png" alt="Current order" class="img-responsive help-img" />
+            If Customer wants to pay for the order and finish the visit to the restaurant, he clicks the button<strong>I want to pay.</strong> It is moved to the order evaluation page.
+            <img src="~/Content/screens/klient-ocena-zamowienia.png" alt="Order rating" class="img-responsive help-img" />
+            After click<strong>Send a grade</strong> We return to the current order status window.
+            The order changes status to<strong>Closed</strong>. Instead of a button, we get information to wait for the waiter.
+            <img src="~/Content/screens/klient-aktualne-zamowienie-6.png" alt="Current order" class="img-responsive help-img" />
+            After paying the order to the waiter, the order changes status to<strong>paid</strong>. At this point, we can log out of the application and leave the restaurant.
+            <img src="~/Content/screens/klient-aktualne-zamowienie-7.png" alt="Current order" class="img-responsive help-img" />
+            Each Customer has the opportunity to view the history of their orders.
+            After clicking on <strong>Details</strong> we can see Details of the order.
+            <img src="~/Content/screens/klient-historia.png" alt="History" class="img-responsive help-img" />
+            <img src="~/Content/screens/klient-historia-detale.png" alt="History Details" class="img-responsive help-img" />
+            <a href="#main"><input type="button" class="btn btn-success pull-right" value="Return to the beginning" /></a>
         </p>
     </div>
 
-    <div class="col-md-12" id="pracownik">
-        <h3>Pracownik restauracji</h3>
+    <div class="col-md-12" id="Employee">
+        <h3>Restaurant Employee</h3>
         <hr/>
         <p class="help-text">
-            Pracownik restauracji nie może sam założyć konta w portalu. Kontami pracowników restauracji zarządza <strong>Manager restauracji</strong>.
-            Jeśli pracownik restauracji zostanie dodany przez managera, może zalogować się na podane mu dane, poprzez ekran logowania.
-            <img src="~/Content/screens/logowanie.png" alt="Logowanie" class="img-responsive help-img"/>
-            Po zalogowaniu, pracownik widzi ekran główny aplikacji.
-            <img src="~/Content/screens/pracownik-ekran-glowny.png" alt="Pracownik" class="img-responsive help-img"/>
-            Najważniejszym elementem portalu dla pracownika jest <strong>Panel pracownika</strong>.
-            Na poniższym screenie widzimy, jak wygląda <strong>Panel pracownika</strong>, gdy w restauracji nie ma aktualnie złożonego żadnego zamówienia.
-            <img src="~/Content/screens/pracownik-panel-pusty.png" alt="Pracownik" class="img-responsive help-img"/>
-            Po złożeniu zamówienia przez klienta restauracji, na portalu zaczną pojawiać się zamówienia.
-            W zależności od stanowiska pracownika restauracji (<strong>Kelner</strong> lub <strong>Kucharz</strong>) z zamówieniami można wykonywać różne czynności.
-            Na samym początku nowe zamówienie powinnen przypisać do siebie kelner, klikając przycisk <strong>Biorę</strong>.
-            <img src="~/Content/screens/kelner-panel-biore.png" alt="Kelner" class="img-responsive help-img"/>
-            Po naciśnięciu przycisku <strong>Biorę</strong> zamówienie trafia do sekcji <strong>Zamówienia, które obsługujesz</strong>. Następny ruch należy do <strong>Kucharza</strong>.
-            W sekcji <strong>Nowe zamówienia</strong> w panelu <strong>Kucharza</strong> pojawia się nowe zamówienie. Przy każdym z elementów zamówienia widnieje przycick <strong>W przygotowaniu</strong>.
-            <strong>Kucharz</strong> powinien kliknąć ten przycisk, gdy rozpoczyna pracę nad daną pozycją. <strong>Kucharz</strong> w tym momencie operuje na pojedynczym elemencie zamówienia.
-            Może zatem zajść taka sytuacja, że najpierw <strong>Kucharz</strong> pracuje nad dwoma pierwszymi pozycjami zamówienia, a dopiero później nad dwoma następnymi.
-            <img src="~/Content/screens/kucharz-panel-w-przygotowaniu.png" alt="Kucharz" class="img-responsive help-img"/>
-            Gdy <strong>Kucharz</strong> zakończy pracę nad danym elementem zamówienia, powinien kliknąć przycisk <strong>Gotowe</strong>. Po kliknięciu przycisku element zamówienia zmieni swój status na <strong>Gotowe do podania</strong>.
-            <img src="~/Content/screens/kucharz-panel-gotowe.png" alt="Kucharz" class="img-responsive help-img"/>
-            Kolejny ruch należy do <strong>Kelnera</strong>. <strong>Kelner</strong> zanosi przygotowane elementy zamówienia i klika przycisk <Strong>Dostarczone</Strong>.
-            Po naciśnięciu przycisku element zamówienia zmienia status na <strong>Dostarczone do stolika</strong>.
-            <img src="~/Content/screens/kelner-panel-dostarczone.png" alt="Kelner" class="img-responsive help-img"/>
-            W tym momencie praca nad zamówienie na pewien czas "zamiera". Oznacza to, że <strong>Kelner</strong> i <strong>Kucharz</strong> wykonali swoją pracę i czekają na kolejny ruch klienta.
-            Klient może domówić dodatkowe elementy zamówienia i wtedy powtarzany jest cały opisany wyżej proces lub też <strong>wyraźnić chęć zapłaty</strong>.
-            Gdy <strong>wyrazi chęć zapłaty</strong> w panelu dla <strong>kelnera</strong> zamówienie zmienia status na <strong>Zamknięte</strong> i pojawia się przycisk <strong>Zapłacone</strong>.
-            Po pobraniu zapłaty od klienta, <strong>Kelner</strong> naciska przycisk <strong>Zapłacone</strong>. Zamówienie zmienia wtedy swój status na <strong>Opłacone</strong> i znika z sekcji <strong>Zamówienia, które obsługujesz</strong>.
-            <img src="~/Content/screens/kelner-panel-zaplacone.png" alt="Kelner" class="img-responsive help-img"/>
-            Każdy <strong>pracownik restauracji</strong> może podejrzeć obsłużone przez siebie zamówienia na ekranie <strong>Historia</strong>.
-            <img src="~/Content/screens/pracownik-historia.png" alt="Pracownik" class="img-responsive help-img"/>
-            <a href="#main"><input type="button" class="btn btn-success pull-right" value="Wróć do początku" /></a>
+            Employee restaurant can not create an account on the portal. The restaurant staff manages the accounts <strong>Restaurent Manager</strong>.
+            If the Employee restaurant is added by the manager, he can log in to the given data via the login screen.
+            <img src="~/Content/screens/logowanie.png" alt="Log in" class="img-responsive help-img" />
+            After logging in, Employee sees the main application screen.
+            <img src="~/Content/screens/pracownik-ekran-glowny.png" alt="Employee" class="img-responsive help-img" />
+            The most important element of the portal for the employee is<strong>Employee panel</strong>.
+            On the screen below, we can see how it looks <strong>Employee panel</strong>, when no order is currently placed in the restaurant.
+            <img src="~/Content/screens/pracownik-panel-pusty.png" alt="Employee" class="img-responsive help-img" />
+            After placing the order by the customer of the restaurant, orders will appear on the portal.
+            Depending on the position of the restaurant employee (<strong>Waiter</strong> or <strong>Cook</strong>) You can perform various tasks with orders.
+            At the very beginning, the new order should be assigned to Waiter by clicking the button <strong>I take</strong>.
+            <img src="~/Content/screens/kelner-panel-biore.png" alt="Waiter" class="img-responsive help-img" />
+            After pressing the button <strong>I take</strong> the order goes to the section <strong>Orders that you support</strong>. The next move belongs to<strong>cook</strong>.
+            At section <strong>New orders</strong> in the panel <strong>cook</strong> a new order appears. There is a prick on each of the line items <strong>In preparation</strong>.
+            <strong>Cook</strong> he should click this button when he starts working on the given item. <strong>Cook</strong> at this time, it operates on a single line item.
+            Therefore, the situation may happen that first<strong>Cook</strong> he works on the first two positions of the order, and only then on the next two items.
+            <img src="~/Content/screens/kucharz-panel-w-przygotowaniu.png" alt="Cook" class="img-responsive help-img" />
+            If <strong>Cook</strong> will stop working on the given line item, he should click the button<strong>Gotowe</strong>. When you click the button, the line item will change its status to<strong>Ready to serve</strong>.
+            <img src="~/Content/screens/kucharz-panel-gotowe.png" alt="Cook" class="img-responsive help-img" />
+            The next move belongs to<strong>waiter</strong>. <strong>Waiter</strong> zanosi przygotowane Line items i klika przycisk <Strong>delivered</Strong>.
+            When you press the button, the line item changes its status to<strong>Delivered to the table</strong>.
+            <img src="~/Content/screens/kelner-panel-dostarczone.png" alt="Waiter" class="img-responsive help-img" />
+            At this point, work on the order for a while "dies". It means that <strong>Waiter</strong> and <strong>Cook</strong> they have done their job and are waiting for the customer's next move.
+            Customer may order additional Line items and then the entire process described above is repeated <strong>express your willingness to pay</strong>.
+            If<strong>will be willing to pay</strong> in the panel for<strong>the waiter</strong>the order changes the status to<strong>Closed</strong> and the button appears<strong>Paid</strong>.
+            After collecting the payment from the client,<strong>Waiter</strong> presses the button<strong>Paid</strong>. The order then changes its status to <strong>paid</strong> and disappears from the section <strong>Orders that you support</strong>.
+            <img src="~/Content/screens/kelner-panel-zaplacone.png" alt="Waiter" class="img-responsive help-img" />
+            Each <strong>Restaurant Employee</strong>he can see the orders he has handled on the screen <strong>History</strong>.
+            <img src="~/Content/screens/pracownik-historia.png" alt="Employee" class="img-responsive help-img" />
+            <a href="#main"><input type="button" class="btn btn-success pull-right" value="Return to the beginning" /></a>
         </p>
     </div>
 
     <div class="col-md-12" id="manager">
-        <h3>Manager restauracji</h3>
+        <h3>Restaurent Manager</h3>
         <hr/>
         <p class="help-text">
-            Jeśli manager restauracji chce, aby system działał w jego restauracji, powinien założyć konto. W tym celu powinien kliknąć przycisk <strong>Zarejestruj</strong>. Po kliknięciu przycisku
-            zostaniemy przekierowani na główną stronę rejestracji. Na ekranie rejestracji wybieramy opcję <strong>Zarejestruj się jako restauracja</strong>.
-            <img src="~/Content/screens/rejestracja.png" alt="Rejestracja" class="img-responsive help-img"/>
-            Po kliknięciu w przycisk, zostajemy przekierowani na ekran <strong>rejestracji restauracji</strong>.
-            Po poprawnym wypełnieniu wszystkich danych, klikamy przycisk <strong>Zarejestruj restauracje</strong>.
-            <img src="~/Content/screens/rejestracja-restauracja.png" alt="Rejestracja" class="img-responsive help-img"/>
-            Konto utworzone, wystarczy zalogować się na dane managera.
-            <img src="~/Content/screens/logowanie-po-rejestracji.png" alt="Ekran logowania po rejestracji" class="img-responsive help-img"/>
-            Zostajemy przekierowani na ekran główny dla managera. W górnym menu mamy do wyboru kilka opcji, które zostaną kolejno opisane.
-            <img src="~/Content/screens/manager-ekran-glowny.png" alt="Manager" class="img-responsive help-img"/>
-            Rozpoczynając od lewej, mamy przycisk <strong>Zarządzanie restauracją</strong>. Po kliknięciu tego przycisku, zostaniemy przekierowany na ekran, na którym możemy obejrzeć i edytować główne informacje o restuaracji, jej pracownikach i dostępnych menu.
-            W sekcji <strong>Podstawowe informacje o restauracji</strong> widzimy dane, które wpisaliśmy przy rejestracji oraz zdjęcie, które zostało dodane.
-            W prawym górnym roku sekcji dostępne są dwa przyciski: <strong>Edytuj konto managera</strong> oraz <strong>Edytuj informacje o restauracji</strong>.
-            <img src="~/Content/screens/manager-zarzadzanie-restauracja-1.png" alt="Manager" class="img-responsive help-img"/>
-            Po naciśnięciu przycisku <strong>Edytuj konto managera</strong> zostajemy przeniesieni do ekranu, w którym możemy zmienić podstawowe dane o managerze.
-            <img src="~/Content/screens/manager-edytuj-managera.png" alt="Manager" class="img-responsive help-img"/>
-            Po naciśnięciu przycisku <strong>Edytuj informacje o restauracji</strong> zostajemy przeniesieni do ekranu, w którym możemy zmienić podstawowe informacje o restauracji.
-            <img src="~/Content/screens/manager-edytuj-restauracje.png" alt="Manager" class="img-responsive help-img"/>
-            Drugą sekcją na ekranie <strong>Zarządzania restauracją</strong> jest <strong>Zarządzanie kadrą i menu</strong>.
-            W tej sekcji po lewej stronie widzimy tabelkę z pracownikami restauracji, a po prawej tabelkę z menu dostępnymi w restauracji.
-            Przy każdym wierszu tabelki dostępny jest przycisk <strong>Edytuj</strong>/<strong>Edytuj menu</strong> umożliwiający edycje danych.
-            W prawym górnym rogu tabelki dostępny jest też przycisk <strong>Dodaj pracownika</strong>/<strong>Dodaj menu</strong> służący do dodawania nowych pracowników/menu.
-            <img src="~/Content/screens/manager-zarzadzanie-restauracja-2.png" alt="Manager" class="img-responsive help-img"/>
-            Po naciśnięciu przycisku <strong>Dodaj pracownika</strong> zostajemy przekierowani na ekran, na którym możemy dodać nowego pracownika.
-            <img src="~/Content/screens/manager-dodaj-pracownika.png" alt="Manager" class="img-responsive help-img"/>
-            Po naciśnięciu przycisku <strong>Dodaj menu</strong> zostajemy przekierowani na ekran, na którym możemy dodać nowe menu.
-            <img src="~/Content/screens/manager-dodaj-menu.png" alt="Manager" class="img-responsive help-img"/>
-            Po naciśnięciu przycisku <strong>Edytuj</strong> w tabelce pracowników zostajemy przekierowani na ekran umożliwiający edycję danych aktualnego pracownika.
-            <img src="~/Content/screens/manager-edytuj-pracownika.png" alt="Manager" class="img-responsive help-img"/>
-            Po naciśnięciu przycisku <strong>Edytuj menu</strong> w tabelce menu zostajemy przekierowani na ekran umożliwiający edycję podstawowych danych menu.
-            Poza podstawowymi danymi o menu, na ekranie widoczne są również produkty dostępne w obrębie danego menu. Przy każdym z produktów mamy do wyboru dwa przyciski:
-            <strong>Edytuj</strong> oraz <strong>Dezaktywuj</strong>, gdy produkt jest aktywny lub <strong>Aktywuj</strong>, gdy produkt jest nieaktywny.
-            <strong>Produkt aktywny</strong> to taki, który jest aktualnie dostępny w menu.
-            <strong>Produkt nieaktywny</strong> to taki, który jest aktualnie niewidoczny w menu dla klientów.
-            <img src="~/Content/screens/manager-edytuj-menu.png" alt="Manager" class="img-responsive help-img"/>
-            <img src="~/Content/screens/manager-edytuj-menu-aktywuj.png" alt="Manager" class="img-responsive help-img"/>
-            Po naciśnięciu przycisku <strong>Edytuj</strong> przy danym produkcie, zostajemy przekierowani na ekran umożliwiający edycje danych produktu.
-            <img src="~/Content/screens/manager-edytuj-produkt.png" alt="Manager" class="img-responsive help-img"/>
-            Powyżej opisane <strong>Dodaj pracownika</strong>, <strong>Dodaj menu</strong> są również dostępne w górnym menu.
-            Poza powyżej opisanymi opcjami, w górnym menu dostępne są: <strong>Dodaj produkt</strong> oraz <strong>Dodaj kategorię</strong>.
-            Naciśnięcie <strong>Dodaj produkt</strong> przeniesie nas na stronę umożliwiającą dodanie nowego produktu do dowolnego menu.
-            <img src="~/Content/screens/manager-dodaj-produkt.png" alt="Manager" class="img-responsive help-img"/>
-            Naciśnięcie <strong>Dodaj kategorię</strong> przeniesie nas na stronę umożliwiającą dodanie nowej kategorii oraz edycję istniejących kategorii.
-            Poniżej formularza służącego do dodawania nowej kategorii widzimy listę kategorii dostępną w restauracji. Przy każdej z nich możemy kliknąć przycisk <strong>Edytuj</strong>.
-            <img src="~/Content/screens/manager-dodaj-kategorie.png" alt="Manager" class="img-responsive help-img"/>
-            Naciśnięcie przycisku <strong>Edytuj</strong> spowoduje przeniesienie nas na stronę edycji kategorii.
-            <img src="~/Content/screens/manager-edytuj-kategorie.png" alt="Manager" class="img-responsive help-img"/>
-            Dodatkowo manager ma możliwość obejrzenia wszystkich zamówień, które zostały obsłużone w restauracji.
-            Na ekran historii zostaniemy przeniesieni, gdy klikniemy przycisk <strong>Historia zamówień</strong> dostępny w górnym menu.
-            <img src="~/Content/screens/manager-historia.png" alt="Manager" class="img-responsive help-img"/>
-            <a href="#main"><input type="button" class="btn btn-success pull-right" value="Wróć do początku" /></a>
+            If Restaurent Manager wants the system to work in his restaurant, he should set up an account. To do this, click the button <strong>Register</strong>. After clicking the button
+            we will be redirected to the main registration page. On the registration screen, select the option <strong>Register as Restaurent</strong>.
+            <img src="~/Content/screens/rejestracja.png" alt="Registration" class="img-responsive help-img" />
+            After clicking the button, we are redirected to the screen <strong>restaurant registration</strong>.
+            After correctly filling in all the data, click the button <strong>Register restaurants</strong>.
+            <img src="~/Content/screens/rejestracja-restauracja.png" alt="Registration" class="img-responsive help-img" />
+            An account created, simply log in to the data manager.
+            <img src="~/Content/screens/logowanie-po-rejestracji.png" alt="Login screen after registration" class="img-responsive help-img" />
+            We are redirected to the manager's home screen. In the upper menu we have several options to choose from, which will be described in sequence.
+            <img src="~/Content/screens/manager-ekran-glowny.png" alt="Manager" class="img-responsive help-img" />
+            Starting from the left, we have a button <strong>Restaurant management</strong>. After clicking this button, we will be redirected to a screen where we can view and edit the main information about the restuaration, its employees and available menus.
+            At section <strong>Basic information about the restaurant</strong> we see the data that we entered when registering and Picture, which was added.
+            In the upper right of the section two buttons are available:<strong>Edit manager account</strong> and <strong>Edit restaurant information</strong>.
+            <img src="~/Content/screens/manager-zarzadzanie-restauracja-1.png" alt="Manager" class="img-responsive help-img" />
+            After pressing the button<strong>Edit manager account</strong> we are transferred to the screen where we can change the basic data about the manager.
+            <img src="~/Content/screens/manager-edytuj-managera.png" alt="Manager" class="img-responsive help-img" />
+            After pressing the button <strong>Edit restaurant information</strong>we are transferred to the screen where we can change Basic information about the restaurant.
+            <img src="~/Content/screens/manager-edytuj-restauracje.png" alt="Manager" class="img-responsive help-img" />
+            The second section on the screen <strong>Restaurant management</strong> is <strong>HR management and menu</strong>.
+            In this section on the left we see a table with restaurant employees, and on the right a table with menus available in the restaurant.
+            A button is available for each row of the table <strong>Edit</strong>/<strong>Edit menu</strong> allowing data editing.
+            A button is also available in the top right corner of the table <strong>Add employee</strong>/<strong>Add menu</strong> used to add new employees / menus.
+            <img src="~/Content/screens/manager-zarzadzanie-restauracja-2.png" alt="Manager" class="img-responsive help-img" />
+            After pressing the button <strong>Add employee</strong> we are redirected to a screen where we can add a new employee.
+            <img src="~/Content/screens/manager-dodaj-pracownika.png" alt="Manager" class="img-responsive help-img" />
+            After pressing the button <strong>Add menu</strong> we are redirected to a screen where we can add a new menu.
+            <img src="~/Content/screens/manager-dodaj-menu.png" alt="Manager" class="img-responsive help-img" />
+            After pressing the button <strong>Edit</strong> in the table of employees we are redirected to a screen that allows you to edit the data of the current employee.
+            <img src="~/Content/screens/manager-edytuj-pracownika.png" alt="Manager" class="img-responsive help-img" />
+            After pressing the button <strong>Edit menu</strong> in the menu table we are redirected to a screen that allows you to edit basic menu data.
+            In addition to the basic data about the menu, the products available within the menu are also visible on the screen. We have two buttons for each product:
+            <strong>Edit</strong> and <strong>Deactivate</strong>, when the product is active or <strong>Activate</strong>, when the product is inactive.
+            <strong>Active product</strong> is one that is currently available on the menu.
+            <strong>Inactive product</strong> is one that is currently invisible on the customer menu.
+            <img src="~/Content/screens/manager-edytuj-menu.png" alt="Manager" class="img-responsive help-img" />
+            <img src="~/Content/screens/manager-edytuj-menu.png" alt="Manager" class="img-responsive help-img" />
+            After pressing the button <strong>Edit</strong> for a given product, we are redirected to a screen that allows you to edit product data.
+            <img src="~/Content/screens/manager-edytuj-produkt.png" alt="Manager" class="img-responsive help-img" />
+            Above described <strong>Add employee</strong>, <strong>Add menu</strong>they are also available in the top menu.
+            In addition to the options described above, the following menu options are available: <strong>Add product</strong> and <strong>Add category</strong>.
+            Press <strong>Add product</strong> will take us to a page that allows you to add a new product to any menu.
+            <img src="~/Content/screens/manager-dodaj-produkt.png" alt="Manager" class="img-responsive help-img" />
+            Press <strong>Add category</strong> will take us to a page that allows you to add a new category and edit existing categories.
+            Below the form for adding a new category, we can see a list of categories available in the restaurant. For each of them we can click the button <strong>Edit</strong>.
+            <img src="~/Content/screens/manager-dodaj-kategorie.png" alt="Manager" class="img-responsive help-img" />
+            Pressing the button<strong>Edit</strong> will move us to the category edition page.
+            <img src="~/Content/screens/manager-edytuj-kategorie.png" alt="Manager" class="img-responsive help-img" />
+            In addition, the manager has the opportunity to see all orders that have been served in the restaurant.
+            We will be moved to the history screen when we click the button <strong>The History of Orders</strong> available in the top menu.
+            <img src="~/Content/screens/manager-historia.png" alt="Manager" class="img-responsive help-img" />
+            <a href="#main"><input type="button" class="btn btn-success pull-right" value="Return to the beginning" /></a>
         </p>
     </div>
 
-    <div class="col-md-12" id="inne">
-        <h3>Inne</h3>
+    <div class="col-md-12" id="Other">
+        <h3>Other</h3>
         <hr/>
         <div class="col-md-6">
             <p class="help-text">
-                <b>Zamówienie</b>
+                <b>Order</b>
                 <ul>
-                    <li><b>Otwarte</b> - klient złożył zamówienie, zamówienie czeka na przejęcie przez kelnera.</li>
-                    <li><b>Przypisane do kelnera</b> - zamówienie zostało przypisane do kelnera.</li>
-                    <li><b>Zamknięte</b> - klient zdecydował, że nie będzie już nic zamawiał, kończy swoją wizytę w restauracji. Klient czeka na kelnera, aby opłacić zamówienie.</li>
-                    <li><b>Opłacone</b> - kelner przyjął płatność za zamówienie.</li>
-                    <li><b>Odrzucone</b> - manager może odrzucić zamówienie.</li>
+                    <li><b>Open</b> - Customer placed an order, the order waits for the waiter to take over.</li>
+                    <li><b>Assigned to the waiter</b> - the order has been assigned to the waiter.</li>
+                    <li><b>Closed</b> - Customer decided that he will not order anything anymore, he ends his visit to the restaurant. Customer waits for the waiter to pay for the order.</li>
+                    <li><b>paid</b> - Waiter accepted the payment for the order.</li>
+                    <li><b>Rejected</b> - the manager may reject the order.</li>
                 </ul>
             </p>
         </div>
         <div class="col-md-6">
             <p class="help-text">
-                <b>Elementy zamówienia</b>
+                <b>Line items</b>
                 <ul>
-                    <li><b>Nowa</b> - produkt został dodany do zamówienia, ale nie został ostatecznie zatwierdzony.</li>
-                    <li><b>Zatwierdzona</b> - element zamówienia zostaje zatwierdzony przez klienta. Klient nie może zmienić liczby produktów na elemencie ani go usunąć.</li>
-                    <li><b>W przygotowaniu w kuchni</b> - element zamówienia został przypisany do kucharza i jest aktualnie przygotowywany.</li>
-                    <li><b>Gotowe</b> - element zamówienia jest gotowy, kelner może go dostarczyć do stolika.</li>
-                    <li><b>Dostarczone</b> - element zamówienia został dostarczony do stolika.</li>
+                    <li><b>New</b> - the product has been added to the order, but has not been finally approved.</li>
+                    <li><b>Confirmed</b> - the line item is approved by the customer. Customer can not change the number of products on an item or delete it.</li>
+                    <li><b>In preparation in the kitchen</b> - the line item has been assigned to the cook and is currently being prepared.</li>
+                    <li><b>Ready</b> - the line item is ready, Waiter can deliver it to the table. </li>
+                    <li><b>delivered</b> - the line item was delivered to the table.</li>
                 </ul>
             </p>
         </div>

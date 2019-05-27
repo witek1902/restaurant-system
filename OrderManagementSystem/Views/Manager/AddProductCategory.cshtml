@@ -1,11 +1,11 @@
 ﻿@model OrderManagementSystem.Models.Product.ProductCategoryForm
 
 @{
-    ViewBag.Title = "Dodaj kategorię produktu";
+    ViewBag.Title = "Add product category";
     Layout = "~/Views/Shared/_RestaurantLayout.cshtml";
 }
 
-<h2 class="margin-form">Dodaj kategorię produktu</h2>
+<h2 class="margin-form">Add product category</h2>
 
 @using (Html.BeginForm()) 
 {
@@ -38,7 +38,7 @@
 
         <div class="form-group">
             <div class="col-md-offset-5 col-md-12">
-                <input type="submit" value="Dodaj kategorię" class="btn btn-success" />
+                <input type="submit" value="Add category" class="btn btn-success" />
             </div>
         </div>
     </div>
@@ -50,8 +50,8 @@
         <table id="productsInMenuTable" class="table table-hover">
             <thead>
                 <tr>
-                    <th>Nazwa kategorii</th>
-                    <th>Kod kategorii</th>
+                    <th>Name of the category</th>
+                    <th>Category Code</th>
                     <th></th>
                 </tr>
             </thead>
@@ -62,7 +62,7 @@
                     <td>@category.ProductCategoryName</td>
                     <td>@category.ProductCategoryCode</td>
                     <td>
-                        @Html.ActionLink("Edytuj", "EditProductCategory", "Manager", new { productCategoryId = category.ProductCategoryId}, new {@class="btn btn-xs btn-info"})
+                        @Html.ActionLink("Edit", "EditProductCategory", "Manager", new { productCategoryId = category.ProductCategoryId}, new {@class="btn btn-xs btn-info"})
                     </td>
                 </tr>
             }

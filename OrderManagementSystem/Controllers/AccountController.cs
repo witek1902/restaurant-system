@@ -13,7 +13,7 @@
     public class AccountController : Infrastructure.Web.ControllerBase
     {
         /// <summary>
-        /// Zwraca widok, w którym wybieramy czy chcemy zarejestrować się jako restauracja czy jako klient
+        /// Zwraca widok, w którym wybieramy czy chcemy zarejestrować się jako restauracja czy jako Customer
         /// </summary>
         /// <returns></returns>
         [HttpGet]
@@ -25,7 +25,7 @@
         }
 
         /// <summary>
-        /// Logowanie do systemu
+        /// Log in do systemu
         /// </summary>
         /// <param name="user">User</param>
         /// <returns></returns>
@@ -36,11 +36,11 @@
             if (Security.Login(user.Login, user.Password))
                 return RedirectByRole();
             else
-                return RedirectToAction("Login", new {message = "Logowanie nie powiodło się, spróbuj ponownie."});
+                return RedirectToAction("Login", new {message = "Login failed, please try again."});
         }
 
         /// <summary>
-        /// Rejestracja - ekran główny
+        /// Registration - ekran główny
         /// </summary>
         /// <returns></returns>
         [HttpGet]
@@ -85,7 +85,7 @@
         }
 
         /// <summary>
-        /// Rejestracja klienta
+        /// Customer registration
         /// </summary>
         /// <returns></returns>
         [HttpGet]

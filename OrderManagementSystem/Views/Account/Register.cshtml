@@ -1,20 +1,19 @@
-﻿
-@{
+﻿@{
     ViewBag.Title = "Register";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2 class="margin-form">Rejestracja</h2>
+<h2 class="margin-form">Registration</h2>
 
 <div class="container">
     <div class="row">
         <div class="col-md-offset-2 col-md-4">
-            @Html.ActionLink("Zarejestruj się jako restauracja", "RegisterRestaurant", "Account", new {aria=""}, new { @class = "registerRestaurant" })
-            <p class="registerText">Zarejestruj się jako restauracja</p>
+            @Html.ActionLink("Register as restaurent", "RegisterRestaurant", "Account", new {aria=""}, new { @class = "registerRestaurant" })
+            <p class="registerText">Register as a restaurent</p>
         </div>
         <div class="col-md-6">
-            @Html.ActionLink("Zarejestruj się jako klient", "RegisterCustomer", "Account", new { aria = "" }, new { @class = "registerCustomer" })
-            <p class="registerText">Zarejestruj się jako klient</p>
+            @Html.ActionLink("Register as customer", "RegisterCustomer", "Account", new { aria = "" }, new { @class = "registerCustomer" })
+            <p class="registerText">Register as a customer</p>
         </div>
     </div>
 </div>

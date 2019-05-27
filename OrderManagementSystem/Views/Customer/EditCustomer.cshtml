@@ -1,11 +1,11 @@
 ﻿@model OrderManagementSystem.Models.Customer.CustomerForm
 
 @{
-    ViewBag.Title = "Edytuj konto użytkownika";
+    ViewBag.Title = "Edit user account";
     Layout = "~/Views/Shared/_CustomerLayout.cshtml";
 }
 
-<h2 class="margin-form">Edytuj konto użytkownika</h2>
+<h2 class="margin-form">Edit user account</h2>
 
 @using (Html.BeginForm("SaveCustomer", "Customer"))
 {
@@ -23,7 +23,7 @@
                 @Html.ValidationMessageFor(model => model.Firstname, "", new {@class = "text-danger"})
             </div>
             <div class="col-md-2">
-                <input type="submit" value="Zapisz zmiany" class="btn btn-success"/>
+                <input type="submit" value="Save changes" class="btn btn-success"/>
             </div>
             <div class="col-md-5"></div>
         </div>

@@ -12,7 +12,7 @@
     public class Order : Entity<Guid>
     {
         /// <summary>
-        /// Status zamówienia
+        /// Status of the order
         /// </summary>
         public virtual OrderStatus OrderStatus { get; set; }
 
@@ -27,7 +27,7 @@
         public virtual DateTime? FinishedDate { get; set; }
 
         /// <summary>
-        /// Kelner przypisany do zamówienia
+        /// Waiter przypisany do zamówienia
         /// </summary>
         public virtual RestaurantWorker Waiter { get; set; }
 
@@ -37,17 +37,17 @@
         public virtual RestaurantWorker Cook { get; set; }
 
         /// <summary>
-        /// Klient składający zamówienie
+        /// Customer składający zamówienie
         /// </summary>
         public virtual Customer Customer { get; set; }
 
         /// <summary>
-        /// Numer stolika
+        /// Table number
         /// </summary>
         public virtual int? TableNumber { get; set; }
 
         /// <summary>
-        /// Ocena zamówienia przez klienta w gwiazdkach (1-5)
+        /// Order rating przez klienta w gwiazdkach (1-5)
         /// </summary>
         public virtual int? Rate { get; set; }
 
@@ -62,7 +62,7 @@
         public virtual ICollection<OrderItem.OrderItem> OrderItems { get; set; }
 
         /// <summary>
-        /// Uwagi do zamówienia
+        /// Comments to order
         /// </summary>
         public virtual string Comments { get; set; }
     }
@@ -73,7 +73,7 @@
     public enum OrderStatus
     {
         /// <summary>
-        /// Zamówienie otwarte (klient cały czas może dodawać nowe produkty do zamówienia)
+        /// Zamówienie otwarte (Customer cały czas może dodawać nowe produkty do zamówienia)
         /// </summary>
         [Display(Name="Otwarte")]
         Open = 1,
@@ -83,7 +83,7 @@
         [Display(Name = "Przypisane do kelnera")]
         AssignedToWaiter = 2,
         /// <summary>
-        /// Zamknięte zamówienie (klient chce zapłacić i opuścić restauracje)
+        /// Zamknięte zamówienie (Customer chce zapłacić i opuścić restauracje)
         /// </summary>
         [Display(Name="Zamknięte")]
         Closed = 3,
@@ -93,7 +93,7 @@
         [Display(Name="Opłacone")]
         Paid = 4,
         /// <summary>
-        /// Zamówienie odrzucone (klient się rozmyślił)
+        /// Zamówienie odrzucone (Customer się rozmyślił)
         /// </summary>
         [Display(Name = "Odrzucone")]
         Rejected = 5

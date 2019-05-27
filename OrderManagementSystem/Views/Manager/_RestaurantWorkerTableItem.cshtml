@@ -6,6 +6,6 @@
     <td>@Model.Lastname</td>
     <td>@Model.Position.GetDisplayName()</td>
     <td>
-        @Html.ActionLink("Edytuj", "EditRestaurantWorker", "Manager", new { userId = @Model.AppUserId }, new { @class = "btn btn-info btn-xs" })
+        @Html.ActionLink("Edit", "EditRestaurantWorker", "Manager", new { userId = @Model.AppUserId }, new { @class = "btn btn-info btn-xs" })
     </td>
 </tr>

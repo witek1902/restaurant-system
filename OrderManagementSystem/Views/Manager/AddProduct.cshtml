@@ -1,11 +1,11 @@
 ﻿@model OrderManagementSystem.Models.Product.ProductForm
 
 @{
-    ViewBag.Title = "Dodaj nowy produkt";
+    ViewBag.Title = "Add a new product";
     Layout = "~/Views/Shared/_RestaurantLayout.cshtml";
 }
 
-<h2 class="margin-form">Dodaj nowy produkt</h2>
+<h2 class="margin-form">Add a new product</h2>
 @using (Html.BeginForm()) 
 {
     @Html.AntiForgeryToken()
@@ -13,7 +13,7 @@
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         @Html.HiddenFor(model => model.ProductId, htmlAttributes: new { @class = "control-label col-md-2" })
 
-        <h4>Informacje podstawowe</h4>
+        <h4>Basic information</h4>
         <hr/>
 
         @if (!String.IsNullOrEmpty(ViewBag.Message))
@@ -85,7 +85,7 @@
             </div>
         </div>
 
-        <h4>Szczegóły</h4>
+        <h4>Details</h4>
         <hr/>
 
         <div class="row">
@@ -126,7 +126,7 @@
 
         <div class="form-group">
             <div class="col-md-offset-5 col-md-10">
-                <input type="submit" value="Dodaj nowy produkt" class="btn btn-success" />
+                <input type="submit" value="Add a new product" class="btn btn-success" />
             </div>
         </div>
     </div>

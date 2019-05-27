@@ -18,7 +18,7 @@
         }
 
         /// <summary>
-        /// Pomoc
+        /// Help
         /// </summary>
         /// <returns></returns>
         public ActionResult Help()

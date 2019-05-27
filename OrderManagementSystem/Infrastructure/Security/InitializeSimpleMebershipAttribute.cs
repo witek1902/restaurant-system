@@ -71,7 +71,7 @@
             {
                 var manager = $"{prefix}-manager";
                 var waiter = $"{prefix}-waiter";
-                var cook = $"{prefix}-cook";
+                var Cook = $"{prefix}-Cook";
 
                 if (!WebSecurity.UserExists(manager))
                 {
@@ -85,10 +85,10 @@
                     Roles.AddUserToRole(waiter, "waiters");
                 }
 
-                if (!WebSecurity.UserExists(cook))
+                if (!WebSecurity.UserExists(Cook))
                 {
-                    WebSecurity.CreateUserAndAccount(cook, "cook");
-                    Roles.AddUserToRole(cook, "cooks");
+                    WebSecurity.CreateUserAndAccount(Cook, "Cook");
+                    Roles.AddUserToRole(Cook, "cooks");
                 }
             }
         }

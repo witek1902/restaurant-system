@@ -124,7 +124,7 @@
         }
 
         /// <summary>
-        /// Kucharz oznacza element zamówienia jako 'W przygotowaniu w kuchni'
+        /// Cook oznacza element zamówienia jako 'W przygotowaniu w kuchni'
         /// </summary>
         /// <param name="orderItemId"></param>
         /// <returns></returns>
@@ -142,7 +142,7 @@
         }
 
         /// <summary>
-        /// Kucharz oznacza element zamówienia jako 'Gotowy do wydania'
+        /// Cook oznacza element zamówienia jako 'Gotowy do wydania'
         /// </summary>
         /// <param name="orderItemId"></param>
         /// <returns></returns>
@@ -182,11 +182,11 @@
     public enum RestaurantWorkerEnum
     {
         /// <summary>
-        /// Kelner
+        /// Waiter
         /// </summary>
         Waiter,
         /// <summary>
-        /// Kucharz
+        /// Cook
         /// </summary>
         Cook
     }

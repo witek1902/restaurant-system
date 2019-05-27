@@ -19,14 +19,14 @@
         public int AppUserId { get; set; }
 
         [Required]
-        [Display(Name="Imię klienta")]
+        [Display(Name="Customer's name")]
         public string Firstname { get; set; }
 
         [Required]
         [Display(Name="Login")]
         public string Login { get; set; }
 
-        [Display(Name="Hasło")]
+        [Display(Name="Password ")]
         public string Password { get; set; }
     }
 }

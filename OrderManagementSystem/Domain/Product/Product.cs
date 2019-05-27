@@ -15,12 +15,12 @@
         public virtual Menu Menu { get; set; }
 
         /// <summary>
-        /// Nazwa produktu
+        /// Product name
         /// </summary>
         public virtual string Name { get; set; }
 
         /// <summary>
-        /// Kategoria
+        /// Category
         /// </summary>
         public virtual ProductCategory ProductCategory { get; set; }
         
@@ -30,12 +30,12 @@
         public virtual ProductDetails ProductDetails { get; set; }
 
         /// <summary>
-        /// Cena
+        /// Price
         /// </summary>
         public virtual decimal Price { get; set; }
 
         /// <summary>
-        /// Opis produktu
+        /// Description produktu
         /// </summary>
         public virtual string Description { get; set; }
 

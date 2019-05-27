@@ -7,7 +7,7 @@
     using Infrastructure.Query;
 
     /// <summary>
-    /// Pobranie zamówień, które złożył klient
+    /// Pobranie zamówień, które złożył Customer
     /// </summary>
     public class GetCustomerHistoryOrdersQuery : Query<List<OrderForm>>
     {

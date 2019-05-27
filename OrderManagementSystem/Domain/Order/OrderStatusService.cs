@@ -13,25 +13,25 @@
     public interface IOrderStatusService
     {
         /// <summary>
-        /// Klient zamyka zamówienie (chce zapłacić, nie będzie nic więcej zamawiać)
+        /// Customer zamyka zamówienie (chce zapłacić, nie będzie nic więcej zamawiać)
         /// </summary>
         /// <param name="order"></param>
         void CloseOrder(Order order);
 
         /// <summary>
-        /// Kelner przypisuje do siebie zamówienie
+        /// Waiter przypisuje do siebie zamówienie
         /// </summary>
         /// <param name="order"></param>
         void AssignToWaiter(Order order);
 
         /// <summary>
-        /// Kelner oznacza zamówienie jako opłacone.
+        /// Waiter oznacza zamówienie jako opłacone.
         /// </summary>
         /// <param name="order"></param>
         void PaidOrder(Order order);
 
         /// <summary>
-        /// Klient odrzuca zamówienie
+        /// Customer odrzuca zamówienie
         /// </summary>
         /// <param name="order">Odrzucane zamówienie</param>
         void RejectOrder(Order order);
@@ -47,7 +47,7 @@
         }
 
         /// <summary>
-        /// Kelner przypisuje do siebie zamówienie
+        /// Waiter przypisuje do siebie zamówienie
         /// </summary>
         /// <param name="order"></param>
         public void AssignToWaiter(Order order)
@@ -59,7 +59,7 @@
         }
 
         /// <summary>
-        /// Klient zamyka zamówienie (chce zapłacić, nie będzie nic więcej zamawiać)
+        /// Customer zamyka zamówienie (chce zapłacić, nie będzie nic więcej zamawiać)
         /// </summary>
         /// <param name="order"></param>
         public void CloseOrder(Order order)
@@ -71,7 +71,7 @@
         }
 
         /// <summary>
-        /// Kelner oznacza zamówienie jako opłacone.
+        /// Waiter oznacza zamówienie jako opłacone.
         /// </summary>
         /// <param name="order"></param>
         public void PaidOrder(Order order)
