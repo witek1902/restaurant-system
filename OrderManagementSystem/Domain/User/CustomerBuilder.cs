@@ -6,19 +6,19 @@
     using Models.Customer;
 
     /// <summary>
-    /// Builder dla klientów
+    /// Builder for clients
     /// </summary>
     public class CustomerBuilder : BusinessService
     {
         /// <summary>
-        /// Tworzy nową instancje usługi, oczekuje wstrzyknięcia sesji NHibernate
+        /// Creates a new service instance, expects to inject an NHibernate session
         /// </summary>
         public CustomerBuilder(ISession session) : base(session)
         {
         }
 
         /// <summary>
-        /// Tworzenie klienta
+        /// Creating a client
         /// </summary>
         /// <param name="customerForm"></param>
         /// <returns></returns>
@@ -37,10 +37,10 @@
         }
 
         /// <summary>
-        /// Aktualizacja klienta z view modelu
+        /// Client update from model view
         /// </summary>
-        /// <param name="customer">Encja</param>
-        /// <param name="customerForm">Formularz</param>
+        /// <param name="customer">entity</param>
+        /// <param name="customerForm">Form</param>
         public void UpdateCustomerEntity(Customer customer, CustomerForm customerForm)
         {
             customer.Firstname = customerForm.Firstname;

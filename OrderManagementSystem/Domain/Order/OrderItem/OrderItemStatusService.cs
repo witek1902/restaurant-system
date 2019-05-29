@@ -49,7 +49,7 @@
             if(item.OrderItemStatus == OrderItemStatus.New)
                 item.OrderItemStatus = OrderItemStatus.Approved;
             else
-                throw new BusinessException(BusinessErrorCodes.BusinessRulesViolation, "Tylko element zamówienia w statusie 'Nowe' może zostać zaakceptowany.");
+                throw new BusinessException(BusinessErrorCodes.BusinessRulesViolation, "Only the line item in the 'New' status can be accepted.");
         }
 
         public void InProgressOrderItem(OrderItem item)
@@ -57,7 +57,7 @@
             if (item.OrderItemStatus == OrderItemStatus.Approved)
                 item.OrderItemStatus = OrderItemStatus.InProgressInKitchen;
             else
-                throw new BusinessException(BusinessErrorCodes.BusinessRulesViolation, "Tylko element zamówienia w statusie 'Zaakceptowany' może zostać oznaczony jako 'W trakcie przygotowywania'.");
+                throw new BusinessException(BusinessErrorCodes.BusinessRulesViolation, "Only the line item in the 'Accepted' status can be marked as 'In preparation'.");
         }
 
         public void ReadyOrderItem(OrderItem item)
@@ -65,7 +65,7 @@
             if (item.OrderItemStatus == OrderItemStatus.InProgressInKitchen)
                 item.OrderItemStatus = OrderItemStatus.Ready;
             else
-                throw new BusinessException(BusinessErrorCodes.BusinessRulesViolation, "Tylko element zamówienia w statusie 'W trakcie realizacji' może zostać oznaczony jako 'Gotowy'.");
+                throw new BusinessException(BusinessErrorCodes.BusinessRulesViolation, "Only the line item in status 'In progress' can be marked as 'Ready'.");
         }
 
         public void DeliveredOrderItem(OrderItem item)
@@ -73,7 +73,7 @@
             if (item.OrderItemStatus == OrderItemStatus.Ready)
                 item.OrderItemStatus = OrderItemStatus.Delivered;
             else
-                throw new BusinessException(BusinessErrorCodes.BusinessRulesViolation, "Tylko element zamówienia w statusie 'Gotowy' może zostać oznaczony jako 'Doręczony'.");
+                throw new BusinessException(BusinessErrorCodes.BusinessRulesViolation, "Only the line item in 'Ready' status can be marked 'Delivered'.");
         }
     }
 }

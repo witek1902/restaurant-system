@@ -7,7 +7,7 @@
     using Infrastructure.Query;
 
     /// <summary>
-    /// Zapytanie do wyszukiwania restauracji
+    /// Query to search for restaurants
     /// </summary>
     public class SearchRestaurantQuery : Query<List<RestaurantSearchResultItem>>
     {
@@ -19,9 +19,9 @@
         }
 
         /// <summary>
-        /// Metoda do konstruowania i wywoływania zapytania za pomocą sesji NHibernate
+        /// A method for constructing and calling a query using the NHibernate session
         /// </summary>
-        /// <param name="session">Sesja NHibernate</param>
+        /// <param name="session">NHibernate session</param>
         public override List<RestaurantSearchResultItem> Execute(ISession session)
         {
             var query = session.QueryOver<Domain.Restaurant.Restaurant>();

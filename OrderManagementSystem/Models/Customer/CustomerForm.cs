@@ -4,12 +4,12 @@
     using System.ComponentModel.DataAnnotations;
 
     /// <summary>
-    /// Formularz klienta
+    /// Customer form
     /// </summary>
     public class CustomerForm
     {
         /// <summary>
-        /// Id klienta
+        /// Customer Id
         /// </summary>
         public Guid? CustomerId { get; set; }
 

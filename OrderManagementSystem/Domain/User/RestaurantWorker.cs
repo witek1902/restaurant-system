@@ -6,7 +6,7 @@
     using Common;
 
     /// <summary>
-    /// Waiter w restauracji
+    /// Waiter in the restaurant
     /// </summary>
     public class RestaurantWorker : Entity<Guid>
     {
@@ -31,17 +31,17 @@
         public virtual Position Position { get; set; }
 
         /// <summary>
-        /// Restauracja, w której zatrudniony jest Employee
+        /// The restaurant where Employee is employed
         /// </summary>
         public virtual Restaurant.Restaurant Restaurant { get; set; }
 
         /// <summary>
-        /// Użytkownik aplikacji
+        /// Application user
         /// </summary>
         public virtual AppUser AppUser { get; set; }
 
         /// <summary>
-        /// Czy Employee jest nadal pracownikiem restauracji
+        /// Is Employee still a restaurant employee
         /// </summary>
         public virtual bool Active { get; set; }
     }

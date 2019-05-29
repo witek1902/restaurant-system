@@ -13,13 +13,13 @@
     using System.Web.Mvc;
 
     /// <summary>
-    /// Kontroler dla klienta restauracji
+    /// Controller for the restaurant client
     /// </summary>
     [Authorize(Roles="customers")]
     public class CustomerController : Infrastructure.Web.ControllerBase
     {
         /// <summary>
-        /// Panel początkowy klienta
+        /// The customer's initial panel
         /// </summary>
         /// <returns></returns>
         [HttpGet]
@@ -29,9 +29,9 @@
         }
 
         /// <summary>
-        /// Edycja istniejącego klienta
+        /// Editing an existing client
         /// </summary>
-        /// <returns>Widok z edycją</returns>
+        /// <returns>View with edition</returns>
         [HttpGet]
         public ActionResult EditCustomer()
         {
@@ -41,9 +41,9 @@
         }
 
         /// <summary>
-        /// Zapisuje zmiany wprowadzone na kliencie
+        /// Saves changes made on the client
         /// </summary>
-        /// <param name="customerForm">Formularz klienta</param>
+        /// <param name="customerForm">Customer form</param>
         /// <returns></returns>
         [HttpPost]
         public ActionResult SaveCustomer(CustomerForm customerForm)
@@ -55,7 +55,7 @@
         /// <summary>
         /// Search for restaurants
         /// </summary>
-        /// <param name="vm">Model do wyszukiwania</param>
+        /// <param name="vm">The search model</param>
         /// <returns></returns>
         [HttpPost]
         public ActionResult Index(RestaurantSearchViewModel vm)
@@ -66,7 +66,7 @@
         }
 
         /// <summary>
-        /// Ekran do składania zamówienia
+        /// Screen to order
         /// </summary>
         /// <returns></returns>
         [HttpGet]
@@ -88,7 +88,7 @@
         }
 
         /// <summary>
-        /// Pobranie produktów z Menu, wykorzystywana przez strzały AJAXowe
+        /// Downloading products from the Menu, used by AJAX shots
         /// </summary>
         /// <param name="menuId">Id menu</param>
         /// <returns></returns>
@@ -101,9 +101,9 @@
         }
 
         /// <summary>
-        /// Pobranie partialView widoku aktualnego zamówienia
+        /// Downloading partialView of the current order view
         /// </summary>
-        /// <param name="orderId">Id zamówienia</param>
+        /// <param name="orderId">Order Id</param>
         /// <returns></returns>
         [HttpGet]
         public ActionResult GetActualOrder(Guid orderId)
@@ -114,9 +114,9 @@
         }
 
         /// <summary>
-        /// Dodanie elementu do zamówieniu (lub stworzenie nowego, jeśli to pierwszy element)
+        /// Adding an item to the order(or creating a new one if it's the first item)
         /// </summary>
-        /// <param name="orderItemForm">Element zamówienia</param>
+        /// <param name="orderItemForm">Line item</param>
         /// <returns></returns>
         [HttpPost]
         public ActionResult AddOrderItem(OrderItemForm orderItemForm)
@@ -147,9 +147,9 @@
         }
 
         /// <summary>
-        /// Usunięcie elementu zamówienia
+        /// Delete the line item
         /// </summary>
-        /// <param name="orderItemId">Id elementu zamówienia</param>
+        /// <param name="orderItemId">The line item id</param>
         /// <returns></returns>
         [HttpGet]
         public ActionResult DeleteOrderItem(Guid orderItemId)
@@ -162,9 +162,9 @@
         }
 
         /// <summary>
-        /// Zmiana ilości produktu na elemencie zamówienia
+        /// Change in the quantity of product on the line item
         /// </summary>
-        /// <param name="orderItem">Element zamówienia</param>
+        /// <param name="orderItem">Line item</param>
         /// <returns></returns>
         [HttpPost]
         public ActionResult ChangeQuantity(OrderItemForm orderItem)
@@ -177,9 +177,9 @@
         }
 
         /// <summary>
-        /// Usunięcie zamówienia
+        /// Removal of the order
         /// </summary>
-        /// <param name="orderId">Id zamówienia</param>
+        /// <param name="orderId">Order Id</param>
         /// <returns></returns>
         [HttpGet]
         public ActionResult DeleteOrder(Guid? orderId)
@@ -191,7 +191,7 @@
         }
 
         /// <summary>
-        /// Zatwierdzenie zamówienia
+        /// Confirmation of the order        
         /// </summary>
         /// <param name="orderForm">Current order</param>
         /// <returns></returns>
@@ -208,9 +208,9 @@
         }
 
         /// <summary>
-        /// Details aktualnego zamówienia
+        /// Details of the current order
         /// </summary>
-        /// <param name="orderId">Id zamówienia</param>
+        /// <param name="orderId">Order Id</param>
         /// <returns></returns>
         [HttpGet]
         public ActionResult ActualOrderDetails(Guid orderId)
@@ -222,7 +222,7 @@
         }
 
         /// <summary>
-        /// The History of Orders klienta
+        /// The History of Customer's Orders
         /// </summary>
         /// <returns></returns>
         [HttpGet]
@@ -234,9 +234,9 @@
         }
 
         /// <summary>
-        /// Podgląd szczegółów historycznego zamówienia
+        /// Preview of historical order details
         /// </summary>
-        /// <param name="orderId">Id zamówienia</param>
+        /// <param name="orderId">Order Id</param>
         /// <returns></returns>
         [HttpGet]
         public ActionResult OrderDetails(Guid orderId)
@@ -247,9 +247,9 @@
         }
 
         /// <summary>
-        /// Customer wyraża chęć zapłaty za zamówienie
+        /// Customer expresses the willingness to pay for the order
         /// </summary>
-        /// <param name="orderId">Id zamówienia</param>
+        /// <param name="orderId">Order Id</param>
         /// <returns></returns>
         [HttpGet]
         public ActionResult WantToPay(Guid orderId)
@@ -259,13 +259,13 @@
             if(cmdResult.Success)
                 return RedirectToAction("RateOrder", new {orderId = orderId});
             else
-                return new HttpStatusCodeResult(400, "Nie wszystkie Line items zostały dostarczone do stolika, poczekaj chwilkę! :)");
+                return new HttpStatusCodeResult(400, "Not all Line items have been delivered to the table, wait a minute! :)");
         }
 
         /// <summary>
-        /// Widok oceny zamówienia
+        /// Order evaluation view
         /// </summary>
-        /// <param name="orderId">Id ocenianego zamówienia</param>
+        /// <param name="orderId">Id of the order being assessed</param>
         /// <returns></returns>
         [HttpGet]
         public ActionResult RateOrder(Guid orderId)
@@ -274,9 +274,9 @@
         }
 
         /// <summary>
-        /// Przesłanie oceny zamówienia
+        /// Sending the order evaluation
         /// </summary>
-        /// <param name="rateForm">Formularz oceny zamówienia</param>
+        /// <param name="rateForm">Order evaluation form</param>
         /// <returns></returns>
         [HttpPost]
         public ActionResult RateOrder(RateOrderForm rateForm)

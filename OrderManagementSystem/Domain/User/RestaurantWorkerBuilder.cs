@@ -6,19 +6,19 @@
     using Models.Restaurant;
 
     /// <summary>
-    /// Budowanie encji pracownika restauracji
+    /// Building an employee of a restaurant employee
     /// </summary>
     public class RestaurantWorkerBuilder : BusinessService
     {
         /// <summary>
-        /// Tworzy nową instancje usługi, oczekuje wstrzyknięcia sesji NHibernate
+        /// Creates a new service instance, expects to inject an NHibernate session
         /// </summary>
         public RestaurantWorkerBuilder(ISession session) : base(session)
         {
         }
 
         /// <summary>
-        /// Konstruowanie nowej encji pracownika restauracji z formularza
+        /// Constructing a new restaurant employee entity from the form
         /// </summary>
         /// <param name="workerForm"></param>
         /// <returns></returns>
@@ -45,7 +45,7 @@
         }
 
         /// <summary>
-        /// Aktualizacja danych
+        /// Data update
         /// </summary>
         /// <param name="worker"></param>
         /// <param name="workerForm"></param>

@@ -4,21 +4,21 @@
     using NHibernate.Proxy;
 
     /// <summary>
-    /// Klasa bazowa dla wszystkich klas, które będą używane w kontekscie NHibernate'a
+    /// Base class for all classes that will be used in the NHibernate context
     /// </summary>
-    /// <typeparam name="TKey">Rodzaj klucza głównego</typeparam>
+    /// <typeparam name="TKey">Type of primary key</typeparam>
     public class Entity<TKey> where TKey : IComparable<TKey>, IEquatable<TKey>
     {
         /// <summary>
-        /// Klucz główny
+        /// The main key        
         /// </summary>
         public virtual TKey Id { get; set; }
 
         /// <summary>
-        /// Porównanie obiektów
+        /// Object comparison
         /// </summary>
-        /// <param name="other">Obiekt do porównania</param>
-        /// <returns>TRUE, jeśli obiekty są takie same, w innym przypadku FALSE</returns>
+        /// <param name="other">Object to compare</param>
+        /// <returns>TRUE if the objects are the same, otherwise FALSE</returns>
         public virtual bool Equals(Entity<TKey> other)
         {
             if (ReferenceEquals(null, other))
@@ -42,10 +42,10 @@
         }
 
         /// <summary>
-        /// Porównanie obiektów
+        /// Object comparison
         /// </summary>
-        /// <param name="obj">Obiekt do porównania</param>
-        /// <returns>TRUE, jeśli obiekty są takie same, w innym przypadku FALSE</returns>
+        /// <param name="obj">Object to compare</param>
+        /// <returns>TRUE if the objects are the same, otherwise FALSE</returns>
         public override bool Equals(object obj)
         {
             if (ReferenceEquals(null, obj))
@@ -60,7 +60,7 @@
         }
 
         /// <summary>
-        /// Zwraca HashCode
+        /// Returns HashCode
         /// </summary>
         public override int GetHashCode()
         {

@@ -6,7 +6,7 @@
     using Models.Product;
 
     /// <summary>
-    /// Aktualizacja produktu
+    /// Product update
     /// </summary>
     public class UpdateProductCommand : Command<Product>, INeedSession, INeedAutocommitTransaction
     {
@@ -19,9 +19,9 @@
         }
 
         /// <summary>
-        /// Wywołuje komendę i zwraca wskazany typ
+        /// Invokes the command and returns the specified type
         /// </summary>
-        /// <returns>Rezultat</returns>
+        /// <returns>Result</returns>
         public override Product Execute()
         {
             var product = Session.Load<Product>(productForm.ProductId);
@@ -31,16 +31,16 @@
         }
 
         /// <summary>
-        /// Dodawanie własnych zależności do komendy.
+        /// Adding custom dependencies to the command.
         /// </summary>
-        /// <param name="container">Kontener IoC</param>
+        /// <param name="container">IoC container</param>
         public override void SetupDependencies(IWindsorContainer container)
         {
             productBuilder = container.Resolve<ProductBuilder>();
         }
 
         /// <summary>
-        /// Sesja NHibernate.
+        /// NHibernate session.
         /// </summary>
         public ISession Session { get; set; }
     }

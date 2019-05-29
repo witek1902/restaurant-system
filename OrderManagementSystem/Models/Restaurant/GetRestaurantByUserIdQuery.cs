@@ -5,7 +5,7 @@
     using Infrastructure.Query;
 
     /// <summary>
-    /// Pobranie restauracji po ID pracownika
+    /// Downloading the restaurant for the employee's ID
     /// </summary>
     public class GetRestaurantByUserIdQuery : Query<RestaurantForm>
     {
@@ -17,10 +17,10 @@
         }
 
         /// <summary>
-        /// Metoda do konstruowania i wywoływania zapytania za pomocą sesji NHibernate
+        /// A method for constructing and calling a query using the NHibernate session
         /// </summary>
-        /// <param name="session">Sesja NHibernate</param>
-        public override RestaurantForm Execute(ISession session)
+        /// <param name="session">NHibernate session</param>
+    public override RestaurantForm Execute(ISession session)
         {
             var restaurantId = session
                 .CreateQuery(@"

@@ -7,7 +7,7 @@
     using Domain.Order;
 
     /// <summary>
-    /// Pobranie otwartych zamówień w danej restauracji
+    /// Downloading open orders in a given restaurant
     /// </summary>
     public class GetOpenOrdersInActualRestaurantByUserIdQuery : Query<OrderForm>
     {
@@ -21,9 +21,9 @@
         }
 
         /// <summary>
-        /// Metoda do konstruowania i wywoływania zapytania za pomocą sesji NHibernate
+        /// A method for constructing and calling a query using the NHibernate session
         /// </summary>
-        /// <param name="session">Sesja NHibernate</param>
+        /// <param name="session">NHibernate session</param>
         public override OrderForm Execute(ISession session)
         {
             var order = session

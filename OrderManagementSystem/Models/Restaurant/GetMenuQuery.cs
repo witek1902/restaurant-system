@@ -8,7 +8,7 @@
     using Infrastructure.Query;
 
     /// <summary>
-    /// Pobranie menu po ID
+    /// Download menu by ID
     /// </summary>
     public class GetMenuQuery : Query<MenuForm>
     {
@@ -20,9 +20,9 @@
         }
 
         /// <summary>
-        /// Metoda do konstruowania i wywoływania zapytania za pomocą sesji NHibernate
+        /// A method for constructing and calling a query using the NHibernate session
         /// </summary>
-        /// <param name="session">Sesja NHibernate</param>
+        /// <param name="session">NHibernate session</param>
         public override MenuForm Execute(ISession session)
         {
             var menu = session
@@ -32,7 +32,7 @@
                 .Single();
 
             if (menu == null)
-                throw new TechnicalException(String.Format("Nie można znaleźć menu o podanym id: {0}", menuId));
+                throw new TechnicalException(String.Format("The menu with the given id can not be found: {0}", menuId));
 
             return MenuMapper.MapToForm(menu);
         }

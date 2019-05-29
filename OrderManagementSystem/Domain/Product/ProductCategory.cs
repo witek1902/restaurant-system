@@ -4,7 +4,7 @@
     using Common;
 
     /// <summary>
-    /// Category produktu
+    /// Product category
     /// </summary>
     public class ProductCategory : Entity<Guid>
     {
@@ -19,7 +19,7 @@
         public virtual string Name { get; set; }
 
         /// <summary>
-        /// Restauracja, do której należy dana Category produktu
+        /// The restaurant to which the product category belongs
         /// </summary>
         public virtual Restaurant.Restaurant Restaurant { get; set; }
     }

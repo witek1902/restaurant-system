@@ -1,13 +1,13 @@
 ﻿namespace OrderManagementSystem.Domain.Common
 {
     /// <summary>
-    /// Kody biznesowych błędów
+    /// Error business codes
     /// </summary>
     public class BusinessErrorCodes
     {
         /// <summary>
-        /// Biznesowy błąd walidacji
+        /// Business validation error
         /// </summary>
-        public const string BusinessRulesViolation = "Błąd walidacji danych.";
+        public const string BusinessRulesViolation = "Data validation error.";
     }
 }

@@ -7,7 +7,7 @@
     using Infrastructure.Query;
 
     /// <summary>
-    /// Pobranie aktualnych zamówień dla kelnera
+    /// Downloading current orders for the waiter
     /// </summary>
     public class GetWaiterActualOrdersQuery : Query<List<OrderForm>>
     {
@@ -19,9 +19,9 @@
         }
 
         /// <summary>
-        /// Metoda do konstruowania i wywoływania zapytania za pomocą sesji NHibernate
+        /// A method for constructing and calling a query using the NHibernate session
         /// </summary>
-        /// <param name="session">Sesja NHibernate</param>
+        /// <param name="session">NHibernate session</param>
         public override List<OrderForm> Execute(ISession session)
         {
             var orders = session

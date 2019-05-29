@@ -4,17 +4,17 @@
     using Common;
 
     /// <summary>
-    /// Detale produktu
+    /// Details of the product
     /// </summary>
     public class ProductDetails : Entity<Guid>
     {
         /// <summary>
-        /// Produkt
+        /// Product
         /// </summary>
         public virtual Product Product {get; set; }
 
         /// <summary>
-        /// Liczba kalorii w kcal
+        /// The number of calories in kcal
         /// </summary>
         public virtual int? Calories { get; set; }
 

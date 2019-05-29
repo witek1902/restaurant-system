@@ -14,7 +14,7 @@
     <td>
         @if (@Model.OrderItemStatus == OrderItemStatus.Approved && Security.IsUserInRole("cooks"))
         {
-            @Html.ActionLink("W przygotowaniu", "MarkAsInProgressOrderItem", "RestaurantWorker", new { orderItemId = @Model.OrderItemId }, new { @class = "btn btn-info btn-xs" })
+            @Html.ActionLink("In preparation", "MarkAsInProgressOrderItem", "RestaurantWorker", new { orderItemId = @Model.OrderItemId }, new { @class = "btn btn-info btn-xs" })
         }
         else if (@Model.OrderItemStatus == OrderItemStatus.InProgressInKitchen && Security.IsUserInRole("cooks"))
         {

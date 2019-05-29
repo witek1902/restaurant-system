@@ -6,7 +6,7 @@
     using Infrastructure.Command;
 
     /// <summary>
-    /// Zmienia aktywność produktu (czy jest tylko historyczny czy nie)
+    /// Changes the activity of the product (whether it is only historical or not)
     /// </summary>
     public class ChangeActiveProductCommand : Command<bool>, INeedSession, INeedAutocommitTransaction
     {
@@ -20,9 +20,9 @@
         }
 
         /// <summary>
-        /// Wywołuje komendę i zwraca wskazany typ
+        /// Invokes the command and returns the specified type
         /// </summary>
-        /// <returns>Rezultat</returns>
+        /// <returns>Result</returns>
         public override bool Execute()
         {
             var product = Session.Load<Product>(productId);
@@ -33,15 +33,15 @@
         }
 
         /// <summary>
-        /// Dodawanie własnych zależności do komendy.
+        /// Adding custom dependencies to the command.
         /// </summary>
-        /// <param name="container">Kontener IoC</param>
+        /// <param name="container">IoC container</param>
         public override void SetupDependencies(IWindsorContainer container)
         {
         }
 
         /// <summary>
-        /// Sesja NHibernate.
+        /// NHibernate session.
         /// </summary>
         public ISession Session { get; set; }
     }

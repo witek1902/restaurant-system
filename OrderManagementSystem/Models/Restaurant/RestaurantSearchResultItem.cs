@@ -3,12 +3,12 @@
     using System;
 
     /// <summary>
-    /// Pojedyncza pozycja rezultatów wyszukiwania restauracji
+    /// A single item of restaurant search results
     /// </summary>
     public class RestaurantSearchResultItem
     {
         /// <summary>
-        /// Id restauracji
+        /// Id of the restaurant
         /// </summary>
         public Guid RestaurantId { get; set; }
 
@@ -18,17 +18,17 @@
         public string RestaurantPhotoUrl { get; set; }
 
         /// <summary>
-        /// Name restauracji
+        /// Name of the restaurant
         /// </summary>
         public string RestaurantName { get; set; }
 
         /// <summary>
-        /// Code restauracji
+        /// Restaurant code
         /// </summary>
         public string RestaurantCode { get; set; }
 
         /// <summary>
-        /// Adres restauracji
+        /// Restaurant address
         /// </summary>
         public string RestaurantAddress { get; set; }
     }

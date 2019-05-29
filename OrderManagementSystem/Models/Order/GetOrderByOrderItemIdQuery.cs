@@ -8,7 +8,7 @@
     using Infrastructure.Query;
 
     /// <summary>
-    /// Pobranie zamówienia po id elementu zamówienia
+    /// Get order by line item id
     /// </summary>
     public class GetOrderByOrderItemIdQuery : Query<OrderForm>
     {
@@ -20,9 +20,9 @@
         }
 
         /// <summary>
-        /// Metoda do konstruowania i wywoływania zapytania za pomocą sesji NHibernate
+        /// A method for constructing and calling a query using the NHibernate session
         /// </summary>
-        /// <param name="session">Sesja NHibernate</param>
+        /// <param name="session">NHibernate session</param>
         public override OrderForm Execute(ISession session)
         {
             var order = session

@@ -5,9 +5,9 @@
     using NHibernate;
     using Domain.Order;
     using Infrastructure.Query;
-    
+
     /// <summary>
-    /// Pobranie aktualnych zamówień dla kucharza 
+    /// Downloading current orders for the cook 
     /// </summary>
     public class GetCookActualOrdersQuery : Query<List<OrderForm>>
     {
@@ -19,9 +19,9 @@
         }
 
         /// <summary>
-        /// Metoda do konstruowania i wywoływania zapytania za pomocą sesji NHibernate
+        /// A method for constructing and calling a query using the NHibernate session
         /// </summary>
-        /// <param name="session">Sesja NHibernate</param>
+        /// <param name="session">NHibernate session</param>
         public override List<OrderForm> Execute(ISession session)
         {
             var orders = session

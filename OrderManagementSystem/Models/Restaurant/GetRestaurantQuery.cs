@@ -6,7 +6,7 @@
     using Infrastructure.Query;
 
     /// <summary>
-    /// Pobranie restauracji po ID
+    /// Downloading the restaurant by ID
     /// </summary>
     public class GetRestaurantQuery : Query<RestaurantForm>
     {
@@ -18,14 +18,14 @@
         }
 
         /// <summary>
-        /// Metoda do konstruowania i wywoływania zapytania za pomocą sesji NHibernate
+        /// A method for constructing and calling a query using the NHibernate session
         /// </summary>
-        /// <param name="session">Sesja NHibernate</param>
+        /// <param name="session">NHibernate session</param>
         public override RestaurantForm Execute(ISession session)
         {
             var restaurant = session.Get<Domain.Restaurant.Restaurant>(restaurantId);
             if(restaurant == null)
-                throw new TechnicalException(String.Format("Nie można znaleźć restauracji o podanym id: {0}", restaurantId));
+                throw new TechnicalException(String.Format("You can not find a restaurant with the given id: {0}", restaurantId));
 
             return RestaurantMapper.MapToForm(restaurant);
         }

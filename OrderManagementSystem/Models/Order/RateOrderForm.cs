@@ -4,16 +4,16 @@
     using System.ComponentModel.DataAnnotations;
 
     /// <summary>
-    /// Formularz oceny zamówienia
+    /// Order evaluation form
     /// </summary>
     public class RateOrderForm
     {
         /// <summary>
-        /// Id zamówienia
+        /// Order Id
         /// </summary>
         public Guid OrderId { get; set; }
 
-        [Display(Name="Gwiazdki")]
+        [Display(Name= "stars")]
         public int RateStars { get; set; }
 
         [Display(Name = "Description")]

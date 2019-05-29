@@ -6,30 +6,30 @@
     using System;
 
     /// <summary>
-    /// Formularz dodawania/edycji produktu
+    /// Form for adding / editing a product
     /// </summary>
     public class ProductForm
     {
         /// <summary>
-        /// Id produktu
+        /// Product ID
         /// </summary>
         public Guid? ProductId { get; set; }
 
         /// <summary>
-        /// Id menu, do którego należy produkt
+        /// The menu to which the product belongs
         /// </summary>
         public Guid? MenuId { get; set; }
 
-        [Display(Name="Aktywny")]
+        [Display(Name= "Active")]
         public bool Active { get; set; }
 
         /// <summary>
-        /// Id kategorii, do której należy produkt
+        /// The category ID to which the product belongs
         /// </summary>
         public Guid? ProductCategoryId { get; set; }
 
         /// <summary>
-        /// Id detali produktu
+        /// Product details id
         /// </summary>
         public Guid? ProductDetailsId { get; set; }
 
@@ -68,13 +68,13 @@
         public int? ProductDetailsFat { get; set; }
 
         /// <summary>
-        /// Lista dostępnych kategorii w restauracji
+        /// List of available categories in the restaurant
         /// </summary>
         [Display(Name="Category")]
         public List<ProductCategoryForm> ProductCategories { get; set; }
 
         /// <summary>
-        /// Lista dostępnych menu w restauracji
+        /// List of available menus in the restaurant
         /// </summary>
         [Display(Name="Menu")]
         public List<MenuForm> Menus { get; set; } 
@@ -93,17 +93,17 @@
     }
 
     /// <summary>
-    /// Formularz do dodawania/edycji kategorii produktu
+    /// Form for adding / editing product categories
     /// </summary>
     public class ProductCategoryForm
     {
         /// <summary>
-        /// Id kategorii
+        /// Category Id
         /// </summary>
         public Guid? ProductCategoryId { get; set; }
 
         /// <summary>
-        /// Id restauracji
+        /// Id of the restaurant
         /// </summary>
         public Guid? RestaurantId { get; set; }
 
@@ -114,7 +114,7 @@
         public string ProductCategoryCode { get; set; }
 
         /// <summary>
-        /// Lista kategorii dostępnych w restauracji
+        /// List of categories available in the restaurant
         /// </summary>
         public List<ProductCategoryForm> ProductCategories { get; set; }
     }

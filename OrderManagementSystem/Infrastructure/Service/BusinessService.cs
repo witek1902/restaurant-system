@@ -4,14 +4,14 @@
     using Query;
 
     /// <summary>
-    /// Serwis biznesowy
+    /// Business service
     /// </summary>
     public abstract class BusinessService
     {
         protected ISession Session { get; }
 
         /// <summary>
-        /// Tworzy nową instancje usługi, oczekuje wstrzyknięcia sesji NHibernate
+        /// Creates a new service instance, expects to inject an NHibernate session
         /// </summary>
         protected BusinessService(ISession session)
         {
@@ -19,7 +19,7 @@
         }
 
         /// <summary>
-        /// Uruchamia zapytanie
+        /// Runs the query
         /// </summary>
         protected virtual TResult Query<TResult>(Query<TResult> queryToExecute)
         {

@@ -7,7 +7,7 @@
     using User;
 
     /// <summary>
-    /// Zamówienie klienta
+    /// Customers order
     /// </summary>
     public class Order : Entity<Guid>
     {
@@ -17,27 +17,27 @@
         public virtual OrderStatus OrderStatus { get; set; }
 
         /// <summary>
-        /// Data utworzenia zamówienia
+        /// Order creation date        
         /// </summary>
         public virtual DateTime CreationDate { get; set; }
 
         /// <summary>
-        /// Data zakończenia procesowania zamówienia 
+        /// Date of processing the order
         /// </summary>
         public virtual DateTime? FinishedDate { get; set; }
 
         /// <summary>
-        /// Waiter przypisany do zamówienia
+        /// Waiter assigned to the order
         /// </summary>
         public virtual RestaurantWorker Waiter { get; set; }
 
         /// <summary>
-        /// Kuchar przygotowujący zamówienie
+        /// Kuchar preparing the order
         /// </summary>
         public virtual RestaurantWorker Cook { get; set; }
 
         /// <summary>
-        /// Customer składający zamówienie
+        /// Customer placing an order
         /// </summary>
         public virtual Customer Customer { get; set; }
 
@@ -47,17 +47,17 @@
         public virtual int? TableNumber { get; set; }
 
         /// <summary>
-        /// Order rating przez klienta w gwiazdkach (1-5)
+        /// Order rating by the client in asterisks (1-5)
         /// </summary>
         public virtual int? Rate { get; set; }
 
         /// <summary>
-        /// Dodatkowe informacje dotyczące oceny zamówienia
+        /// Additional information about the order evaluation
         /// </summary>
         public virtual string RateDetails { get; set; }
 
         /// <summary>
-        /// Pozycje, z których składa się zamówienie
+        /// Items that make up the order
         /// </summary>
         public virtual ICollection<OrderItem.OrderItem> OrderItems { get; set; }
 
@@ -68,34 +68,34 @@
     }
 
     /// <summary>
-    /// Statusy zamówienia
+    /// Order statuses
     /// </summary>
     public enum OrderStatus
     {
         /// <summary>
-        /// Zamówienie otwarte (Customer cały czas może dodawać nowe produkty do zamówienia)
+        /// Open order (Customer may add new products to the order at any time)
         /// </summary>
-        [Display(Name="Otwarte")]
+        [Display(Name= "Open")]
         Open = 1,
         /// <summary>
-        /// Przypisane do kelnera
+        /// Assigned to the waiter
         /// </summary>
-        [Display(Name = "Przypisane do kelnera")]
+        [Display(Name = "Assigned to the waiter")]
         AssignedToWaiter = 2,
         /// <summary>
-        /// Zamknięte zamówienie (Customer chce zapłacić i opuścić restauracje)
+        /// Closed order (Customer wants to pay and leave restaurants)
         /// </summary>
-        [Display(Name="Zamknięte")]
+        [Display(Name= "Closed")]
         Closed = 3,
         /// <summary>
-        /// Zamówienie opłacone
+        /// Order paid
         /// </summary>
-        [Display(Name="Opłacone")]
+        [Display(Name= "Paid")]
         Paid = 4,
         /// <summary>
-        /// Zamówienie odrzucone (Customer się rozmyślił)
+        /// Order rejected (Customer changed his mind)
         /// </summary>
-        [Display(Name = "Odrzucone")]
+        [Display(Name = "Rejected")]
         Rejected = 5
     }
 }

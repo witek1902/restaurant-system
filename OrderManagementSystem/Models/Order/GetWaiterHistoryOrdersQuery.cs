@@ -6,7 +6,7 @@
     using Infrastructure.Query;
 
     /// <summary>
-    /// Pobranie zamówień, które obsłużył Waiter
+    /// Downloading orders that Waiter handled
     /// </summary>
     public class GetWaiterHistoryOrdersQuery : Query<List<OrderForm>>
     {
@@ -18,10 +18,10 @@
         }
 
         /// <summary>
-        /// Metoda do konstruowania i wywoływania zapytania za pomocą sesji NHibernate
+        /// A method for constructing and calling a query using the NHibernate session
         /// </summary>
-        /// <param name="session">Sesja NHibernate</param>
-        public override List<OrderForm> Execute(ISession session)
+        /// <param name="session">NHibernate session</param>
+    public override List<OrderForm> Execute(ISession session)
         {
             var orders = session
                 .CreateQuery("from Order o where o.Waiter.AppUser.UserId = :userId")

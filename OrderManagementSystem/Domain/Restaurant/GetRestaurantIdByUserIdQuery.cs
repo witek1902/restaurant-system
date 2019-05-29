@@ -6,7 +6,7 @@
     using Infrastructure.Query;
 
     /// <summary>
-    /// Pobranie Id restauracji po podaniu Id aktualnie zalogowanego pracownika restauracji
+    /// Downloading the restaurant Id after providing the Id of the currently logged restaurant employee
     /// </summary>
     public class GetRestaurantIdByUserIdQuery : Query<Guid>
     {
@@ -18,10 +18,10 @@
         }
 
         /// <summary>
-        /// Metoda do konstruowania i wywoływania zapytania za pomocą sesji NHibernate
+        /// A method for constructing and calling a query using the NHibernate session
         /// </summary>
-        /// <param name="session">Sesja NHibernate</param>
-        public override Guid Execute(ISession session)
+        /// <param name="session">NHibernate session</param>
+    public override Guid Execute(ISession session)
         {
             var restaurantId = session
                 .CreateQuery("select rw.Restaurant.Id from RestaurantWorker rw where rw.AppUser.UserId = :userId")

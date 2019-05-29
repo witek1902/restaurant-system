@@ -7,12 +7,12 @@
     using Common;
 
     /// <summary>
-    /// Resturacja
+    /// Restaurant
     /// </summary>
     public class Restaurant : Entity<Guid>
     {
         /// <summary>
-        /// Name restauracji
+        /// Name of the restaurant
         /// </summary>
         public virtual string Name { get; set; }
 
@@ -22,7 +22,7 @@
         public virtual string UniqueCode { get; set; }
 
         /// <summary>
-        /// Adres
+        /// Address
         /// </summary>
         public virtual RestaurantAddress Address { get; set; }
 
@@ -32,28 +32,28 @@
         public virtual RestaurantWorker Manager { get; set; }
 
         /// <summary>
-        /// Link to the photo restauracji
+        /// Link to the photo restaurant
         /// </summary>
         public virtual string PhotoUrl { get; set; }
 
         /// <summary>
-        /// Employees restauracji
+        /// Restaurant employees
         /// </summary>
         public virtual ICollection<RestaurantWorker> RestaurantWorkers { get; set; }
 
         /// <summary>
-        /// Menu dostępne w restauracji
+        /// Menu available in the restaurant
         /// </summary>
-        public virtual ICollection<Menu> Menus { get; set; } 
+        public virtual ICollection<Menu> Menus { get; set; }
 
         /// <summary>
-        /// Lista kategorii dotępnych w restauracji
+        /// List of categories available in the restaurant
         /// </summary>
         public virtual ICollection<ProductCategory> ProductCategories { get; set; } 
     }
 
     /// <summary>
-    /// Adres restauracji
+    /// Restaurant address
     /// </summary>
     public class RestaurantAddress
     {

@@ -6,7 +6,7 @@ namespace OrderManagementSystem.Models.Order
     using System.ComponentModel.DataAnnotations;
 
     /// <summary>
-    /// Pojedyncza pozycja na zamówieniu
+    /// A single item on the order
     /// </summary>
     public class OrderItemForm
     {

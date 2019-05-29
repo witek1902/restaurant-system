@@ -10,7 +10,7 @@
     using Infrastructure.Service;
 
     /// <summary>
-    /// Builder do zamówień i elementów zamowien
+    /// Builder for orders and line items
     /// </summary>
     public class OrderBuilder : BusinessService
     {
@@ -58,9 +58,9 @@
         }
 
         /// <summary>
-        /// Tworzenie nowego elementu zamówienia
+        /// Creating a new line item
         /// </summary>
-        /// <param name="orderItemForm">Element zamówienia</param>
+        /// <param name="orderItemForm">Line item</param>
         /// <returns></returns>
         public OrderItem.OrderItem ConstructOrderItemEntity(OrderItemForm orderItemForm)
         {

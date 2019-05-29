@@ -7,7 +7,7 @@
     using Infrastructure.Query;
 
     /// <summary>
-    /// Pobranie wszystkich produktów z menu
+    /// Downloading all products from the menu
     /// </summary>
     public class GetProductsByMenuQuery : Query<List<ProductForm>>
     {
@@ -19,10 +19,10 @@
         }
 
         /// <summary>
-        /// Metoda do konstruowania i wywoływania zapytania za pomocą sesji NHibernate
+        /// A method for constructing and calling a query using the NHibernate session
         /// </summary>
-        /// <param name="session">Sesja NHibernate</param>
-        public override List<ProductForm> Execute(ISession session)
+        /// <param name="session">NHibernate session</param>
+    public override List<ProductForm> Execute(ISession session)
         {
             var products = session
                 .CreateQuery(@"

@@ -6,7 +6,7 @@
     using Infrastructure.Command;
 
     /// <summary>
-    /// Aktualizacja restauracji
+    /// Restaurant upgrade
     /// </summary>
     public class UpdateRestaurantCommand : Command<Restaurant>, INeedSession, INeedAutocommitTransaction
     {
@@ -19,9 +19,9 @@
         }
 
         /// <summary>
-        /// Wywołuje komendę i zwraca wskazany typ
+        /// Invokes the command and returns the specified type
         /// </summary>
-        /// <returns>Rezultat</returns>
+        /// <returns>Result</returns>
         public override Restaurant Execute()
         {
             var restaurant = Session.Load<Restaurant>(restaurantForm.RestaurantId);
@@ -34,16 +34,16 @@
         }
 
         /// <summary>
-        /// Dodawanie własnych zależności do komendy.
+        /// Adding custom dependencies to the command.
         /// </summary>
-        /// <param name="container">Kontener IoC</param>
+        /// <param name="container">IoC container</param>
         public override void SetupDependencies(IWindsorContainer container)
         {
             restaurantBuilder = container.Resolve<RestaurantBuilder>();
         }
 
         /// <summary>
-        /// Sesja NHibernate.
+        /// NHibernate session.
         /// </summary>
         public ISession Session { get; set; }
     }

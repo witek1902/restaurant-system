@@ -16,12 +16,12 @@
         public virtual string Firstname { get; set; }
 
         /// <summary>
-        /// Lista zamówień, które zostały złożone przez klienta
+        /// List of orders that have been placed by the customer
         /// </summary>
         public virtual ICollection<Order.Order> Orders { get; set; }
 
         /// <summary>
-        /// Użytkownik aplikacji
+        /// Application user
         /// </summary>
         public virtual AppUser AppUser { get; set; }
     }

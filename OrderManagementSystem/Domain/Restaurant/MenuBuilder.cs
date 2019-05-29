@@ -7,19 +7,19 @@
     using Models.Restaurant;
 
     /// <summary>
-    /// Builder dla Menu
+    /// Builder for Menu
     /// </summary>
     public class MenuBuilder : BusinessService
     {
         /// <summary>
-        /// Tworzy nową instancje usługi, oczekuje wstrzyknięcia sesji NHibernate
+        /// Creates a new service instance, expects to inject an NHibernate session
         /// </summary>
         public MenuBuilder(ISession session) : base(session)
         {
         }
 
         /// <summary>
-        /// Tworzenie nowego Menu
+        /// Creating a new Menu
         /// </summary>
         /// <param name="menuForm"></param>
         /// <returns></returns>

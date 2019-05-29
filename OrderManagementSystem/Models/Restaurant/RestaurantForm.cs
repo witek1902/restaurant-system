@@ -5,12 +5,12 @@
     using System;
 
     /// <summary>
-    /// Formularz do edytowania/tworzenia restauracji
+    /// Form for editing / creating restaurants
     /// </summary>
     public class RestaurantForm
     {
         /// <summary>
-        /// Id restauracji
+        /// Id of the restaurant
         /// </summary>
         public Guid? RestaurantId { get; set; }
 
@@ -45,7 +45,7 @@
         public int? RestaurantFlatNumber { get; set; }
 
         /// <summary>
-        /// Id managera
+        /// Id manager
         /// </summary>
         public Guid? ManagerId { get; set; }
 
@@ -67,12 +67,12 @@
         public string ManagerLastname { get; set; }
 
         /// <summary>
-        /// Lista pracowników restauracji
+        /// List of restaurant staff
         /// </summary>
         public List<RestaurantWorkerForm> RestaurantWorkers { get; set; }
 
         /// <summary>
-        /// Lista menu dostępnych w restauracji
+        /// List of menus available in the restaurant
         /// </summary>
         public List<MenuForm> Menus { get; set; } 
 

@@ -5,16 +5,16 @@
     using System;
 
     /// <summary>
-    /// Formularz pracownika restuaracji
+    /// Form of a restaurant worker
     /// </summary>
     public class RestaurantWorkerForm
     {
         /// <summary>
-        /// Id pracownika restauracji
+        /// Id of a restaurant employee
         /// </summary>
         public Guid? RestaurantWorkerId { get; set; }
 
-        [Display(Name="Aktywny")]
+        [Display(Name= "Active")]
         public bool Active { get; set; }
 
         [Display(Name = "Position")]
@@ -40,19 +40,19 @@
         public string Password { get; set; }
 
         /// <summary>
-        /// Id restauracji
+        /// Id of the restaurant
         /// </summary>
         public Guid? RestaurantId { get; set; }
 
-        [Display(Name = "Name restauracji")]
+        [Display(Name = "Name of the restaurant")]
         public string RestaurantName { get; set; }
 
         public RestaurantWorkerForm() { }
 
         /// <summary>
-        /// Rekonstrukcja formularza z danych przesłanych przez użytkownika
+        /// Reconstruction of the form from data sent by the user
         /// </summary>
-        /// <param name="receivedForm">Wpisane dane</param>
+        /// <param name="receivedForm">Entered data</param>
         public RestaurantWorkerForm(RestaurantWorkerForm receivedForm)
         {
             this.RestaurantWorkerId = receivedForm.RestaurantWorkerId;

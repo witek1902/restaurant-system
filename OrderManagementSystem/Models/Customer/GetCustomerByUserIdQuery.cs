@@ -5,7 +5,7 @@
     using Infrastructure.Query;
 
     /// <summary>
-    /// Pobranie klienta po id aktualnie zalogowane użytkownika
+    /// Downloading the client after the currently logged in user's id
     /// </summary>
     public class GetCustomerByUserIdQuery : Query<CustomerForm>
     {
@@ -17,9 +17,9 @@
         }
 
         /// <summary>
-        /// Metoda do konstruowania i wywoływania zapytania za pomocą sesji NHibernate
+        /// A method for constructing and calling a query using the NHibernate session
         /// </summary>
-        /// <param name="session">Sesja NHibernate</param>
+        /// <param name="session">NHibernate session</param>
         public override CustomerForm Execute(ISession session)
         {
             var customer = session

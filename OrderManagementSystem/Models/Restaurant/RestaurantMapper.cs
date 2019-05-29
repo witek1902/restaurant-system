@@ -6,15 +6,15 @@
     using System.Linq;
 
     /// <summary>
-    /// Klasa mapująca dla encji 'Restauracja'
+    /// Mapping class for the 'Restaurant' entity
     /// </summary>
     public static class RestaurantMapper
     {
         /// <summary>
-        /// Mapowanie encji na wyniki wyszukiwania
+        /// Entity mapping to search results
         /// </summary>
-        /// <param name="restaurant">Encja restauracji</param>
-        /// <returns>Rezultat wyszukiwania</returns>
+        /// <param name="restaurant">Entity restaurant</param>
+        /// <returns>Search result</returns>
         public static RestaurantSearchResultItem MapToSearchResultsItem(Domain.Restaurant.Restaurant restaurant)
         {
             return new RestaurantSearchResultItem
@@ -28,10 +28,10 @@
         }
 
         /// <summary>
-        /// Mapowanie encji na formularz
+        /// Entity mapping on the form
         /// </summary>
-        /// <param name="restaurant">Encja</param>
-        /// <returns>Formularz</returns>
+        /// <param name="restaurant">entity</param>
+        /// <returns>Form</returns>
         public static RestaurantForm MapToForm(Domain.Restaurant.Restaurant restaurant)
         {
             var form = new RestaurantForm

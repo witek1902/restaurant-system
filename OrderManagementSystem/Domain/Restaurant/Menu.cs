@@ -6,7 +6,7 @@
     using Common;
 
     /// <summary>
-    /// Menu w restauracji
+    /// Menu in the restaurant
     /// </summary>
     public class Menu : Entity<Guid>
     {
@@ -21,17 +21,17 @@
         public virtual string Name { get; set; }
 
         /// <summary>
-        /// Restauracja
+        /// Restaurant
         /// </summary>
         public virtual Restaurant Restaurant { get; set; }
 
         /// <summary>
-        /// Lista produktów, które są w Menu
+        /// List of products that are on the Menu
         /// </summary>
         public virtual ICollection<Product> Products { get; set; }
 
         /// <summary>
-        /// Czy Menu jest aktywne?
+        /// Is Menu Active?
         /// </summary>
         public virtual bool Active { get; set; }
     }

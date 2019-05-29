@@ -4,12 +4,12 @@
     using Domain.User;
 
     /// <summary>
-    /// Mapowanie pracowników restauracji
+    /// Mapping restaurant employees
     /// </summary>
     public static class RestaurantWorkerMapper
     {
         /// <summary>
-        /// Mapowanie roli do enuma pozycji
+        /// Mapping the role to enum position
         /// </summary>
         /// <param name="position"></param>
         /// <returns></returns>
