@@ -4,50 +4,50 @@
 @model OrderManagementSystem.Models.Order.OrderForm
 
 @{
-    ViewBag.Title = "Aktualne zamówienie";
+    ViewBag.Title = "Current order";
     Layout = "~/Views/Shared/_CustomerLayout.cshtml";
 }
 
 <div class="col-md-12 margin-form ">
     <div class="col-md-8">
-        <h4>Aktualny status zamówienia: <b>@Model.OrderStatus.GetDisplayName()</b></h4>
-        <h5>Suma zamówienia: <b>@Model.TotalPrice zł</b></h5>
-        <h5>Numer stolika: <b>@Model.TableNumber</b></h5>
-        <h5>Uwagi: <b>@Model.OrderComments</b></h5>
+        <h4>Current order status: <b>@Model.OrderStatus.GetDisplayName()</b></h4>
+        <h5>Order sum: <b>@Model.TotalPrice zł</b></h5>
+        <h5>Table number: <b>@Model.TableNumber</b></h5>
+        <h5>Comments: <b>@Model.OrderComments</b></h5>
     </div>
     <div class="col-md-4">
         @if (@Model.OrderStatus == OrderStatus.AssignedToWaiter && @Model.OrderItems.All(x => x.OrderItemStatus == OrderItemStatus.Delivered))
         {
-            <p>@Html.ActionLink("Chcę zapłacić.", "WantToPay", "Customer", new { orderId = @Model.OrderId }, new { @class = "btn btn-primary" })</p>
-            <p>@Html.ActionLink("Mam ochotę na więcej...", "PlaceOrder", "Customer", new { restaurantId = @Model.RestaurantId }, new { @class = "btn btn-primary" })</p>
+            <p>@Html.ActionLink("I want to pay.", "WantToPay", "Customer", new { orderId = @Model.OrderId }, new { @class = "btn btn-primary" })</p>
+            <p>@Html.ActionLink("I feel like more ...", "PlaceOrder", "Customer", new { restaurantId = @Model.RestaurantId }, new { @class = "btn btn-primary" })</p>
         }
         else if (@Model.OrderStatus == OrderStatus.Closed)
         {
-            <div class="lead alert"><b>Drogi kliencie,</b><br />kelner za chwilkę do Ciebie podejdzie.</div>
+            <div class="lead alert"><b>Dear Customer,</b><br />the waiter will approach you in a moment.</div>
         }
         else if (@Model.OrderStatus == OrderStatus.Open || @Model.OrderStatus == OrderStatus.AssignedToWaiter)
         {
-            <p>@Html.ActionLink("Mam ochotę na więcej...", "PlaceOrder", "Customer", new { restaurantId = @Model.RestaurantId }, new { @class = "btn btn-primary" })</p>
+            <p>@Html.ActionLink("I feel like more ...", "PlaceOrder", "Customer", new { restaurantId = @Model.RestaurantId }, new { @class = "btn btn-primary" })</p>
         }
         else if (@Model.OrderStatus == OrderStatus.Paid)
         {
-            <div class="lead alert"><b>Drogi kliencie,</b><br/> dziękujęmy za skorzystanie z naszych usług.<br/><br/> <b>Zapraszamy ponownie!</b></div>
+            <div class="lead alert"><b>Dear Customer,</b><br /> Thank you for using our services.<br /><br /> <b>Come again!</b></div>
         }
     </div>
 </div>
 <div class="col-md-12">
     <fieldset>
-        <legend>Twoje aktualne zamówienie</legend>
+        <legend>Your current order</legend>
         <table id="orderItemsTable" class="table table-hover">
             <thead>
             <tr>
-                <th>Zdjęcie</th>
+                <th>Picture</th>
                 <th>Status</th>
-                <th>Kategoria</th>
-                <th>Nazwa produktu</th>
-                <th>Opis</th>
-                <th>Cena</th>
-                <th>Ilość</th>
+                <th>Category</th>
+                <th>Product name</th>
+                <th>Description</th>
+                <th>Price</th>
+                <th>Quantity</th>
             </tr>
             </thead>
             <tbody>

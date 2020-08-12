@@ -8,37 +8,37 @@
     using Infrastructure.Service;
 
     /// <summary>
-    /// Interfejs do zarządzania statusem zamówienia
+    /// Interface to manage order status
     /// </summary>
     public interface IOrderStatusService
     {
         /// <summary>
-        /// Klient zamyka zamówienie (chce zapłacić, nie będzie nic więcej zamawiać)
+        /// Customer closes the order (he wants to pay, he will not order anything more)
         /// </summary>
         /// <param name="order"></param>
         void CloseOrder(Order order);
 
         /// <summary>
-        /// Kelner przypisuje do siebie zamówienie
+        /// Waiter assigns the order to himself
         /// </summary>
         /// <param name="order"></param>
         void AssignToWaiter(Order order);
 
         /// <summary>
-        /// Kelner oznacza zamówienie jako opłacone.
+        /// Waiter means the order is paid for.
         /// </summary>
         /// <param name="order"></param>
         void PaidOrder(Order order);
 
         /// <summary>
-        /// Klient odrzuca zamówienie
+        /// Customer rejects the order
         /// </summary>
-        /// <param name="order">Odrzucane zamówienie</param>
+        /// <param name="order">Rejected order</param>
         void RejectOrder(Order order);
     }
 
     /// <summary>
-    /// Implementacja interfejsu do zarządzania statusem zamówienia
+    /// Implementation of the interface to manage the order status
     /// </summary>
     public class OrderStatusService : BusinessService, IOrderStatusService
     {
@@ -47,7 +47,7 @@
         }
 
         /// <summary>
-        /// Kelner przypisuje do siebie zamówienie
+        /// Waiter assigns the order to himself
         /// </summary>
         /// <param name="order"></param>
         public void AssignToWaiter(Order order)
@@ -55,11 +55,11 @@
             if (order.OrderStatus == OrderStatus.Open)
                 order.OrderStatus = OrderStatus.AssignedToWaiter;
             else
-                throw new BusinessException(BusinessErrorCodes.BusinessRulesViolation, "Tylko zamówienie w statusie 'Otwarte' może zostać przypisane do kelnera.");
+                throw new BusinessException(BusinessErrorCodes.BusinessRulesViolation, "Only the order in the status 'Open' can be assigned to the waiter.");
         }
 
         /// <summary>
-        /// Klient zamyka zamówienie (chce zapłacić, nie będzie nic więcej zamawiać)
+        /// Customer closes the order (he wants to pay, he will not order anything more)
         /// </summary>
         /// <param name="order"></param>
         public void CloseOrder(Order order)
@@ -67,11 +67,11 @@
             if (order.OrderStatus == OrderStatus.AssignedToWaiter && !order.OrderItems.Any(x => x.OrderItemStatus == OrderItemStatus.Approved))
                 order.OrderStatus = OrderStatus.Closed;
             else
-                throw new BusinessException(BusinessErrorCodes.BusinessRulesViolation, "Tylko zamówienie w statusie 'Przypisane do kelnera' może zostać zamknięte.");
+                throw new BusinessException(BusinessErrorCodes.BusinessRulesViolation, "Only the order in the 'Assigned to waiter' status can be closed.");
         }
 
         /// <summary>
-        /// Kelner oznacza zamówienie jako opłacone.
+        /// Waiter means the order is paid for.
         /// </summary>
         /// <param name="order"></param>
         public void PaidOrder(Order order)
@@ -79,20 +79,20 @@
             if (order.OrderStatus == OrderStatus.Closed)
                 order.OrderStatus = OrderStatus.Paid;
             else
-                throw new BusinessException(BusinessErrorCodes.BusinessRulesViolation, "Tylko zamówienie w statusie 'Zamknięte' może zostać opłacone.");
+                throw new BusinessException(BusinessErrorCodes.BusinessRulesViolation, "Only the order in the 'Closed' status can be paid for.");
 
         }
 
         /// <summary>
-        /// Manager odrzuca zamówienie
+        /// Manager rejects the order
         /// </summary>
-        /// <param name="order">Odrzucane zamówienie</param>
+        /// <param name="order">Rejected order</param>
         public void RejectOrder(Order order)
         {
             if (!order.OrderItems.Any(x => x.OrderItemStatus == OrderItemStatus.InProgressInKitchen))
                 order.OrderStatus = OrderStatus.Rejected;
             else
-                throw new BusinessException(BusinessErrorCodes.BusinessRulesViolation, "Tylko zamówienie, na którym nie ma elementów w statusie 'W przygotowaniu w kuchni' może zotać odrzucone.");
+                throw new BusinessException(BusinessErrorCodes.BusinessRulesViolation, "Only the order on which there are no items in the status 'In preparation in the kitchen' can be rejected.");
         }
     }
 }

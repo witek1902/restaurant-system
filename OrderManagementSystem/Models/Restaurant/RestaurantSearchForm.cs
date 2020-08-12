@@ -1,12 +1,12 @@
 ﻿namespace OrderManagementSystem.Models.Restaurant
 {
     /// <summary>
-    /// Formularz wyszukiwania restauracji
+    /// Restaurant search form
     /// </summary>
     public class RestaurantSearchForm
     {
         /// <summary>
-        /// Nazwa lub unikalny numer restauracji
+        /// Name or unique restaurant number
         /// </summary>
         public string RestaurantNameOrCode { get; set; }
     }

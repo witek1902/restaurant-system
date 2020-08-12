@@ -1,11 +1,11 @@
 ﻿@model IEnumerable<OrderManagementSystem.Models.Order.OrderForm>
 
 @{
-    ViewBag.Title = "Historia zamówień w restauracji";
+    ViewBag.Title = "The History of Orders in the restaurant";
     Layout = "~/Views/Shared/_RestaurantLayout.cshtml";
 }
 
-<h2 class="margin-form">Historia zamówień w restauracji</h2>
+<h2 class="margin-form">The History of Orders in the restaurant</h2>
 
 @if (Model.Any())
 {
@@ -30,7 +30,7 @@
                 @Html.DisplayNameFor(model => model.CookFirstName)
             </th>
             <th>
-                Ilość elementów
+                Quantity of elements
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.TotalPrice)
@@ -70,5 +70,5 @@
 }
 else
 {
-    <p class="alert alert-info">Brak zamówień.</p>
+    <p class="alert alert-info">No orders.</p>
 }

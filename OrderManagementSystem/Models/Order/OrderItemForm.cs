@@ -6,7 +6,7 @@ namespace OrderManagementSystem.Models.Order
     using System.ComponentModel.DataAnnotations;
 
     /// <summary>
-    /// Pojedyncza pozycja na zamówieniu
+    /// A single item on the order
     /// </summary>
     public class OrderItemForm
     {
@@ -20,26 +20,26 @@ namespace OrderManagementSystem.Models.Order
 
         public Guid? ProductCategoryId { get; set; }
 
-        [Display(Name = "Nazwa menu")]
+        [Display(Name = "Name menu")]
         public string MenuName { get; set; }
 
-        [Display(Name = "Nazwa kategorii")]
+        [Display(Name = "Name of the category")]
         public string ProductCategoryName { get; set; }
 
-        [Display(Name = "Nazwa")]
+        [Display(Name = "Name")]
         public string ProductName { get; set; }
 
-        [Display(Name="Zdjęcie")]
+        [Display(Name="Picture")]
         public string ProductPhotoUrl { get; set; }
 
-        [Display(Name="Opis")]
+        [Display(Name="Description")]
         public string ProductDescription { get; set; }
 
-        [Display(Name = "Cena")]
+        [Display(Name = "Price")]
         [DataType(DataType.Currency)]
         public decimal ProductPrice { get; set; }
 
-        [Display(Name = "Ilość")]
+        [Display(Name = "Quantity")]
         public int Quantity { get; set; }
     }
 }

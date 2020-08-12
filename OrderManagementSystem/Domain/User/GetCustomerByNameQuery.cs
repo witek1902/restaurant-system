@@ -14,9 +14,9 @@
         }
 
         /// <summary>
-        /// Metoda do konstruowania i wywoływania zapytania za pomocą sesji NHibernate
+        /// A method for constructing and calling a query using the NHibernate session
         /// </summary>
-        /// <param name="session">Sesja NHibernate</param>
+        /// <param name="session">NHibernate session</param>
         public override Customer Execute(ISession session)
         {
             return session

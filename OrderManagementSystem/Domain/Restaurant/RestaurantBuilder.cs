@@ -9,19 +9,19 @@
     using System.Collections.Generic;
 
     /// <summary>
-    /// Klasa odpowiedzialna za konstruowanie i aktualizacje encji restauracji z ViewModelu
+    /// The class responsible for constructing and updating the restaurant entities from the ViewModel
     /// </summary>
     public class RestaurantBuilder : BusinessService
     {
         /// <summary>
-        /// Tworzy nową instancje usługi, oczekuje wstrzyknięcia sesji NHibernate
+        /// Creates a new service instance, expects to inject an NHibernate session
         /// </summary>
         public RestaurantBuilder(ISession session) : base(session)
         {
         }
 
         /// <summary>
-        /// Tworzenie nowej restauracji
+        /// Creating a new restaurant
         /// </summary>
         /// <param name="restaurantForm"></param>
         /// <returns></returns>
@@ -76,10 +76,10 @@
         }
 
         /// <summary>
-        /// Aktualizacja restauracji z view modelu
+        /// Update restaurant with model view
         /// </summary>
-        /// <param name="restaurant">Encja</param>
-        /// <param name="restaurantForm">Formularz</param>
+        /// <param name="restaurant">entity</param>
+        /// <param name="restaurantForm">Form</param>
         public void UpdateRestaurantEntity(Restaurant restaurant, RestaurantForm restaurantForm)
         {
             restaurant.PhotoUrl = restaurantForm.RestaurantPhotoUrl;

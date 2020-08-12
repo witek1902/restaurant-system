@@ -4,15 +4,15 @@
     using System.Linq;
 
     /// <summary>
-    /// Mapper do zamówień
+    /// Mapper for orders
     /// </summary>
     public static class OrderMapper
     {
         /// <summary>
-        /// Mapowanie encji na formularz
+        /// Entity mapping on the form
         /// </summary>
-        /// <param name="order">Zamówienie</param>
-        /// <returns>Formularz zamówienia</returns>
+        /// <param name="order">Order</param>
+        /// <returns>The order form</returns>
         public static OrderForm MapOrderToForm(Domain.Order.Order order)
         {
             var form = new OrderForm
@@ -51,11 +51,11 @@
 
             return form;
         }
-        
+
         /// <summary>
-        /// Mapowanie pojedynczej pozycji na formularz
+        /// Mapping a single item to the form
         /// </summary>
-        /// <param name="orderItem">Pozycja w zamówieniu</param>
+        /// <param name="orderItem">Position in the order</param>
         /// <returns>Formularz</returns>
         public static OrderItemForm MapOrderItemToForm(Domain.Order.OrderItem.OrderItem orderItem)
         {
@@ -73,7 +73,6 @@
                 Quantity = orderItem.Quantity,
                 OrderItemId = orderItem.Id
             };
-
             return form;
         }
     }

@@ -1,15 +1,15 @@
 ﻿namespace OrderManagementSystem.Controllers
 {
     using System.Web.Mvc;
-    
+
     /// <summary>
-    /// Ekran główny aplikacji
+    ///  The main screen of the application
     /// </summary>
     [AllowAnonymous]
     public class HomeController : Infrastructure.Web.ControllerBase
     {
         /// <summary>
-        /// Strona główna aplikacji
+        /// Application home page
         /// </summary>
         /// <returns></returns>
         public ActionResult Index()
@@ -18,7 +18,7 @@
         }
 
         /// <summary>
-        /// Pomoc
+        /// Help
         /// </summary>
         /// <returns></returns>
         public ActionResult Help()

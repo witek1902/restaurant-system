@@ -1,15 +1,15 @@
 ﻿namespace OrderManagementSystem.Models.Customer
 {
     /// <summary>
-    /// Mapper dla encji klienta
+    /// Mapper for the client entity
     /// </summary>
     public static class CustomerMapper
     {
         /// <summary>
-        /// Mapowanie encji do formularza
+        /// Entity mapping to the form
         /// </summary>
-        /// <param name="customer">Encja klienta</param>
-        /// <returns>Formularz</returns>
+        /// <param name="customer">Customer's entity</param>
+        /// <returns>Form</returns>
         public static CustomerForm MapToForm(Domain.User.Customer customer)
         {
             var form = new CustomerForm
@@ -19,7 +19,7 @@
                 Login = customer.AppUser.Login
             };
 
-            //TODO Orders
+            //ALL Orders
 
             return form;
         }

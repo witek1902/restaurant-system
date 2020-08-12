@@ -8,7 +8,7 @@
     using Infrastructure.Query;
 
     /// <summary>
-    /// Pobiera wszystkie Menu dostępne w danej restauracji
+    /// Gets all menus available in your restaurant
     /// </summary>
     public class GetMenusByRestaurantIdQuery : Query<List<MenuForm>>
     {
@@ -20,9 +20,9 @@
         }
 
         /// <summary>
-        /// Metoda do konstruowania i wywoływania zapytania za pomocą sesji NHibernate
+        /// A method for constructing and calling a query using the NHibernate session
         /// </summary>
-        /// <param name="session">Sesja NHibernate</param>
+        /// <param name="session">NHibernate session</param>
         public override List<MenuForm> Execute(ISession session)
         {
             var menusEntity = session

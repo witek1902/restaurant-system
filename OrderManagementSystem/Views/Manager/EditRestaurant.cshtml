@@ -1,7 +1,7 @@
 ﻿@model OrderManagementSystem.Models.Restaurant.RestaurantForm
 
 @{
-    ViewBag.Title = "Edytuj restauracje";
+    ViewBag.Title = "Edit restaurants";
     Layout = "~/Views/Shared/_RestaurantLayout.cshtml";
 }
 
@@ -11,7 +11,7 @@
     @Html.AntiForgeryToken()
     
     <div class="form-horizontal">
-        <h2 class="margin-form">Edytuj podstawowe informacje o restauracji</h2>
+        <h2 class="margin-form">Edit Basic information about the restaurant</h2>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         @Html.HiddenFor(model => model.RestaurantId, htmlAttributes: new { @class = "control-label col-md-2" })
@@ -90,7 +90,7 @@
 
         <div class="form-group">
             <div class="col-md-offset-5 col-md-10">
-                <input type="submit" value="Zapisz zmiany" class="btn btn-success" />
+                <input type="submit" value="Save changes" class="btn btn-success" />
             </div>
         </div>
     </div>

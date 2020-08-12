@@ -5,52 +5,52 @@
     using Common;
 
     /// <summary>
-    /// Produkt, który może zostać dodany do zamówienia
+    /// A product that can be added to the order
     /// </summary>
     public class Product : Entity<Guid>
     {
         /// <summary>
-        /// Menu, do którego przypisany jest produkt
+        /// Menu to which the product is assigned
         /// </summary>
         public virtual Menu Menu { get; set; }
 
         /// <summary>
-        /// Nazwa produktu
+        /// Product name
         /// </summary>
         public virtual string Name { get; set; }
 
         /// <summary>
-        /// Kategoria
+        /// Category
         /// </summary>
         public virtual ProductCategory ProductCategory { get; set; }
-        
+
         /// <summary>
-        /// Detale
+        /// Details
         /// </summary>
         public virtual ProductDetails ProductDetails { get; set; }
 
         /// <summary>
-        /// Cena
+        /// Price
         /// </summary>
         public virtual decimal Price { get; set; }
 
         /// <summary>
-        /// Opis produktu
+        /// Description of the product
         /// </summary>
         public virtual string Description { get; set; }
 
         /// <summary>
-        /// Rabat od ceny w procentach
+        /// Discount from the price in percent
         /// </summary>
         public virtual int? PercentDiscount { get; set; }
 
         /// <summary>
-        /// Url do zdjęcia produktu
+        /// Url for product photo
         /// </summary>
         public virtual string PhotoUrl { get; set; }
 
         /// <summary>
-        /// Czy aktywny
+        /// Is active
         /// </summary>
         public virtual bool Active { get; set; }
     }

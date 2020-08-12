@@ -1,11 +1,11 @@
 ﻿@model OrderManagementSystem.Models.Restaurant.RestaurantWorkerForm
 
 @{
-    ViewBag.Title = "Dodaj pracownika restauracji";
+    ViewBag.Title = "Add employee restaurant";
     Layout = "~/Views/Shared/_RestaurantLayout.cshtml";
 }
 
-<h2 class="margin-form">Dodaj pracownika restauracji</h2>
+<h2 class="margin-form">Add employee restaurant</h2>
 
 @using (Html.BeginForm()) 
 {
@@ -20,7 +20,7 @@
             <div class="form-group col-md-6">
                 @Html.LabelFor(model => model.Position, htmlAttributes: new { @class = "control-label col-md-2" })
                 <div class="col-md-10">
-                    @Html.EnumDropDownListFor(model => model.Position, "Wybierz pozycję", new { @class = "form-control" })
+                    @Html.EnumDropDownListFor(model => model.Position, "Select position", new { @class = "form-control" })
                     @Html.ValidationMessageFor(model => model.Position, "", new { @class = "text-danger" })
                 </div>
             </div>
@@ -72,7 +72,7 @@
 
         <div class="form-group">
             <div class="col-md-offset-5 col-md-10">
-                <input type="submit" value="Dodaj pracownika" class="btn btn-success" />
+                <input type="submit" value="Add employee" class="btn btn-success" />
             </div>
         </div>
     </div>

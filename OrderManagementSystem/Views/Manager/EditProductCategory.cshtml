@@ -1,11 +1,11 @@
 ﻿@model OrderManagementSystem.Models.Product.ProductCategoryForm
 
 @{
-    ViewBag.Title = "Edytuj kategorię produktu";
+    ViewBag.Title = "Edit product category";
     Layout = "~/Views/Shared/_RestaurantLayout.cshtml";
 }
 
-<h2 class="margin-form">Edytuj kategorię produktu</h2>
+<h2 class="margin-form">Edit product category</h2>
 
 @using (Html.BeginForm("SaveProductCategory", "Manager"))
 {
@@ -38,7 +38,7 @@
 
         <div class="form-group">
             <div class="col-md-offset-5 col-md-10">
-                <input type="submit" value="Zapisz zmiany" class="btn btn-success" />
+                <input type="submit" value="Save changes" class="btn btn-success" />
             </div>
         </div>
     </div>

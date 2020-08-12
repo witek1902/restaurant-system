@@ -3,17 +3,17 @@
     using System.Collections.Generic;
 
     /// <summary>
-    /// View model do wyszukiwania restauracji
+    /// View model for restaurant search
     /// </summary>
     public class RestaurantSearchViewModel
     {
         /// <summary>
-        /// Kryteria wyszukiwania restauracji
+        /// Criteria for restaurant search
         /// </summary>
         public RestaurantSearchForm Criteria { get; set; }
 
         /// <summary>
-        /// Rezultat wyszukiwania
+        /// Search result
         /// </summary>
         public List<RestaurantSearchResultItem> Results { get; set; }
     }

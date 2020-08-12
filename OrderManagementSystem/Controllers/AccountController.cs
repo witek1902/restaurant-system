@@ -8,12 +8,12 @@
     using Models.Restaurant;
 
     /// <summary>
-    /// Kontroler odpowiedzialny za obsługę rezerwacji
+    /// The controller responsible for the booking service
     /// </summary>
     public class AccountController : Infrastructure.Web.ControllerBase
     {
         /// <summary>
-        /// Zwraca widok, w którym wybieramy czy chcemy zarejestrować się jako restauracja czy jako klient
+        /// Returns the view in which we choose whether to register as a restaurant or as a Customer
         /// </summary>
         /// <returns></returns>
         [HttpGet]
@@ -25,7 +25,7 @@
         }
 
         /// <summary>
-        /// Logowanie do systemu
+        /// Log in to the system
         /// </summary>
         /// <param name="user">User</param>
         /// <returns></returns>
@@ -36,11 +36,11 @@
             if (Security.Login(user.Login, user.Password))
                 return RedirectByRole();
             else
-                return RedirectToAction("Login", new {message = "Logowanie nie powiodło się, spróbuj ponownie."});
+                return RedirectToAction("Login", new {message = "Login failed, please try again."});
         }
 
         /// <summary>
-        /// Rejestracja - ekran główny
+        /// Registration - main screen
         /// </summary>
         /// <returns></returns>
         [HttpGet]
@@ -51,9 +51,9 @@
         }
 
         /// <summary>
-        /// Zwraca widok do rejestracji restauracji
+        /// Returns the restaurant registration view
         /// </summary>
-        /// <returns>Widok do rejestracji</returns>
+        /// <returns>View to registration</returns>
         [HttpGet]
         [AllowAnonymous]
         public ActionResult RegisterRestaurant()
@@ -62,10 +62,10 @@
         }
 
         /// <summary>
-        /// Utworzenie nowego konta restauracji
+        /// Creating a new restaurant account
         /// </summary>
-        /// <param name="restaurantForm">Formularz restauracji</param>
-        /// <returns>Widok do edycji lub ponowny widok tworzenia</returns>
+        /// <param name="restaurantForm">Restaurant form</param>
+        /// <returns>Editing view or re-create view</returns>
         [HttpPost]
         [AllowAnonymous]
         public ActionResult RegisterRestaurant(RestaurantForm restaurantForm)
@@ -76,16 +76,16 @@
             {
                 restaurantForm.ManagerAppUserId = managerCmdResult.Result;
                 var restaurantCmdResult = ExecuteCommand(new CreateRestaurantCommand(restaurantForm));
-
+                
                 if (restaurantCmdResult.Success)
-                    return RedirectToAction("Login", new { message = "Restauracja zarejestrowana pomyślnie. Zaloguj się na dane Managera." });
+                    return RedirectToAction("Login", new { message = "Restaurant registered successfully. Log in to the Manager data.." });
             }
 
             return View(restaurantForm);
         }
 
         /// <summary>
-        /// Rejestracja klienta
+        /// Customer registration
         /// </summary>
         /// <returns></returns>
         [HttpGet]
@@ -96,9 +96,9 @@
         }
 
         /// <summary>
-        /// Utworzenie nowego konta klienta
+        /// Creating a new customer account
         /// </summary>
-        /// <param name="customerForm">Formularz klienta</param>
+        /// <param name="customerForm">Customer form</param>
         /// <returns></returns>
         [HttpPost]
         [AllowAnonymous]
@@ -112,16 +112,16 @@
                 var cmdResult = ExecuteCommand(new CreateCustomerCommand(customerForm));
 
                 if (cmdResult.Success)
-                    return RedirectToAction("Login", new {message = "Twoje konto zostało zarejestrowane. Możesz się zalogować."});
+                    return RedirectToAction("Login", new {message = "Your account has been registered. You can log in." });
             }
 
             return View(customerForm);
         }
 
         /// <summary>
-        /// Wylogowywanie użytkownika
+        /// User Logout
         /// </summary>
-        /// <returns>Powrót do strony logowania</returns>
+        /// <returns>Return to the login page</returns>
         [HttpGet]
         public ActionResult Logout()
         {
@@ -130,7 +130,7 @@
         }
 
         /// <summary>
-        /// Metoda przekierowaniu użytkownika w zależności od pełnionej roli po zalogowaniu
+        /// The method of user redirection depending on the role played after logging in
         /// </summary>
         /// <returns></returns>
         private ActionResult RedirectByRole()

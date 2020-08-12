@@ -6,47 +6,47 @@
     using Query;
 
     /// <summary>
-    /// Interfejs do obsługi komend
+    /// Interface for handling commands
     /// </summary>
-    /// <typeparam name="T">Zwracany rezultat</typeparam>
+    /// <typeparam name="T">Returned result</typeparam>
     public interface ICommand<T>
     {
         /// <summary>
-        /// Wywołuje komendę i zwraca wskazany typ
+        /// Invokes the command and returns the specified type
         /// </summary>
-        /// <returns>Rezultat</returns>
+        /// <returns>Result</returns>
         T Execute();
 
         /// <summary>
-        /// Sprawdza, czy komenda może zostać wykonana
+        /// Checks whether the command can be executed
         /// </summary>
-        /// <returns>Prawda, jeśli komenda może zostać wykonana, w innym przypadku fałsz</returns>
+        /// <returns>True if the command can be executed, otherwise false</returns>
         bool CanExecute();
     }
 
     /// <summary>
-    /// Klasa bazowa dla komend
+    /// Base class for commands
     /// </summary>
-    /// <typeparam name="T">Zwracany typ</typeparam>
+    /// <typeparam name="T">Return type</typeparam>
     public abstract class Command<T> : ICommand<T>
     {
         /// <summary>
-        /// Wywołuje komendę i zwraca wskazany typ
+        /// Invokes the command and returns the specified type
         /// </summary>
-        /// <returns>Rezultat</returns>
+        /// <returns>Result</returns>
         public abstract T Execute();
 
         /// <summary>
-        /// Sprawdza, czy komenda może zostać wykonana
+        /// Checks whether the command can be executed
         /// </summary>
-        /// <returns>Prawda, jeśli komenda może zostać wykonana, w innym przypadku fałsz</returns>
+        /// <returns>True if the command can be executed, otherwise false</returns>
         public virtual bool CanExecute()
         {
             return true;
         }
 
         /// <summary>
-        /// Uruchamia zapytanie. 
+        /// Runs the query.
         /// </summary>
         protected virtual TResult Query<TResult>(Query<TResult> queryToExecute)
         {
@@ -57,26 +57,26 @@
         }
 
         /// <summary>
-        /// Dodawanie własnych zależności do komendy.
+        /// Adding custom dependencies to the command.
         /// </summary>
-        /// <param name="container">Kontener IoC</param>
+        /// <param name="container">IoC container</param>
         public abstract void SetupDependencies(IWindsorContainer container);
     }
 
     /// <summary>
-    /// Interfejs, który mówi, że do CommandRunnera należy wstrzyknąć sesje NHibernate
+    /// An interface that says you should inject NHibernate to CommandRunner
     /// </summary>
     public interface INeedSession
     {
         /// <summary>
-        /// Sesja NHibernate.
+        /// NHibernate session.
         /// </summary>
         ISession Session { get; set; }
     }
 
     /// <summary>
-    /// Interfejs, który mówi, że CommandRanner powinien być uruchomiony w transakcji
-    /// Jeśli podczas 'Execute' nastąpi wyjątek, transakcja jest wycofywana.
+    /// An interface that says that CommandRanner should be running in a transaction
+    /// If an exception occurs during 'Execute', the transaction is rolled back.
     /// </summary>
     public interface INeedAutocommitTransaction { }
 }

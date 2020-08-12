@@ -13,11 +13,11 @@
     <td>
         @if (@Model.OrderStatus == OrderStatus.Open)
         {
-            @Html.ActionLink("Biorę", "AssignToWaiterOrder", "RestaurantWorker", new { orderId = @Model.OrderId },  new { @class = "btn btn-info btn-xs" })
+            @Html.ActionLink("I take", "AssignToWaiterOrder", "RestaurantWorker", new { orderId = @Model.OrderId },  new { @class = "btn btn-info btn-xs" })
         }
         else if (@Model.OrderStatus == OrderStatus.Closed)
         {
-            @Html.ActionLink("Zapłacone", "MarkAsPaidOrder", "RestaurantWorker", new { orderId = @Model.OrderId }, new { @class = "btn btn-info btn-xs" })
+            @Html.ActionLink("Paid", "MarkAsPaidOrder", "RestaurantWorker", new { orderId = @Model.OrderId }, new { @class = "btn btn-info btn-xs" })
         }
 
     </td>
@@ -25,16 +25,16 @@
 <tr id="@Model.OrderId" class="">
     <td colspan="7">
         <fieldset>
-            <legend>Elementy zamówienia</legend>
+            <legend>Line items</legend>
             <table class="table table-condensed table-bordered">
                 <thead>
                     <tr>
                         <th>Status</th>
                         <th>Menu</th>
-                        <th>Kategoria</th>
-                        <th>Nazwa</th>
-                        <th>Ilość</th>
-                        <th>Cena</th>
+                        <th>Category</th>
+                        <th>Name</th>
+                        <th>Quantity</th>
+                        <th>Price</th>
                         <th></th>
                     </tr>
                 </thead>

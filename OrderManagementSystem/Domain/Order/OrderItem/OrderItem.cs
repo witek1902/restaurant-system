@@ -21,7 +21,7 @@
         public virtual Order Order { get; set; }
 
         /// <summary>
-        /// Ilość produktu
+        /// Quantity produktu
         /// </summary>
         public virtual int Quantity { get; set; }
 
@@ -32,34 +32,34 @@
     }
 
     /// <summary>
-    /// Statusy pozycji zamówienia
+    /// Status of the order item
     /// </summary>
     public enum OrderItemStatus
     {
         /// <summary>
-        /// Nowa pozycja na zamówieniu
+        /// New item on the order
         /// </summary>
-        [Display(Name="Nowa")]
+        [Display(Name= "New")]
         New = 1,
         /// <summary>
-        /// Pozycja potwierdzona
+        /// Position confirmed
         /// </summary>
-        [Display(Name="Potwierdzona")]
+        [Display(Name= "Confirmed")]
         Approved = 2,
         /// <summary>
-        /// Pozycja w przygotowaniu 'W kuchni'
+        /// Position in preparation 'In the kitchen'
         /// </summary>
-        [Display(Name = "W przygotowaniu w kuchni")]
+        [Display(Name = "In preparation in the kitchen")]
         InProgressInKitchen = 3,
         /// <summary>
-        /// Pozycja gotowa do podania
+        /// Position ready to be served
         /// </summary>
-        [Display(Name = "Gotowa do podania")]
+        [Display(Name = "Ready to serve")]
         Ready = 4,
         /// <summary>
-        /// Pozycja dostarczona do stolika
+        /// Item delivered to the table
         /// </summary>
-        [Display(Name="Dostarczona do stolika")]
+        [Display(Name= "Delivered to the table")]
         Delivered = 5
     }
 }

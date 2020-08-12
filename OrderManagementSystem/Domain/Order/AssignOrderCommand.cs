@@ -7,7 +7,7 @@
     using Infrastructure.Command;
 
     /// <summary>
-    /// Oznaczenie zamówienia jako 'Przypisane do kelnera'
+    /// Marking the order as 'Assigned to the waiter'
     /// </summary>
     public class AssignOrderCommand : Command<Order>, INeedSession, INeedAutocommitTransaction
     {
@@ -22,9 +22,9 @@
         }
 
         /// <summary>
-        /// Wywołuje komendę i zwraca wskazany typ
+        /// Invokes the command and returns the specified type
         /// </summary>
-        /// <returns>Rezultat</returns>
+        /// <returns>Result</returns>
         public override Order Execute()
         {
             var order = Session.Load<Order>(orderId);
@@ -39,16 +39,16 @@
         }
 
         /// <summary>
-        /// Dodawanie własnych zależności do komendy.
+        /// Adding custom dependencies to the command.
         /// </summary>
-        /// <param name="container">Kontener IoC</param>
+        /// <param name="container">IoC container</param>
         public override void SetupDependencies(IWindsorContainer container)
         {
             orderStatusService = container.Resolve<IOrderStatusService>();
         }
 
         /// <summary>
-        /// Sesja NHibernate.
+        /// NHibernate session.
         /// </summary>
         public ISession Session { get; set; }
     }

@@ -1,11 +1,11 @@
 ﻿@model IEnumerable<OrderManagementSystem.Models.Order.OrderForm>
 
 @{
-    ViewBag.Title = "Historia obsłużonych zamówień";
+    ViewBag.Title = "The history of orders handled";
     Layout = "~/Views/Shared/_RestaurantWorkerLayout.cshtml";
 }
 
-<h2 class="margin-form">Historia obsłużonych zamówień</h2>
+<h2 class="margin-form">The history of orders handled</h2>
 <hr />
 <div class="col-md-12">
     @if (Model.Any())
@@ -72,7 +72,7 @@
     }
     else
     {
-        <p class="alert alert-info">Nie obsłużyłeś jeszcze żadnego zamówienia :)</p>
+        <p class="alert alert-info">You have not yet processed any orders:)</p>
     }
 </div>
 

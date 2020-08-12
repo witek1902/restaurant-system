@@ -9,7 +9,7 @@
     using Models.Order;
 
     /// <summary>
-    /// Komenda do składania zamówienia (po wstępnym wyborze produktów)
+    /// Command for ordering (after the initial selection of products)
     /// </summary>
     public class PlaceOrderCommand : Command<Guid>, INeedSession, INeedAutocommitTransaction
     {
@@ -22,9 +22,9 @@
         }
 
         /// <summary>
-        /// Wywołuje komendę i zwraca wskazany typ
+        /// Invokes the command and returns the specified type
         /// </summary>
-        /// <returns>Rezultat</returns>
+        /// <returns>Result</returns>
         public override Guid Execute()
         {
             var order = Session.Load<Order>(orderForm.OrderId);
@@ -41,16 +41,16 @@
         }
 
         /// <summary>
-        /// Dodawanie własnych zależności do komendy.
+        /// Adding custom dependencies to the command.
         /// </summary>
-        /// <param name="container">Kontener IoC</param>
+        /// <param name="container">IoC container</param>
         public override void SetupDependencies(IWindsorContainer container)
         {
             orderItemStatusService = container.Resolve<IOrderItemStatusService>();
         }
 
         /// <summary>
-        /// Sesja NHibernate.
+        /// NHibernate session.
         /// </summary>
         public ISession Session { get; set; }
     }

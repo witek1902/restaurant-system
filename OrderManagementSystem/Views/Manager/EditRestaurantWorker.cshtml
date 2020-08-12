@@ -2,17 +2,17 @@
 @model OrderManagementSystem.Models.Restaurant.RestaurantWorkerForm
 
 @{
-    ViewBag.Title = "Edytuj pracownika restauracji";
+    ViewBag.Title = "Edit restaurant employee";
     Layout = "~/Views/Shared/_RestaurantLayout.cshtml";
 }
 @if (Model.Position == Position.Manager)
 {
-    <h2 class="margin-form">Edytuj managera restauracji</h2>
+<h2 class="margin-form">Edit restaurant manager</h2>
 
 }
 else
 {
-    <h2 class="margin-form">Edytuj pracownika restauracji</h2>
+    <h2 class="margin-form">Edit restaurant employee</h2>
 }
 
 @using (Html.BeginForm("SaveRestaurantWorker", "Manager"))
@@ -29,7 +29,7 @@ else
                 <div class="form-group col-md-6">
                     @Html.LabelFor(model => model.Position, htmlAttributes: new { @class = "control-label col-md-2" })
                     <div class="col-md-10">
-                        @Html.EnumDropDownListFor(model => model.Position, "Wybierz pozycję", new { @class = "form-control" })
+                        @Html.EnumDropDownListFor(model => model.Position, "Select position", new { @class = "form-control" })
                         @Html.ValidationMessageFor(model => model.Position, "", new { @class = "text-danger" })
                     </div>
                 </div>
@@ -73,7 +73,7 @@ else
 
             <div class="form-group">
                 <div class="col-md-offset-5 col-md-10">
-                    <input type="submit" value="Zapisz zmiany" class="btn btn-success" />
+                    <input type="submit" value="Save changes" class="btn btn-success" />
                 </div>
             </div>
         </div>

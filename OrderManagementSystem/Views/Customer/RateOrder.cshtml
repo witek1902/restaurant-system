@@ -1,7 +1,7 @@
 ﻿@model OrderManagementSystem.Models.Order.RateOrderForm
 
 @{
-    ViewBag.Title = "Oceń swoje zamówienie";
+    ViewBag.Title = "Rate your order";
     Layout = "~/Views/Shared/_CustomerLayout.cshtml";
 }
 
@@ -10,7 +10,7 @@
     @Html.AntiForgeryToken()
     
     <div class="form-horizontal">
-        <h2 class="margin-form">Oceń swoje zamówienie</h2>
+        <h2 class="margin-form">Rate your order</h2>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         @Html.HiddenFor(model => model.OrderId, htmlAttributes: new { @class = "control-label col-md-2" })
@@ -19,7 +19,7 @@
         <div class="form-group">
             <div class="col-md-offset-3 col-md-10">
                 <input id="input-id" class="rating" data-show-clear="false" data-show-caption="false" data-step="1" data-max="10" data-stars="10" data-min="1">
-                <p><b>1 gwiazdka </b>- bardzo źle; <b>5 gwiazdek</b> - średnio; <b>10 gwiazdek</b> - znakomicie!</p>
+                <p><b>1 Christmas </b>-very bad; <b>5 stars</b> - medium; <b>10 stars</b> - famously!</p>
             </div>
         </div>
 
@@ -35,7 +35,7 @@
 
         <div class="form-group">
             <div class="col-md-offset-5 col-md-10">
-                <input type="submit" value="Wyślij ocenę" class="btn btn-success" />
+                <input type="submit" value="Send a grade" class="btn btn-success" />
             </div>
         </div>
     </div>

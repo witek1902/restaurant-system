@@ -1,7 +1,7 @@
 ﻿@model OrderManagementSystem.Models.Restaurant.RestaurantSearchViewModel
 
 @{
-    ViewBag.Title = "Wyszukiwanie restauracji";
+    ViewBag.Title = "Search for restaurants";
     Layout = "~/Views/Shared/_CustomerLayout.cshtml";
 }
 
@@ -9,11 +9,11 @@
     @using (Html.BeginForm())
     {
         @Html.AntiForgeryToken()
-        <h2 class="margin-form">Wyszukiwanie restauracji</h2>
+        <h2 class="margin-form">Search for restaurants</h2>
         <hr/>
         <div class="row">
                 <div class="input-group">
-                    @Html.EditorFor(model => model.Criteria.RestaurantNameOrCode, new { htmlAttributes = new { @class = "form-control", @id="searchRestaurant", @placeholder = "Wpisz nazwę lub unikalny kod restauracji..." } })
+                    @Html.EditorFor(model => model.Criteria.RestaurantNameOrCode, new { htmlAttributes = new { @class = "form-control", @id="searchRestaurant", @placeholder = "Enter a name or A unique restaurant code " } })
                     <span class="input-group-btn">
                         <button type="submit" class="btn btn-default">
                             <span class="glyphicon glyphicon-search"></span>
@@ -28,7 +28,7 @@
         <div class="col-md-12 margin-form">
             @if (!Model.Results.Any())
             {
-            <div class="alert alert-info">Brak wyników.</div>
+            <div class="alert alert-info">No results.</div>
             }
             else
             {
@@ -48,7 +48,7 @@
                                 </p>
                             </td>
                             <td>
-                                <a style="text-decoration: none" class="btn-success btn btn-sm " href="@Url.Action("PlaceOrder", "Customer", new {restaurantId = @item.RestaurantId})"><span class="glyphicon glyphicon-ok"></span> Wybierz</a>
+                                <a style="text-decoration: none" class="btn-success btn btn-sm " href="@Url.Action("PlaceOrder", "Customer", new {restaurantId = @item.RestaurantId})"><span class="glyphicon glyphicon-ok"></span> Select</a>
                             </td>
                         </tr>
                     }
@@ -63,7 +63,7 @@
         <img src="~/Content/icons/logo-color-text.png" class="img-responsive logoInJumbotron" alt="Food Portal"/>
     </div>
     <div class="col-md-offset-1 col-md-5">
-        <p class="lead"><b>Witaj kliencie,</b><br/><br/> wygląda na to, że masz ochotę zjeść coś dobrego lub napić się piwa. <br/><br /> Wybierz restaurację, w której aktualnie przebywasz.</p>
-        <p>@Html.ActionLink("Kliknij, aby dowiedzieć się więcej.", "Help", "Home", new { area = "" }, new { @class = "btn btn-info pull-right" })</p>    
+        <p class="lead"><b>Hello customer,</b><br/><br/> it looks like you want to eat something good or have a beer.<br/><br /> Choose the restaurant where you are currently located.</p>
+        <p>@Html.ActionLink("Click to learn more.", "Help", "Home", new { area = "" }, new { @class = "btn btn-info pull-right" })</p>    
     </div>
 </div>

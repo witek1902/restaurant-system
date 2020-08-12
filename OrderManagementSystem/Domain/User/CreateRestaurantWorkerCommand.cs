@@ -7,7 +7,7 @@
     using Models.Restaurant;
 
     /// <summary>
-    /// Tworzenie pracownika restauracji
+    /// Creating a restaurant employee
     /// </summary>
     public class CreateRestaurantWorkerCommand : Command<Guid>, INeedSession, INeedAutocommitTransaction
     {
@@ -18,11 +18,11 @@
         {
             this.workerForm = workerForm;
         }
-        
+
         /// <summary>
-        /// Wywołuje komendę i zwraca wskazany typ
+        /// Invokes the command and returns the specified type
         /// </summary>
-        /// <returns>Rezultat</returns>
+        /// <returns>Result</returns>
         public override Guid Execute()
         {
             var worker = workerBuilder.ConstructRestaurantWorkerEntity(workerForm);
@@ -32,16 +32,16 @@
         }
 
         /// <summary>
-        /// Dodawanie własnych zależności do komendy.
+        /// Adding custom dependencies to the command.
         /// </summary>
-        /// <param name="container">Kontener IoC</param>
+        /// <param name="container">IoC container</param>
         public override void SetupDependencies(IWindsorContainer container)
         {
             this.workerBuilder = container.Resolve<RestaurantWorkerBuilder>();
         }
 
         /// <summary>
-        /// Sesja NHibernate.
+        /// NHibernate session.
         /// </summary>
         public ISession Session { get; set; }
     }

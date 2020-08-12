@@ -11,7 +11,7 @@
     using System.Web.Mvc;
 
     /// <summary>
-    /// Zarządzanie restauracją przez Managera
+    /// Restaurant management by the Manager
     /// </summary>
     [Authorize(Roles = "managers")]
     public class ManagerController : Infrastructure.Web.ControllerBase
@@ -19,7 +19,7 @@
         private Guid? restaurantId;
 
         /// <summary>
-        /// Ogólny widok panelu do zarządzania restauracją
+        /// A general view of the restaurant management panel
         /// </summary>
         /// <returns></returns>
         public ActionResult Index()
@@ -32,9 +32,9 @@
         }
 
         /// <summary>
-        /// Zwraca formularz do edycji danych restauracji
+        /// Returns the form for editing restaurant data
         /// </summary>
-        /// <returns>Uzupełniony formularz edycji</returns>
+        /// <returns>A completed form of editing</returns>
         [HttpGet]
         public ActionResult EditRestaurant()
         {
@@ -45,7 +45,7 @@
         }
 
         /// <summary>
-        /// Zapisujemy zmiany w restauracji
+        /// We save changes in the restaurant
         /// </summary>
         /// <returns></returns>
         [HttpPost]
@@ -63,7 +63,7 @@
         }
 
         /// <summary>
-        /// Dodawanie pracownika restauracji
+        /// Adding a restaurant employee
         /// </summary>
         /// <returns></returns>
         [HttpGet]
@@ -73,9 +73,9 @@
         }
 
         /// <summary>
-        /// Zapisywanie nowego pracownika
+        /// Saving a new employee
         /// </summary>
-        /// <param name="workerForm">Formularz pracownika</param>
+        /// <param name="workerForm">Employee form</param>
         /// <returns></returns>
         [HttpPost]
         public ActionResult AddRestaurantWorker(RestaurantWorkerForm workerForm)
@@ -98,7 +98,7 @@
         }
 
         /// <summary>
-        /// Edytowanie pracownika restauracji
+        /// Editing a restaurant employee
         /// </summary>
         /// <param name="userId">UserId</param>
         /// <returns></returns>
@@ -111,9 +111,9 @@
         }
 
         /// <summary>
-        /// Zapisanie informacji restauracji
+        /// Save restaurant information
         /// </summary>
-        /// <param name="workerForm">Formularz pracownika restauracji</param>
+        /// <param name="workerForm">Form of a restaurant employee</param>
         /// <returns></returns>
         [HttpPost]
         public ActionResult SaveRestaurantWorker(RestaurantWorkerForm workerForm)
@@ -131,7 +131,7 @@
         }
 
         /// <summary>
-        /// Widok dodawania menu w restauracji
+        /// A view of adding a menu in a restaurant
         /// </summary>
         /// <returns></returns>
         [HttpGet]
@@ -141,7 +141,7 @@
         }
 
         /// <summary>
-        /// Dodanie nowego menu
+        /// Adding a new menu
         /// </summary>
         /// <param name="menuForm"></param>
         /// <returns></returns>
@@ -159,7 +159,7 @@
         }
 
         /// <summary>
-        /// Widok edycji menu
+        /// Edit menu view
         /// </summary>
         /// <param name="menuId"></param>
         /// <returns></returns>
@@ -172,7 +172,7 @@
         }
 
         /// <summary>
-        /// Zapisanie zmian w menu
+        /// Save changes in the menu
         /// </summary>
         /// <param name="menuForm"></param>
         /// <returns></returns>
@@ -187,7 +187,7 @@
         }
 
         /// <summary>
-        /// Widok dodania nowego produktu
+        /// View of adding a new product
         /// </summary>
         /// <returns></returns>
         [HttpGet]
@@ -203,7 +203,7 @@
         }
 
         /// <summary>
-        /// Dodanie nowego produktu
+        /// Adding a new product
         /// </summary>
         /// <param name="productForm"></param>
         /// <returns></returns>
@@ -219,16 +219,16 @@
                 InitializeInfo();
                 productForm.ProductCategories = Query(new GetProductCategoriesByRestaurantIdQuery(restaurantId.Value));
                 productForm.Menus = Query(new GetMenusByRestaurantIdQuery(restaurantId.Value));
-                ViewBag.Message = "Wystąpił problem podczas dodawania nowego produktu. Spróbuj ponownie.";
+                ViewBag.Message = "There was a problem adding a new product. try again.";
 
                 return View(productForm);
             }
         }
 
         /// <summary>
-        /// Widok do edycji produktu
+        ///  A view to edit the product
         /// </summary>
-        /// <param name="productId">Id produktu</param>
+        /// <param name="productId">Product ID</param>
         /// <returns></returns>
         [HttpGet]
         public ActionResult EditProduct(Guid productId)
@@ -242,7 +242,7 @@
         }
 
         /// <summary>
-        /// Zapisanie zmian na produkcie
+        /// Saving changes on the product
         /// </summary>
         /// <param name="productForm"></param>
         /// <returns></returns>
@@ -263,9 +263,9 @@
         }
 
         /// <summary>
-        /// Deaktywowanie produktu
+        /// Deactivating the product
         /// </summary>
-        /// <param name="productId">Id produktu</param>
+        /// <param name="productId">Product ID</param>
         /// <returns></returns>
         [HttpGet]
         public ActionResult DeactiveProduct(Guid productId)
@@ -277,9 +277,9 @@
         }
 
         /// <summary>
-        /// Ponowne aktywowanie produktu
+        /// Re-activating the product
         /// </summary>
-        /// <param name="productId">Id produktu</param>
+        /// <param name="productId">Product ID</param>
         /// <returns></returns>
         [HttpGet]
         public ActionResult ActiveProduct(Guid productId)
@@ -291,7 +291,7 @@
         }
 
         /// <summary>
-        /// Widok dodania nowej kategorii produktu
+        /// A view of adding a new product category
         /// </summary>
         /// <returns></returns>
         [HttpGet]
@@ -302,9 +302,9 @@
         }
 
         /// <summary>
-        /// Dodanie nowej kategorii produktu
+        /// Adding a new product category
         /// </summary>
-        /// <param name="productCategoryForm">Formularz kategorii produktu</param>
+        /// <param name="productCategoryForm">Product category form</param>
         /// <returns></returns>
         [HttpPost]
         public ActionResult AddProductCategory(ProductCategoryForm productCategoryForm)
@@ -320,9 +320,9 @@
         }
 
         /// <summary>
-        /// Widok do edycji kategorii produktu
+        /// A view to editing the product category
         /// </summary>
-        /// <param name="productCategoryId">Id kategorii produktu</param>
+        /// <param name="productCategoryId">Product category ID</param>
         /// <returns></returns>
         [HttpGet]
         public ActionResult EditProductCategory(Guid productCategoryId)
@@ -333,9 +333,9 @@
         }
 
         /// <summary>
-        /// Zapisanie zmian w kategorii produktu
+        /// Saving changes in the product category
         /// </summary>
-        /// <param name="productCategoryForm">Formularz kategorii produktu</param>
+        /// <param name="productCategoryForm">Product category form</param>
         /// <returns></returns>
         [HttpPost]
         public ActionResult SaveProductCategory(ProductCategoryForm productCategoryForm)
@@ -348,7 +348,7 @@
         }
 
         /// <summary>
-        /// Historia zamówień w restauracji
+        /// The History of Orders in the restaurant
         /// </summary>
         /// <returns></returns>
         [HttpGet]

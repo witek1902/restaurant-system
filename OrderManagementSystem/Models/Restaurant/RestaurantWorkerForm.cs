@@ -5,30 +5,30 @@
     using System;
 
     /// <summary>
-    /// Formularz pracownika restuaracji
+    /// Form of a restaurant worker
     /// </summary>
     public class RestaurantWorkerForm
     {
         /// <summary>
-        /// Id pracownika restauracji
+        /// Id of a restaurant employee
         /// </summary>
         public Guid? RestaurantWorkerId { get; set; }
 
-        [Display(Name="Aktywny")]
+        [Display(Name= "Active")]
         public bool Active { get; set; }
 
-        [Display(Name = "Stanowisko")]
+        [Display(Name = "Position")]
         public Position Position { get; set; }
 
-        [Display(Name="Pseudonim")]
+        [Display(Name="Pseudonym")]
         public string Nick { get; set; }
 
         [Required]
-        [Display(Name = "Imię pracownika")]
+        [Display(Name = "Name of the employee")]
         public string Firstname { get; set; }
 
         [Required]
-        [Display(Name = "Nazwisko pracownika")]
+        [Display(Name = "Name of the employee")]
         public string Lastname { get; set; }
 
         public int AppUserId { get; set; }
@@ -36,23 +36,23 @@
         [Display(Name="Login")]
         public string Login { get; set; }
 
-        [Display(Name="Hasło")]
+        [Display(Name="Password ")]
         public string Password { get; set; }
 
         /// <summary>
-        /// Id restauracji
+        /// Id of the restaurant
         /// </summary>
         public Guid? RestaurantId { get; set; }
 
-        [Display(Name = "Nazwa restauracji")]
+        [Display(Name = "Name of the restaurant")]
         public string RestaurantName { get; set; }
 
         public RestaurantWorkerForm() { }
 
         /// <summary>
-        /// Rekonstrukcja formularza z danych przesłanych przez użytkownika
+        /// Reconstruction of the form from data sent by the user
         /// </summary>
-        /// <param name="receivedForm">Wpisane dane</param>
+        /// <param name="receivedForm">Entered data</param>
         public RestaurantWorkerForm(RestaurantWorkerForm receivedForm)
         {
             this.RestaurantWorkerId = receivedForm.RestaurantWorkerId;

@@ -1,11 +1,11 @@
 ﻿@model IEnumerable<OrderManagementSystem.Models.Order.OrderForm>
 
 @{
-    ViewBag.Title = "Historia zamówień";
+    ViewBag.Title = "The History of Orders";
     Layout = "~/Views/Shared/_CustomerLayout.cshtml";
 }
 
-<h2 class="margin-form">Historia zamówień</h2>
+<h2 class="margin-form">The History of Orders</h2>
 <hr/>
 <div class="col-md-12">
     @if (Model.Any())
@@ -79,7 +79,7 @@
                         @Html.DisplayFor(modelItem => item.TotalPrice) zł
                     </td>
                     <td>
-                        @Html.ActionLink("Szczegóły", "OrderDetails", new { orderId = item.OrderId })
+                        @Html.ActionLink("Details", "OrderDetails", new { orderId = item.OrderId })
                     </td>
                 </tr>
             }
@@ -87,6 +87,6 @@
     }
     else
     {
-        <p class="alert alert-info">Nie złożyłeś jeszcze żadnego zamówienia :)</p>
+        <p class="alert alert-info">You have not placed any orders yet :)</p>
     }
 </div>

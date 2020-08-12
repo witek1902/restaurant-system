@@ -6,13 +6,13 @@
     public interface ISecurityProvider
     {
         /// <summary>
-        /// Sprawdza czy aktualny użytkownik jest zautoryzowany
+        /// Checks whether the current user is authorized
         /// </summary>
-        /// <returns>Prawda, jeśli aktualny użytkownik jest zautoryzowany</returns>
+        /// <returns>True, if the current user is authorized</returns>
         bool IsUserAuthenticated();
 
         /// <summary>
-        /// Dane aktualnego użytkownika
+        /// Data of the current user
         /// </summary>
         IAppUser CurrentUser { get; }
 
@@ -22,32 +22,32 @@
         int CurrentUserId { get; }
 
         /// <summary>
-        /// Nazwa
+        /// Name
         /// </summary>
         string CurrentUserName { get; }
 
         /// <summary>
-        /// Sprawdza czy użytkownik posiada przekazaną rolę
+        ///Checks whether the user has a delegated role
         /// </summary>
         bool IsUserInRole(string role);
 
         /// <summary>
-        /// Zwraca wszystkie role użytkownika
+        /// Returns all user roles
         /// </summary>
         /// <returns></returns>
         string[] GetRolesForUser();
 
         /// <summary>
-        /// Logowanie za pomocą nazwy użytkownika i hasła
+        /// Log in with username and password
         /// </summary>
         /// <param name="userName">Login</param>
-        /// <param name="password">Hasło</param>
-        /// <param name="persistSecurityCookie">Czy przechowywać ciasteczka</param>
-        /// <returns>Prawda, jeśli OK</returns>
+        /// <param name="password">Password </param>
+        /// <param name="persistSecurityCookie">Do you store cookies</param>
+        /// <returns>True, if OK</returns>
         bool Login(string userName, string password, bool persistSecurityCookie = false);
 
         /// <summary>
-        /// Wylogowywanie użytkownika
+        /// User logout
         /// </summary>
         void Logout();
     }

@@ -8,7 +8,7 @@
     using Infrastructure.Query;
 
     /// <summary>
-    /// Pobranie wszystkich kategorii produktu dla danej restauracji
+    /// Downloading all product categories for a given restaurant
     /// </summary>
     public class GetProductCategoriesByRestaurantIdQuery : Query<List<ProductCategoryForm>>
     {
@@ -20,10 +20,10 @@
         }
 
         /// <summary>
-        /// Metoda do konstruowania i wywoływania zapytania za pomocą sesji NHibernate
+        /// A method for constructing and calling a query using the NHibernate session
         /// </summary>
-        /// <param name="session">Sesja NHibernate</param>
-        public override List<ProductCategoryForm> Execute(ISession session)
+        /// <param name="session">NHibernate session</param>
+    public override List<ProductCategoryForm> Execute(ISession session)
         {
             var productCategories = session
                 .CreateQuery("from ProductCategory pc where pc.Restaurant.Id = :restaurantId")

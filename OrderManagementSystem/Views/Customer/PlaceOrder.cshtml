@@ -2,7 +2,7 @@
 @model OrderManagementSystem.Models.Order.OrderForm
 
 @{
-    ViewBag.Title = "Nowe zamówienie";
+    ViewBag.Title = "New order";
     Layout = "~/Views/Shared/_CustomerLayout.cshtml";
 }
 
@@ -13,10 +13,10 @@
 
     <div class="form-horizontal col-md-12">
         <h2 class="margin-form">
-            Twoje aktualne zamówienie
+            Your current order
             @if (@Model.OrderItems == null || (@Model.OrderItems.All(x => x.OrderItemStatus == OrderItemStatus.New)))
             {
-                <input type="button" id="deleteOrder" class="btn btn-danger btn-xs pull-right" value="Rozmyśliłem się, rezygnuję z zamówienia." />
+                <input type="button" id="deleteOrder" class="btn btn-danger btn-xs pull-right" value="I've changed my mind, giving up my order." />
             }
         </h2>
         <hr/>
@@ -57,7 +57,7 @@
 
         <div class="form-group">
             <div class="col-md-offset-4 col-md-10">
-                <input type="submit" value="To wszystko, dziękuję!" class="btn btn-success btn-lg"/>
+                <input type="submit" value="That is all, thank you!" class="btn btn-success btn-lg"/>
             </div>
         </div>
     </div>

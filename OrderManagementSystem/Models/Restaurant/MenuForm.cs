@@ -6,7 +6,7 @@
     using System;
 
     /// <summary>
-    /// Formularz do tworzenia nowego Menu
+    /// Form for creating a new Menu
     /// </summary>
     public class MenuForm
     {
@@ -16,19 +16,19 @@
         public Guid? MenuId { get; set; }
 
         /// <summary>
-        /// Id restauracji
+        /// Id of the restaurant
         /// </summary>
         public Guid? RestaurantId { get; set; }
 
         [Required]
-        [Display(Name="Nazwa menu")]
+        [Display(Name="Name menu")]
         public string MenuName { get; set; }
 
         [Required]
-        [Display(Name = "Skrócony kod menu")]
+        [Display(Name = "Brief Code menu")]
         public string MenuCode { get; set; }
 
-        [Display(Name="Aktywne")]
+        [Display(Name="Active")]
         public bool Active { get; set; }
 
         public List<ProductForm> Products { get; set; }

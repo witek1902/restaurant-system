@@ -6,7 +6,7 @@
     using Infrastructure.Command;
 
     /// <summary>
-    /// Aktualizacja Menu
+    /// Menu update
     /// </summary>
     public class UpdateMenuCommand : Command<Menu>, INeedSession, INeedAutocommitTransaction
     {
@@ -17,11 +17,11 @@
         {
             this.menuForm = menuForm;
         }
-        
+
         /// <summary>
-        /// Wywołuje komendę i zwraca wskazany typ
+        /// Invokes the command and returns the specified type
         /// </summary>
-        /// <returns>Rezultat</returns>
+        /// <returns>Result</returns>
         public override Menu Execute()
         {
             var menu = Session.Load<Menu>(menuForm.MenuId);
@@ -34,16 +34,16 @@
         }
 
         /// <summary>
-        /// Dodawanie własnych zależności do komendy.
+        /// Adding custom dependencies to the command.
         /// </summary>
-        /// <param name="container">Kontener IoC</param>
+        /// <param name="container">IoC container</param>
         public override void SetupDependencies(IWindsorContainer container)
         {
             menuBuilder = container.Resolve<MenuBuilder>();
         }
 
         /// <summary>
-        /// Sesja NHibernate.
+        /// NHibernate session.
         /// </summary>
         public ISession Session { get; set; }
     }

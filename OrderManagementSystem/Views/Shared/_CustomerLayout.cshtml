@@ -13,7 +13,7 @@
     <div class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
-                <a class="navbar-brand" href="@Url.Action("Index", "Home")"><img src="~/Content/icons/navbar-logo-white-text.png" alt="Food Portal" /></a>
+                <a class="navbar-brand" style="padding:0px 0" href="@Url.Action("Index", "Home")"><img style="height: 57px; "src="~/Content/icons/navbar-logo-white-text.png" alt="Food Portal" /></a>
 
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                     <span class="icon-bar"></span>
@@ -23,11 +23,11 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Wyszukiwanie restauracji", "Index", "Customer")</li>
-                    <li>@Html.ActionLink("Historia zamówień", "OrderHistory", "Customer")</li>
-                    <li>@Html.ActionLink("Moje konto", "EditCustomer", "Customer")</li>
-                    <li>@Html.ActionLink("Pomoc", "Help", "Home")</li>
-                    <li>@Html.ActionLink("Wyloguj", "Logout", "Account")</li>
+                    <li>@Html.ActionLink("Search for restaurants", "Index", "Customer")</li>
+                    <li>@Html.ActionLink("The History of Orders", "OrderHistory", "Customer")</li>
+                    <li>@Html.ActionLink("My account", "EditCustomer", "Customer")</li>
+                    <li>@Html.ActionLink("Help", "Help", "Home")</li>
+                    <li>@Html.ActionLink("Log out", "Logout", "Account")</li>
                 </ul>
             </div>
         </div>

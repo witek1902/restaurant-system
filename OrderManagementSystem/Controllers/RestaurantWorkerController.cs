@@ -11,7 +11,7 @@
     using System.Web.Mvc;
 
     /// <summary>
-    /// Kontroler dla pracownika restauracji
+    /// Controller for a restaurant employee
     /// </summary>
     [Authorize(Roles="waiters,cooks")]
     public class RestaurantWorkerController : Infrastructure.Web.ControllerBase
@@ -21,7 +21,7 @@
         private Guid? restaurantWorkerId;
 
         /// <summary>
-        /// Pokaż zamówienia do obsłużenia
+        /// Show orders to handle
         /// </summary>
         /// <returns></returns>
         public ActionResult Index()
@@ -46,7 +46,7 @@
         }
 
         /// <summary>
-        /// Pobranie historii obsłużonych zamówień dla pracownika restauracji
+        /// Downloading the history of orders handled for a restaurant employee
         /// </summary>
         /// <returns></returns>
         [HttpGet]
@@ -70,9 +70,9 @@
         }
 
         /// <summary>
-        /// Zamówienie zostaje przypisane do kelnera
+        /// The order is assigned to the waiter
         /// </summary>
-        /// <param name="orderId">Id zamówienia</param>
+        /// <param name="orderId">Order Id</param>
         /// <returns></returns>
         public ActionResult AssignToWaiterOrder(Guid orderId)
         {
@@ -88,7 +88,7 @@
         }
 
         /// <summary>
-        /// Element zamówienia zostaje oznaczony jako 'Dostarczony do stolika'
+        /// The line item is marked as 'Delivered to the table'
         /// </summary>
         /// <param name="orderItemId"></param>
         /// <returns></returns>
@@ -106,7 +106,7 @@
         }
 
         /// <summary>
-        /// Zamówienie zostaje oznaczone jako 'Opłacone'
+        /// The order is marked as 'Paid'
         /// </summary>
         /// <param name="orderId"></param>
         /// <returns></returns>
@@ -124,7 +124,7 @@
         }
 
         /// <summary>
-        /// Kucharz oznacza element zamówienia jako 'W przygotowaniu w kuchni'
+        /// Cook means the line item as 'In preparation in the kitchen'
         /// </summary>
         /// <param name="orderItemId"></param>
         /// <returns></returns>
@@ -142,7 +142,7 @@
         }
 
         /// <summary>
-        /// Kucharz oznacza element zamówienia jako 'Gotowy do wydania'
+        /// Cook means the line item is 'Ready to release'
         /// </summary>
         /// <param name="orderItemId"></param>
         /// <returns></returns>
@@ -177,31 +177,31 @@
     }
 
     /// <summary>
-    /// Stanowiska pracowników w restauracji (bez Managera)
+    /// Staff positions in the restaurant(without the Manager)
     /// </summary>
     public enum RestaurantWorkerEnum
     {
         /// <summary>
-        /// Kelner
+        /// Waiter
         /// </summary>
         Waiter,
         /// <summary>
-        /// Kucharz
+        /// Cook
         /// </summary>
         Cook
     }
 
     /// <summary>
-    /// Typ zamówienia
+    /// Order type
     /// </summary>
     public enum OrderTypeEnum
     {
         /// <summary>
-        /// Nowe
+        /// new
         /// </summary>
         New,
         /// <summary>
-        /// W trakcie realizacji
+        ///  In progress
         /// </summary>
         InProgress
     }

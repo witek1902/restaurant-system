@@ -4,16 +4,16 @@
 <input hidden="hidden" value="@Model.OrderId" id="actualOrderId"/>
 <div class="col-md-12">
     <fieldset>
-        <legend>Produkty na zamówieniu</legend>
+        <legend>Products on order</legend>
         <table id="orderItemsTable" class="table table-hover">
             <thead>
             <tr>
                 <th>Status</th>
-                <th>Kategoria</th>
-                <th>Nazwa produktu</th>
-                <th>Opis</th>
-                <th>Cena</th>
-                <th>Ilość</th>
+                <th>Category</th>
+                <th>Product name</th>
+                <th>Description</th>
+                <th>Price</th>
+                <th>Quantity</th>
                 <th></th>
             </tr>
             </thead>
@@ -39,7 +39,7 @@
                         <td>
                             @if (@item.OrderItemStatus == OrderItemStatus.New)
                             {
-                                <input type="button" id="@item.OrderItemId" class="btn btn-danger deleteOrderItem" value="Usuń"/>
+                                <input type="button" id="@item.OrderItemId" class="btn btn-danger deleteOrderItem" value="Delete"/>
                             }
                         </td>
                     </tr>

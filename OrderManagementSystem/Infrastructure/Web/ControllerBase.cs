@@ -8,14 +8,14 @@
     using Query;
 
     /// <summary>
-    /// Klasa bazowa dla kontrolerów
+    /// Base class for controllers
     /// </summary>
     [InitializeSimpleMembership]
     [Authorize]
     public abstract class ControllerBase : Controller
     {
         /// <summary>
-        /// Kontener Windsor wstrzykujacy zaleznosci
+        /// Windsor container injecting dependencies
         /// </summary>
         public IWindsorContainer Container { get; set; }
 
@@ -23,7 +23,7 @@
         protected CommandRunner CommandRunner => commandRunner ?? (commandRunner = Container.Resolve<CommandRunner>());
 
         /// <summary>
-        /// Uruchamiania CommandRunnera i zwraca typ generyczny
+        /// Launching CommandRunner and returns a generic type
         /// </summary>
         protected CommandExecutionResult<T> ExecuteCommand<T>(Command<T> cmd)
         {
@@ -31,7 +31,7 @@
         }
 
         /// <summary>
-        /// Uruchamia Query i zwraca generyczny rezultat
+        /// Runs Query and returns a generic result
         /// </summary>
         protected TResult Query<TResult>(Query<TResult> queryToRun)
         {
@@ -39,7 +39,7 @@
         }
 
         /// <summary>
-        /// Sesja NHibernate
+        /// NHibernate session
         /// </summary>
         protected ISession ProvideSession()
         {

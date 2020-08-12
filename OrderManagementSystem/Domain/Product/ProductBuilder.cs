@@ -6,22 +6,22 @@
     using Models.Product;
 
     /// <summary>
-    /// Builder do produktów i kategorii produktu
+    /// Builder for products and product categories
     /// </summary>
     public class ProductBuilder : BusinessService
     {
         /// <summary>
-        /// Tworzy nową instancje usługi, oczekuje wstrzyknięcia sesji NHibernate
+        /// Creates a new service instance, expects to inject an NHibernate session
         /// </summary>
         public ProductBuilder(ISession session) : base(session)
         {
         }
 
         /// <summary>
-        /// Tworzenie encji produktu z przesłanego formularza
+        /// Creating a product entity from the submitted form
         /// </summary>
-        /// <param name="productForm">Formularz wypełniony przez użytkownika</param>
-        /// <returns>Encja</returns>
+        /// <param name="productForm">The form filled out by the user</param>
+        /// <returns>entity</returns>
         public Product ConstructProductEntity(ProductForm productForm)
         {
             var product = new Product
@@ -56,9 +56,9 @@
 
             return product;
         }
-        
+
         /// <summary>
-        /// Aktualizacja danych produktu
+        /// Update product data
         /// </summary>
         /// <param name="product"></param>
         /// <param name="productForm"></param>
@@ -97,9 +97,9 @@
         }
 
         /// <summary>
-        /// Tworzenie kategorii produktu z formularza
+        /// Creating a product category from the form
         /// </summary>
-        /// <param name="productCategoryForm">Formularz kategorii produktu</param>
+        /// <param name="productCategoryForm">Product category form</param>
         /// <returns></returns>
         public ProductCategory ConstructProductCategoryEntity(ProductCategoryForm productCategoryForm)
         {
@@ -117,7 +117,7 @@
         }
 
         /// <summary>
-        /// Aktualizacja kategorii produktu
+        /// Product category update
         /// </summary>
         /// <param name="productCategory"></param>
         /// <param name="productCategoryForm"></param>

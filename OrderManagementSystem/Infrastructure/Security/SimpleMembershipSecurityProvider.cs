@@ -5,12 +5,12 @@
     using WebMatrix.WebData;
 
     /// <summary>
-    /// Implementacja ISecurityProcider za pomocą SimpleMembershipProvider
+    /// Implementation of ISecurityProcider using SimpleMembershipProvider
     /// </summary>
     public class SimpleMembershipSecurityProvider : ISecurityProvider
     {
         /// <summary>
-        /// Sprawdza czy aktualny użytkownik jest 
+        /// Checks whether the current user is
         /// </summary>
         /// <returns>true if current user is uthenticated</returns>
         public bool IsUserAuthenticated()

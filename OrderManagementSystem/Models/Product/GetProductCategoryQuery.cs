@@ -6,7 +6,7 @@
     using Infrastructure.Query;
 
     /// <summary>
-    /// Pobranie kategorii produktu po ID
+    /// Download product category by ID
     /// </summary>
     public class GetProductCategoryQuery : Query<ProductCategoryForm>
     {
@@ -18,14 +18,14 @@
         }
 
         /// <summary>
-        /// Metoda do konstruowania i wywoływania zapytania za pomocą sesji NHibernate
+        /// A method for constructing and calling a query using the NHibernate session
         /// </summary>
-        /// <param name="session">Sesja NHibernate</param>
+        /// <param name="session">NHibernate session</param>
         public override ProductCategoryForm Execute(ISession session)
         {
             var productCategory = session.Get<Domain.Product.ProductCategory>(productCategoryId);
             if(productCategory == null)
-                throw new TechnicalException(String.Format("Nie można znaleźć klienta o podanym id: {0}", productCategoryId));
+                throw new TechnicalException(String.Format("The client with the given id can not be found: {0}", productCategoryId));
 
             return ProductMapper.MapProductCategoryToForm(productCategory);
         }

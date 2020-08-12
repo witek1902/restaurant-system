@@ -8,80 +8,80 @@
     using Restaurant;
 
     /// <summary>
-    /// Formularz składania zamówienia
+    /// Order form
     /// </summary>
     public class OrderForm
     {
         /// <summary>
-        /// Id zamówienia
+        /// Order Id
         /// </summary>
         public Guid? OrderId { get; set; }
 
         /// <summary>
-        /// Id restauracji, w której zostało żłożone zamówienie
+        /// Id of the restaurant where the order was placed
         /// </summary>
         public Guid? RestaurantId { get; set; }
 
-        [Display(Name="Restauracja")]
+        [Display(Name= "Restaurant")]
         public string RestaurantName { get; set; }
 
-        [Display(Name="Data utworzenia")]
+        [Display(Name= "Date created")]
         public DateTime OrderCreationDate { get; set; }
 
-        [Display(Name = "Data zakończenia")]
+        [Display(Name = "end date")]
         public DateTime? OrderFinishedDate { get; set; }
 
-        [Display(Name = "Ocena")]
+        [Display(Name = "Rating")]
         public int? OrderRate { get; set; }
 
-        [Display(Name = "Ocena klienta")]
+        [Display(Name = "Customer rating")]
         public string OrderRateDetails { get; set; }
 
         [StringLength(200)]
         [DataType(DataType.MultilineText)]
-        [Display(Name = "Uwagi do zamówienia")]
+        [Display(Name = "Comments to order")]
         public string OrderComments { get; set; }
 
-        [Display(Name = "Aktualny status zamówienia")]
+        [Display(Name = "Current Status of the order")]
         public OrderStatus OrderStatus { get; set; }
 
         public Guid CustomerId { get; set; }
 
-        [Display(Name = "Klient")]
+        [Display(Name = "Customer")]
         public string CustomerFullName { get; set; }
 
         public Guid? WaiterId { get; set; }
 
-        [Display(Name = "Kelner")]
+        [Display(Name = "Waiter")]
         public string WaiterFirstName { get; set; }
 
         public Guid? CookId { get; set; }
 
-        [Display(Name = "Kucharz")]
+        [Display(Name = "Cook")]
         public string CookFirstName { get; set; }
 
-        [Display(Name="Numer stolika")]
+        [Display(Name="Table number")]
         public int? TableNumber { get; set; }
 
-        [Display(Name = "Suma")]
+        [Display(Name = "Sum")]
         public decimal TotalPrice
         {
             get { return OrderItems.Any() ? OrderItems.Select(x => x.ProductPrice * x.Quantity).Sum() : 0; }
         }
 
         /// <summary>
-        /// Aktualnie wybrane menu
+        /// Currently selected menu
         /// </summary>
         [Display(Name="Menu")]
         public MenuForm ActualSelectedMenuId { get; set; }
 
         /// <summary>
-        /// Menu, z których mogę wybierać produkty
+        /// Menu from which I can choose products
         /// </summary>
         public List<MenuForm> Menus { get; set; }
 
         /// <summary>
-        /// Pozycje zamówienia
+        /// Items of the order
         /// </summary>
         public List<OrderItemForm> OrderItems { get; set; }
 

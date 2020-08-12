@@ -14,14 +14,16 @@
         {
             if (container == null)
                 throw new ArgumentNullException(nameof(container));
-            
+
             this.container = container;
         }
 
         protected override IController GetControllerInstance(RequestContext context, Type controllerType)
         {
             if (controllerType == null)
+            {
                 throw new HttpException(404, $"The controller for path '{context.HttpContext.Request.Path}' could not be found or it does not implement IController.");
+            }
 
             return (IController)container.Resolve(controllerType);
         }

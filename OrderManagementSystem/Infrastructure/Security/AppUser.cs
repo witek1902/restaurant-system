@@ -3,7 +3,7 @@
     using System.ComponentModel.DataAnnotations;
 
     /// <summary>
-    /// Podstawowe informacje o użytkowniku
+    /// Basic information about the user
     /// </summary>
     public interface IAppUser
     {
@@ -16,13 +16,13 @@
         /// </summary>
         string Login { get; set; }
         /// <summary>
-        /// Hasło
+        /// Password 
         /// </summary>
         string Password { get; set; }
     }
 
     /// <summary>
-    /// Implementacja podstawowych informacji o użytkowniku
+    /// Implementation of basic information about the user
     /// </summary>
     public class AppUser : IAppUser
     {
@@ -33,21 +33,21 @@
         /// <summary>
         /// Login
         /// </summary>
-        [Display(Name="Nazwa użytkownika")]
+        [Display(Name="User Name")]
         public virtual string Login { get; set; }
         /// <summary>
-        /// Hasło
+        /// Password 
         /// </summary>
-        [Display(Name="Hasło")]
+        [Display(Name="Password")]
         public virtual string Password { get; set; }
 
         /// <summary>
-        /// Konstruktor dla NHibernate
+        ///Constructor for NHibernate
         /// </summary>
         public AppUser() { }
 
         /// <summary>
-        /// Tworzenie nowego użytkownika
+        /// Creating a new user
         /// </summary>
         public AppUser(int userId, string login)
         {

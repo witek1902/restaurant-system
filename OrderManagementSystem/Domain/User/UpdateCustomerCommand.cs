@@ -6,7 +6,7 @@
     using Models.Customer;
 
     /// <summary>
-    /// Komenda do aktualizacji klienta
+    /// The client update command
     /// </summary>
     public class UpdateCustomerCommand : Command<Customer>, INeedSession, INeedAutocommitTransaction
     {
@@ -19,9 +19,9 @@
         }
 
         /// <summary>
-        /// Wywołuje komendę i zwraca wskazany typ
+        /// Invokes the command and returns the specified type
         /// </summary>
-        /// <returns>Rezultat</returns>
+        /// <returns>Result</returns>
         public override Customer Execute()
         {
             var customer = Session.Load<Customer>(customerForm.CustomerId);
@@ -32,16 +32,16 @@
         }
 
         /// <summary>
-        /// Dodawanie własnych zależności do komendy.
+        /// Adding custom dependencies to the command.
         /// </summary>
-        /// <param name="container">Kontener IoC</param>
+        /// <param name="container">IoC container</param>
         public override void SetupDependencies(IWindsorContainer container)
         {
             customerBuilder = container.Resolve<CustomerBuilder>();
         }
 
         /// <summary>
-        /// Sesja NHibernate.
+        /// NHibernate session.
         /// </summary>
         public ISession Session { get; set; }
     }

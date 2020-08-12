@@ -7,78 +7,78 @@
     using Common;
 
     /// <summary>
-    /// Resturacja
+    /// Restaurant
     /// </summary>
     public class Restaurant : Entity<Guid>
     {
         /// <summary>
-        /// Nazwa restauracji
+        /// Name of the restaurant
         /// </summary>
         public virtual string Name { get; set; }
 
         /// <summary>
-        /// Unikalny kod restauracji
+        /// A unique restaurant code
         /// </summary>
         public virtual string UniqueCode { get; set; }
 
         /// <summary>
-        /// Adres
+        /// Address
         /// </summary>
         public virtual RestaurantAddress Address { get; set; }
 
         /// <summary>
-        /// Manager restauracji
+        /// Restaurent Manager
         /// </summary>
         public virtual RestaurantWorker Manager { get; set; }
 
         /// <summary>
-        /// Link do zdjęcia restauracji
+        /// Link to the photo restaurant
         /// </summary>
         public virtual string PhotoUrl { get; set; }
 
         /// <summary>
-        /// Pracownicy restauracji
+        /// Restaurant employees
         /// </summary>
         public virtual ICollection<RestaurantWorker> RestaurantWorkers { get; set; }
 
         /// <summary>
-        /// Menu dostępne w restauracji
+        /// Menu available in the restaurant
         /// </summary>
-        public virtual ICollection<Menu> Menus { get; set; } 
+        public virtual ICollection<Menu> Menus { get; set; }
 
         /// <summary>
-        /// Lista kategorii dotępnych w restauracji
+        /// List of categories available in the restaurant
         /// </summary>
         public virtual ICollection<ProductCategory> ProductCategories { get; set; } 
     }
 
     /// <summary>
-    /// Adres restauracji
+    /// Restaurant address
     /// </summary>
     public class RestaurantAddress
     {
         /// <summary>
-        /// Ulica
+        /// Street
         /// </summary>
         public virtual string Street { get; set; }
 
         /// <summary>
-        /// Miasto
+        /// City
         /// </summary>
         public virtual string City { get; set; }
 
         /// <summary>
-        /// Kod pocztowy
+        /// ZIP code
         /// </summary>
         public virtual string PostalCode { get; set; }
 
         /// <summary>
-        /// Numer budynku
+        /// Number of the building
         /// </summary>
         public virtual int StreetNumber { get; set; }
 
         /// <summary>
-        /// Numer lokalu
+        /// House number
         /// </summary>
         public virtual int? FlatNumber { get; set; }
     }

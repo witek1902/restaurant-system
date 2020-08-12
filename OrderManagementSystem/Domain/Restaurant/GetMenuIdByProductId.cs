@@ -6,7 +6,7 @@
     using Infrastructure.Query;
 
     /// <summary>
-    /// Pobranie menu poprzez podanie Id produktu
+    /// Downloading the menu by specifying the product ID
     /// </summary>
     public class GetMenuIdByProductId : Query<Guid>
     {
@@ -18,9 +18,9 @@
         }
 
         /// <summary>
-        /// Metoda do konstruowania i wywoływania zapytania za pomocą sesji NHibernate
+        /// A method for constructing and calling a query using the NHibernate session
         /// </summary>
-        /// <param name="session">Sesja NHibernate</param>
+        /// <param name="session">NHibernate session</param>
         public override Guid Execute(ISession session)
         {
             return session
